@@ -4,7 +4,10 @@
 			<h3>Berita Teknologi Terbaru</h3>
 
 			<div class="row gy-4">
-				<content-list path="/teknologi">
+				<content-list :query="{
+					path: '/teknologi/',
+					limit: 6,
+				}">
 					<template #not-found>
 						<div class="col-md-6 mx-auto">
 							<error-section

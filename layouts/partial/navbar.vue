@@ -15,7 +15,10 @@
 						alt="Logo Cak Adi"
 					/>
 
-					<div class="beta">Beta</div>
+					<div class="beta">
+						<Icon name="ant-design:experiment-filled" />
+						<span>Beta</span>
+					</div>
 				</nuxt-link>
 				<button
 					type="button"
@@ -54,7 +57,10 @@
 					alt="Logo Cak Adi"
 				/>
 
-				<div class="beta">Beta</div>
+				<div class="beta">
+					<Icon name="ant-design:experiment-filled" />
+					<span>Beta</span>
+				</div>
 			</nuxt-link>
 			<button
 				class="navbar-toggler p-0 border-0"
@@ -172,5 +178,8 @@ export default defineComponent({
 	border: 1px solid var(--bs-border-color);
 	border-radius: 0.5rem;
 	backdrop-filter: blur(1rem);
+	display: flex;
+	align-items: center;
+	gap: .5rem;
 }
 </style>

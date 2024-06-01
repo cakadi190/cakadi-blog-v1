@@ -15,9 +15,9 @@
 			<div class="meta-data">
 				<div class="time">
 					<Icon name="fa6-solid:calendar" />
-					<time :datetime="$dayjs(data.created_at).utc().toString()">{{ $dayjs(data.created_at).locale('id').format('dddd, MMMM YYYY') }}</time>
+					<time :datetime="$dayjs(data.created_at).utc().toString()">{{ $dayjs(data.created_at).locale('id').format('dddd, D MMMM YYYY') }}</time>
 				</div>
-				<div class="author">
+				<div class="author" v-if="data.author">
 					<Icon name="fa6-solid:user" />
 					<span>{{ data.author.name }}</span>
 				</div>
