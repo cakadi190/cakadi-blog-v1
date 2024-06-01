@@ -7,13 +7,15 @@
 			aria-labelledby="offcanvasLabel"
 		>
 			<div class="offcanvas-header">
-				<nuxt-link to="/" class="offcanvas-title">
+				<nuxt-link to="/" class="offcanvas-title text-decoration-none color-body d-flex gap-2">
 					<img
 						class="site-logo"
 						src="/images/brands/logo-color-long.svg"
 						height="28"
 						alt="Logo Cak Adi"
 					/>
+
+					<div class="beta">Beta</div>
 				</nuxt-link>
 				<button
 					type="button"
@@ -44,13 +46,15 @@
 
 	<nav class="navbar navbar-expand-lg fixed-top navbar-light py-3">
 		<div class="container">
-			<nuxt-link to="/" class="navbar-brand">
+			<nuxt-link to="/" class="navbar-brand d-flex gap-3 align-items-center">
 				<img
 					class="site-logo"
 					src="/images/brands/logo-color-long.svg"
-					height="32"
+					height="28"
 					alt="Logo Cak Adi"
 				/>
+
+				<div class="beta">Beta</div>
 			</nuxt-link>
 			<button
 				class="navbar-toggler p-0 border-0"
@@ -85,15 +89,7 @@ const navbar = ref<HTMLElement | null>(null);
 const colorMode = useColorMode();
 const theme = ref("light");
 
-const navbarMenu = ref([
-	{ name: "Beranda", link: "/" },
-	// { name: "Portofolio", link: "/portofolio" },
-	// { name: "Tentang Saya", link: "/tentang/saya" },
-	// { name: "Pendidikan & Organisasi", link: "/pendidikan" },
-	// { name: "Penghargaan", link: "/penghargaan" },
-	// { name: "Karir", link: "/karir" },
-	// { name: "Kontak Saya", link: "/kontak" },
-]);
+const navbarMenu = ref([{ name: "Beranda", link: "/" }]);
 
 const closingOffcanvas = () => {
 	const btnClose = document.querySelector("#offcanvas .btn-close");
@@ -167,5 +163,14 @@ export default defineComponent({
 });
 </script>
 
-<style>
+<style lang="scss" scoped>
+.beta {
+	padding: 0.25rem 0.75rem;
+	font-size: 0.75em;
+	background: rgba(var(--bs-body-bg-rgb), 0.75);
+	width: max-content;
+	border: 1px solid var(--bs-border-color);
+	border-radius: 0.5rem;
+	backdrop-filter: blur(1rem);
+}
 </style>

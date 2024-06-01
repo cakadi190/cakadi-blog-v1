@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^3.4.1",
+    "dayjs-nuxt": "^2.1.9",
     "nuxt-icon": "^0.6.10"
   }
 }

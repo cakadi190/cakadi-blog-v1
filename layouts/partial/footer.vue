@@ -3,11 +3,9 @@
 		<div class="container py-4">
 			<div class="row gy-5">
 				<div class="col-md-6">
-					<h5 class="h6">Tentang Saya</h5>
+					<h5 class="h6">Tentang Kami</h5>
 					<p class="opacity-75">
-						Saya adalah seorang fullstack developer yang suka sekali dengan
-						desain dan juga tertarik di dunia teknologi. Saya adalah orang
-						kelahiran Klaten, Jawa Tengah dan berdomisili di Ngawi, Jawa Timur.
+						Halo, ini adalah website milik <a href="https://beta.cakadi.id">Cak Adi</a> yang membagikan berbagai artikel terkait kehidupan, teknologi, kepramukaan dan lain sebagainya yang selalu bermanfaat untuk kalian semuanya. Stay tune ya, web ini akan segera hadir dengan fitur dan cara membaca yang enak sekali.
 					</p>
 					<div class="d-flex gap-3 mt-4">
 						<a

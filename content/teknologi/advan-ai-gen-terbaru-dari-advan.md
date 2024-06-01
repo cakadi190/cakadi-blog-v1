@@ -1,8 +1,8 @@
 ---
 title: Advan AI Gen Terbaru Dari Advan
 description: Advan AI Gen adalah generasi terbaru dari Advan yang memperkenalkan teknologi kecerdasan buatan terbaru untuk meningkatkan pengalaman pengguna dalam berbagai aspek teknologi, dari performa hingga keamanan. Dibangun dengan inovasi terkini, Advan AI Gen menjanjikan penggunaan yang lebih cerdas dan efisien dalam perangkat Advan terbaru.
-# image:
-#   - src: /uploads/cover/advan-ai-gen-laptop.webp
+image:
+  - src: /uploads/cover/advan-ai-gen-laptop.webp
 category:
   - Teknologi
   - Laptop

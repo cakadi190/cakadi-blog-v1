@@ -19,6 +19,11 @@ body {
 </style>
 
 <script lang="ts" setup>
+import('dayjs/locale/id')
+
+const dayjs = useDayjs()
+dayjs.locale('id')
+
 useHead({
   titleTemplate: (titleChunk: any) => {
     return titleChunk ? `${titleChunk} • Cak Adi` : 'Cak Adi';

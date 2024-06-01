@@ -23,6 +23,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
 		'@nuxtjs/color-mode',
     '@nuxt/content',
+		'dayjs-nuxt',
     ["@nuxtjs/google-fonts", {
       families: {
         Signika: true,
