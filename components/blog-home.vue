@@ -10,7 +10,7 @@
 				/>
 			</div>
 
-			<h3>{{ data.title }}</h3>
+			<h3 class="h5">{{ data.title }}</h3>
 
 			<div class="meta-data">
 				<div class="time">
