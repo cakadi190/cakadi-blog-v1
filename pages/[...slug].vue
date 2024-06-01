@@ -82,6 +82,13 @@ const { data } = await useAsyncData("article", () => {
 		: getPath.value;
 	return (queryContent(slugPath) as any).findOne();
 });
+
+onMounted(() => {
+	$("table").each(function () {
+		$(this).addClass("table table-striped mb-0");
+		$(this).wrap('<div class="table-responsive mb-3 overflow-hidden rounded-3 border"></div>');
+	});
+});
 </script>
 
 <style lang="scss" scoped>
