@@ -39,7 +39,10 @@ useHead({
 	},
 	meta: [
 		{ name: 'color-scheme', content: 'dark' }
-	]
+	],
+	htmlAttrs: {
+		lang: "id"
+	}
 });
 
 const handleSystemThemeChange = (e: MediaQueryListEvent) => {
