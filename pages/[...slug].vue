@@ -1,52 +1,73 @@
 <template>
 	<main class="container my-5 py-5">
-		<content-doc :path="routePath">
-			<template #not-found>
-				<p>No article found.</p>
-			</template>
+		<div class="row gy-4 pt-5">
+			<div class="col-md-9">
+				<content-doc :path="routePath">
+					<template #not-found>
+						<p>No article found.</p>
+					</template>
 
-			<template #default="{ doc }">
-				<div class="ratio ratio-16x9 overflow-hidden rounded-3 border mb-3">
-					<nuxt-img
-						:src="doc.image ? doc.image[0]['src'] : '/uploads/default.png'"
-					/>
-				</div>
+					<template #default="{ doc }">
+						<div class="ratio ratio-16x9 overflow-hidden rounded-3 border mb-3">
+							<nuxt-img
+								:src="doc.image ? doc.image[0]['src'] : '/uploads/default.png'"
+							/>
+						</div>
 
-				<h1>{{ doc.title }}</h1>
+						<h1>{{ doc.title }}</h1>
 
-				<div class="meta-data">
-					<div class="time">
-						<Icon name="fa6-solid:calendar" />
-						<time :datetime="$dayjs(doc.created_at).utc().toString()">{{
-							$dayjs(doc.created_at).locale("id").format("dddd, D MMMM YYYY")
-						}}</time>
+						<div class="meta-data">
+							<div class="time">
+								<Icon name="fa6-solid:calendar" />
+								<time :datetime="$dayjs(doc.created_at).utc().toString()">{{
+									$dayjs(doc.created_at)
+										.locale("id")
+										.format("dddd, D MMMM YYYY")
+								}}</time>
+							</div>
+							<div class="author" v-if="doc.author">
+								<Icon name="fa6-solid:user" />
+								<span>{{ doc.author.name }}</span>
+							</div>
+						</div>
+
+						<div class="mb-4 pb-3 border-bottom">
+							<content-renderer :value="doc" />
+						</div>
+
+						<div id="coment-section" class="target-hashbang">
+							<h3>Komentar dan Tanggapan</h3>
+
+							<div class="alert bg-info-subtle d-flex gap-3">
+								<Icon
+									name="mdi:information-variant-circle"
+									class="flex-shrink-0"
+									size="32"
+								/>
+								<span
+									>Mohon bersabar ya, karena fitur komentar ini sedang saya
+									persiapkan di development selanjutnya. Karen mengingat website
+									ini sedang dibangun dari awal.</span
+								>
+							</div>
+						</div>
+					</template>
+				</content-doc>
+			</div>
+			<div class="col-md-3">
+				<aside class="sidebar sticky">
+					<div class="card">
+						<div class="card-header">Ini Sidebar</div>
+						<div class="card-body">
+							<p class="mb-0">
+								Ini merupakan sebuah sidebar yang bisa diubah nanti pada
+								pembaharuan tampilan mendatang.
+							</p>
+						</div>
 					</div>
-					<div class="author" v-if="doc.author">
-						<Icon name="fa6-solid:user" />
-						<span>{{ doc.author.name }}</span>
-					</div>
-				</div>
-
-				<div class="mb-4 pb-3 border-bottom">
-					<content-renderer :value="doc" />
-				</div>
-
-				<div id="coment-section" class="target-hashbang">
-					<h3>Komentar dan Tanggapan</h3>
-
-					<div class="alert bg-info-subtle d-flex gap-3">
-						<Icon
-							name="mdi:information-variant-circle"
-							class="flex-shrink-0"
-							size="32"
-						/>
-						<span
-							>Mohon bersabar ya, karena fitur komentar ini sedang saya persiapkan di development selanjutnya. Karen mengingat website ini sedang dibangun dari awal.</span
-						>
-					</div>
-				</div>
-			</template>
-		</content-doc>
+				</aside>
+			</div>
+		</div>
 	</main>
 </template>
 
@@ -88,5 +109,11 @@ const { data } = await useAsyncData("article", () => {
 		display: flex;
 		gap: 0.5rem;
 	}
+}
+
+.sticky {
+	position: sticky;
+	top: 6rem;
+	z-index: 1020;
 }
 </style>
