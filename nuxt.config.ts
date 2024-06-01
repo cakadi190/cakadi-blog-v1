@@ -19,7 +19,9 @@ export default defineNuxtConfig({
     },
   },
   modules: [
+		'nuxt-icon',
     "@nuxt/image",
+		'@nuxtjs/color-mode',
     '@nuxt/content',
     ["@nuxtjs/google-fonts", {
       families: {
