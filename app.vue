@@ -119,6 +119,16 @@ watch(
 	scroll-margin-top: 100px;
 }
 
+.target-hashbang {
+	&:before {
+		display: block;
+		content: " ";
+		margin-top: -5rem;
+		height: 5rem;
+		visibility: hidden;
+	}
+}
+
 h1,
 h2,
 h3,
@@ -140,7 +150,7 @@ h6 {
 
 		&:after {
 			content: "#";
-			margin-left: .5rem;
+			margin-left: 0.5rem;
 			opacity: 0;
 			transition: all 0.2s ease;
 			visibility: hidden;

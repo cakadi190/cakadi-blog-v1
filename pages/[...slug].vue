@@ -27,7 +27,24 @@
 					</div>
 				</div>
 
-				<content-renderer :value="doc" />
+				<div class="mb-4 pb-3 border-bottom">
+					<content-renderer :value="doc" />
+				</div>
+
+				<div id="coment-section" class="target-hashbang">
+					<h3>Komentar dan Tanggapan</h3>
+
+					<div class="alert bg-info-subtle d-flex gap-3">
+						<Icon
+							name="mdi:information-variant-circle"
+							class="flex-shrink-0"
+							size="32"
+						/>
+						<span
+							>Mohon bersabar ya, karena fitur komentar ini sedang saya persiapkan di development selanjutnya. Karen mengingat website ini sedang dibangun dari awal.</span
+						>
+					</div>
+				</div>
 			</template>
 		</content-doc>
 	</main>
