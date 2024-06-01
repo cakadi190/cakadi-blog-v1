@@ -25,12 +25,6 @@ import Swal from 'sweetalert2';
 const dayjs = useDayjs();
 dayjs.locale("id");
 
-useHead({
-	titleTemplate: (titleChunk: any) => {
-		return titleChunk ? `${titleChunk} • Cak Adi` : "Cak Adi";
-	},
-});
-
 const colorMode = useColorMode();
 const theme = ref("light");
 
@@ -38,6 +32,15 @@ const applyTheme = (themes: string) => {
 	document.documentElement.setAttribute("data-bs-theme", themes);
 	theme.value = themes;
 };
+
+useHead({
+	titleTemplate: (titleChunk: any) => {
+		return titleChunk ? `${titleChunk} • Cak Adi` : "Cak Adi";
+	},
+	meta: [
+		{ name: 'color-scheme', content: 'dark' }
+	]
+});
 
 const handleSystemThemeChange = (e: MediaQueryListEvent) => {
 	applyTheme(e.matches ? "dark" : "light");

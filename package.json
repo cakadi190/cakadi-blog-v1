@@ -17,6 +17,7 @@
     "bootstrap": "^5.3.3",
     "jquery": "^3.7.1",
     "nuxt": "^3.11.2",
+    "nuxt-disqus": "^1.0.1",
     "sass": "^1.77.4",
     "sweetalert2": "^11.11.0"
   },

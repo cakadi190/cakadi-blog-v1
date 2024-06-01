@@ -37,7 +37,7 @@
 
 						<div id="coment-section" class="target-hashbang">
 							<h3>Komentar dan Tanggapan</h3>
-
+<!-- 
 							<div class="alert bg-info-subtle d-flex gap-3">
 								<Icon
 									name="mdi:information-variant-circle"
@@ -49,6 +49,9 @@
 									persiapkan di development selanjutnya. Karen mengingat website
 									ini sedang dibangun dari awal.</span
 								>
+							</div> -->
+							<div class="text-dark">
+								<DisqusComments :identifier="route.fullPath" />
 							</div>
 						</div>
 					</template>
@@ -73,6 +76,8 @@
 
 <script setup lang="ts">
 const route = useRoute();
+
+console.log(route.fullPath)
 
 const getPath = computed<string[]>(() => {
 	return route.params.slug as string[];
@@ -115,5 +120,15 @@ const { data } = await useAsyncData("article", () => {
 	position: sticky;
 	top: 6rem;
 	z-index: 1020;
+}
+</style>
+
+<style lang="scss">
+#disqus_thread {
+	background: transparent;
+}
+
+iframe {
+	color-scheme: light;
 }
 </style>

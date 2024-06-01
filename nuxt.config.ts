@@ -24,6 +24,10 @@ export default defineNuxtConfig({
 		'@nuxtjs/color-mode',
     '@nuxt/content',
 		'dayjs-nuxt',
+		["nuxt-disqus", {
+			shortname: 'catatancakadi',
+			debug: true,
+		}],
     ["@nuxtjs/google-fonts", {
       families: {
         Signika: true,
