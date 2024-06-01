@@ -20,6 +20,7 @@ body {
 
 <script lang="ts" setup>
 import("dayjs/locale/id");
+import Swal from 'sweetalert2';
 
 const dayjs = useDayjs();
 dayjs.locale("id");
@@ -91,6 +92,14 @@ watch(
 		initTooltipAndPopover();
 	}
 );
+
+// Swall Info
+Swal.fire({
+  title: 'Informasi',
+  text: 'Website ini sedang dibangun dan dalam tahap pengembangan. Jadi mohon maaf apabila masih banyak bug, error maupun tampilan tidak sesuai dengan ekspektasi.',
+  icon: 'info',
+  confirmButtonText: 'Woke!'
+})
 </script>
 
 <style lang="scss">
