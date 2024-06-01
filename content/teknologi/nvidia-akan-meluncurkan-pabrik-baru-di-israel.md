@@ -1,10 +1,12 @@
 ---
-title: Nvidia Akan Meluncurkan Pabrik Baru di Israel 
+title: Nvidia Akan Meluncurkan Pabrik Baru di Israel
 description: Nvidia akan meluncurkan pabrik baru di Israel sebagai bagian dari strategi ekspansi globalnya. Pemilihan Israel didorong oleh ekosistem teknologi yang kuat dan sumber daya manusia berkualitas tinggi di bidang teknologi dan semikonduktor. Pabrik ini akan meningkatkan kapasitas produksi Nvidia, menciptakan ribuan lapangan kerja, dan memperkuat kolaborasi dengan startup lokal. Selain produksi, fasilitas ini juga akan fokus pada penelitian dan pengembangan teknologi baru seperti kecerdasan buatan dan komputasi kuantum, yang diharapkan dapat memperkuat posisi Nvidia sebagai pemimpin global dalam industri teknologi tinggi.
-category: 
+image:
+  - src: /uploads/cover/nvidia-headquarters.webp
+category:
   - Teknologi
   - Industri
-tags: 
+tags:
   - Nvidia
   - Pabrik
   - Israel
@@ -15,7 +17,7 @@ tags:
   - Sumber Daya Manusia
   - Kecerdasan Buatan
   - Komputasi Kuantum
-author: 
+author:
   name: "Cak Adi"
   avatar: null
   email: 'cakadi190@gmail.com'
