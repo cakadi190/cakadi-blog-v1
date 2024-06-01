@@ -1,7 +1,7 @@
 <template>
 	<main class="container my-5 py-5">
 		<div class="row gy-4 pt-5">
-			<div class="col-md-9">
+			<div class="col-md-8">
 				<content-doc :path="routePath">
 					<template #not-found>
 						<p>No article found.</p>
@@ -16,34 +16,36 @@
 
 						<h1>{{ doc.title }}</h1>
 
-						<div class="meta-data">
-							<div class="time">
-								<Icon name="fa6-solid:calendar" />
-								<time :datetime="$dayjs(doc.created_at).utc().toString()">{{
-									$dayjs(doc.created_at)
-										.locale("id")
-										.format("dddd, D MMMM YYYY")
-								}}</time>
+						<client-only>
+							<div class="meta-data">
+								<div class="time">
+									<Icon name="fa6-solid:calendar" />
+									<time :datetime="$dayjs(doc.created_at).utc().toString()">{{
+										$dayjs(doc.created_at)
+											.locale("id")
+											.format("dddd, D MMMM YYYY")
+									}}</time>
+								</div>
+								<div class="author" v-if="doc.author">
+									<Icon name="fa6-solid:user" />
+									<span>{{ doc.author.name }}</span>
+								</div>
 							</div>
-							<div class="author" v-if="doc.author">
-								<Icon name="fa6-solid:user" />
-								<span>{{ doc.author.name }}</span>
-							</div>
-						</div>
+						</client-only>
 
 						<div class="mb-4 pb-3 border-bottom">
 							<content-renderer :value="doc" />
 						</div>
 
 						<div id="coment-section" class="target-hashbang">
-							<div class="text-dark">
+							<client-only>
 								<DisqusComments :identifier="route.fullPath" />
-							</div>
+							</client-only>
 						</div>
 					</template>
 				</content-doc>
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-4">
 				<aside class="sidebar sticky">
 					<div class="card">
 						<div class="card-header">Ini Sidebar</div>
@@ -62,8 +64,6 @@
 
 <script setup lang="ts">
 const route = useRoute();
-
-console.log(route.fullPath)
 
 const getPath = computed<string[]>(() => {
 	return route.params.slug as string[];
@@ -115,6 +115,6 @@ const { data } = await useAsyncData("article", () => {
 }
 
 iframe {
-	color-scheme: light;
+	color-scheme: auto;
 }
 </style>
