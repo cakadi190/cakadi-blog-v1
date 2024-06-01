@@ -36,7 +36,7 @@
 				<h3>Semua Kategori</h3>
 
 				<div class="row gy-4">
-					<content-list path="/teknologi">
+					<content-list path="/">
 						<template #not-found>
 							<div class="col-md-6 mx-auto">
 								<error-section
