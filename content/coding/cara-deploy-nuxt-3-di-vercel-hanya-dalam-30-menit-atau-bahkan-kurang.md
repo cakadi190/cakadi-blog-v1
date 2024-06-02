@@ -5,7 +5,7 @@ draft: false
 image:
   - src: /uploads/cover/deploy-nuxt3-vercel.webp
 category:
-  - Ngoding
+  - Coding
 tags:
   - Nuxt 3
   - Vercel
