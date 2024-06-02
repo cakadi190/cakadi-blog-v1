@@ -189,4 +189,25 @@ h6 {
 		}
 	}
 }
+
+.widget {
+	margin-bottom: 2rem;
+
+	.title {
+		position: relative;
+		margin-top: 1rem;
+		padding-bottom: 1rem;
+		margin-bottom: 3rem;
+		border-bottom: 1px solid var(--bs-border-color);
+		
+		span {
+			border: 1px solid var(--bs-border-color);
+			position: absolute;
+			background: var(--bs-body-bg);
+			padding: .5rem .875rem;
+			border-radius: .5rem;
+			margin-top: -.25rem;
+		}
+	}
+}
 </style>

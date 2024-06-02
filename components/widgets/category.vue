@@ -1,6 +1,8 @@
 <template>
 	<div class="widget" id="#category">
-		<h5>Kategori</h5>
+		<h5 class="title">
+			<span>Kategori</span>
+		</h5>
 
 		<div class="list-group list-group-flush">
 			<nuxt-link

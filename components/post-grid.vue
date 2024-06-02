@@ -50,15 +50,17 @@ import blogHome from '~/components/post-template/blog-home.vue';
 const props = withDefaults(defineProps<{
 	target?: string;
 	title?: string;
+	limit?: number;
 }>(), {
 	target: "article",
-	title: "Mungkin Kamu Suka"
+	title: "Mungkin Kamu Suka",
+	limit: 6,
 });
 
 const targetKey = computed(() => props.target.replace(/^\/|\/$/g, '').replace(' ', '-'));
 
 const { data, pending, error } = await useLazyAsyncData<Post[]>(targetKey.value, () =>
-	(queryContent(props.target) as any).limit(6).find()
+	(queryContent(props.target) as any).limit(props.limit).find()
 );
 </script>
 

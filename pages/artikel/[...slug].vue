@@ -9,7 +9,12 @@
 			</div>
 			<div class="col-md-4">
 				<aside class="sidebar sticky">
+					<widgets-custom title="Pasang Iklan">
+						<p>Yuk Pasang Iklanmu disini. Oh iya kalian bisa menghubungi nomor admin di <a href="https://wa.me/6281333550746?text=Halo, saya berminat memasang iklan di website catatancakadi.com." target="_blank" rel="noopener noreferrer">081333550746</a></p>
+					</widgets-custom>
+
 					<widgets-category />
+					<widgets-tags />
 				</aside>
 			</div>
 		</div>
@@ -21,6 +26,7 @@ import postContent from '~/components/post-template/post-content.vue';
 
 const route = useRoute();
 const router = useRouter();
+const urlRequest = useRequestURL();
 
 const getPath = computed<string[]>(() => {
 	return route.params.slug as string[];
@@ -43,17 +49,19 @@ const description = computed(() => data.value.description);
 const image = computed(() => data.value.image ? data.value.image[0]['src'] : '/uploads/default.png');
 
 useSeoMeta({
+  ogUrl: urlRequest.href,
 	title,
 	ogTitle: title,
+	twitterTitle: title,
 	description,
 	ogDescription: description,
+	twitterDescription: description,
 	ogImage: image,
-	twitterCard: 'summary_large_image',
 	twitterImage: image,
-	twitterTitle: title,
-	twitterDescription: description
+	twitterCard: 'summary_large_image',
 });
 
+// Properties
 onMounted(() => {
 	$("table").each(function () {
 		$(this).addClass("table table-striped mb-0");
