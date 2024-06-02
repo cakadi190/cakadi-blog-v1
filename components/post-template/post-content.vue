@@ -1,37 +1,43 @@
 <template>
 	<teleport to="body">
-		<div class="modal fade" id="shareModal" tabindex="-1" role="dialog">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header border-0">
-						<h5 class="modal-title">Bagikan Artikel Ini</h5>
-						<button
-							type="button"
-							class="btn-close"
-							data-bs-dismiss="modal"
-							aria-label="Close"
-						></button>
-					</div>
-					<div class="modal-body">
-						<div class="form-group">
-							<label for="shareUrl" class="mb-2">Share URL</label>
-							<div class="input-group">
-								<input
-									type="text"
-									readonly
-									class="form-control"
-									v-model="requesturl.href"
-									id="shareUrlInput"
-								/>
-								<button class="btn btn-light" @click="copyInputValue('#shareUrlInput')" type="button">
-									<Icon name="fa6-solid:copy" />
-								</button>
+		<client-only>
+			<div class="modal fade" id="shareModal" tabindex="-1" role="dialog">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header border-0">
+							<h5 class="modal-title">Bagikan Artikel Ini</h5>
+							<button
+								type="button"
+								class="btn-close"
+								data-bs-dismiss="modal"
+								aria-label="Close"
+							></button>
+						</div>
+						<div class="modal-body">
+							<div class="form-group">
+								<label for="shareUrl" class="mb-2">Share URL</label>
+								<div class="input-group">
+									<input
+										type="text"
+										readonly
+										class="form-control"
+										v-model="requesturl.href"
+										id="shareUrlInput"
+									/>
+									<button
+										class="btn btn-light"
+										@click="copyInputValue('#shareUrlInput')"
+										type="button"
+									>
+										<Icon name="fa6-solid:copy" />
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</client-only>
 	</teleport>
 
 	<article id="post-section">
@@ -73,23 +79,25 @@
 
 		<h6 class="mb-4">Artikel ini ditulis oleh</h6>
 		<div class="author-section bg-body-tertiary p-4 rounded-4">
-			<div class="row gy-4 align-items-center">
-				<div class="col-lg-2">
-					<div class="ratio ratio-1x1 overflow-hidden rounded-circle border">
+			<div class="d-flex flex-column flex-lg-row gy-4 gap-4 align-items-center">
+				<div class="avatar flex-shrink-0" style="width: 120px">
+					<div class="ratio ratio-1x1 overflow-hidden rounded-circle border" style="width: 120px">
 						<Gravatar
+							height="120"
 							:size="700"
 							default-img="mm"
 							v-if="!data.author.avatar"
 							:email="data.author.email"
 						/>
 						<nuxt-img
+							height="120"
 							v-else
 							:src="data.author.avatar"
 							:alt="data.author.name"
 						/>
 					</div>
 				</div>
-				<div class="col-lg-8 text-center text-lg-start">
+				<div class="desc text-center text-lg-start">
 					<div
 						class="d-flex align-items-center justify-content-center justify-content-lg-start mb-2 gap-2"
 					>
@@ -106,7 +114,7 @@
 							size="32"
 						/>
 					</div>
-					<p>{{ data.author.description }}</p>
+					<p class="mb-0">{{ data.author.description }}</p>
 				</div>
 			</div>
 		</div>

@@ -44,7 +44,10 @@
 							<Icon size="20" name="fa6-brands:linkedin-in" />
 						</a>
 					</div>
-					<a href="//www.dmca.com/Protection/Status.aspx?ID=8927aba4-9300-4bed-a0fd-5503cf62aece" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca_protected_sml_120i.png?ID=8927aba4-9300-4bed-a0fd-5503cf62aece"  alt="DMCA.com Protection Status" /></a>
+					
+					<ClientOnly>
+						<a href="//www.dmca.com/Protection/Status.aspx?ID=8927aba4-9300-4bed-a0fd-5503cf62aece" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca_protected_sml_120i.png?ID=8927aba4-9300-4bed-a0fd-5503cf62aece"  alt="DMCA.com Protection Status" /></a>
+					</ClientOnly>
 				</div>
 
 				<div class="col-lg-2 col-6">

@@ -44,7 +44,7 @@ useHead({
 		lang: "id"
 	},
 	script: [
-		{ src: 'https://images.dmca.com/Badges/DMCABadgeHelper.min.js' }
+		{ src: 'https://images.dmca.com/Badges/DMCABadgeHelper.min.js', mode: 'client' }
 	]
 });
 

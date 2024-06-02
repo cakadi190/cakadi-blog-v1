@@ -4,6 +4,6 @@ import highlightJS from '@highlightjs/vue-plugin'
 import 'highlight.js/styles/atom-one-dark.css'
 
 export default defineNuxtPlugin((nuxtApp) => {
-    hljs.registerLanguage('javascript', javascript)
-    nuxtApp.vueApp.use(highlightJS)
-})
+	hljs.registerLanguage('javascript', javascript)
+	nuxtApp.vueApp.use(highlightJS)
+});
