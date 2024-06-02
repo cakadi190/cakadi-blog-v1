@@ -102,7 +102,13 @@ const navbar = ref<HTMLElement | null>(null);
 const colorMode = useColorMode();
 const theme = ref("light");
 
-const navbarMenu = ref([{ name: "Beranda", link: "/" }]);
+const navbarMenu = ref([
+{ name: "Beranda", link: "/" },
+{ name: "Pramuka", link: "/kategori/pramuka" },
+{ name: "Teknologi", link: "/kategori/teknologi" },
+{ name: "Koding", link: "/kategori/coding" },
+{ name: "Desain Grafis", link: "/kategori/desain-grafis" },
+]);
 
 const closingOffcanvas = () => {
 	const btnClose = document.querySelector("#offcanvas .btn-close");
