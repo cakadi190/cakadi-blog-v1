@@ -76,3 +76,35 @@ export const upperCase = (text: string): string => {
 export const trim = (text: string): string => {
   return text.trim();
 };
+
+// utils/copyUtils.ts
+
+/**
+ * Menyalin teks ke clipboard.
+ * @param {string} text - Teks yang akan disalin.
+ * @returns {Promise<string>} - Promise yang resolve dengan pesan sukses jika penyalinan berhasil.
+ * @throws {Error} - Jika penyalinan gagal.
+ */
+export const copyToClipboard = async (text: string): Promise<string> => {
+  try {
+    await navigator.clipboard.writeText(text);
+    return 'Text copied to clipboard';
+  } catch (err) {
+    throw new Error('Failed to copy text: ' + (err instanceof Error ? err.message : String(err)));
+  }
+};
+
+/**
+ * Menyalin nilai dari sebuah elemen input ke clipboard.
+ * @param {string} inputSelector - Selector dari elemen input yang nilai-nya akan disalin.
+ * @returns {Promise<string>} - Promise yang resolve dengan pesan sukses jika penyalinan berhasil.
+ * @throws {Error} - Jika elemen input tidak ditemukan atau penyalinan gagal.
+ */
+export const copyInputValue = async (inputSelector: string): Promise<string> => {
+  const inputElement = document.querySelector<HTMLInputElement>(inputSelector);
+  if (inputElement) {
+    return copyToClipboard(inputElement.value);
+  } else {
+    throw new Error('Input element not found');
+  }
+};

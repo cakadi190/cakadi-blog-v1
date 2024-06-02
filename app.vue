@@ -123,7 +123,7 @@ Swal.fire({
 	) !important;
 }
 .color-body {
-	background-color: var(--bs-color-bg) !important;
+	color: var(--bs-body-color) !important;
 }
 .color-body-rgb {
 	--bs-bg-opacity: 1;

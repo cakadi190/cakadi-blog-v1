@@ -1,5 +1,40 @@
 <template>
-	<article>
+	<teleport to="body">
+		<div class="modal fade" id="shareModal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header border-0">
+						<h5 class="modal-title">Bagikan Artikel Ini</h5>
+						<button
+							type="button"
+							class="btn-close"
+							data-bs-dismiss="modal"
+							aria-label="Close"
+						></button>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="shareUrl" class="mb-2">Share URL</label>
+							<div class="input-group">
+								<input
+									type="text"
+									readonly
+									class="form-control"
+									v-model="requesturl.href"
+									id="shareUrlInput"
+								/>
+								<button class="btn btn-light" @click="copyInputValue('#shareUrlInput')" type="button">
+									<Icon name="fa6-solid:copy" />
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</teleport>
+
+	<article id="post-section">
 		<div class="ratio ratio-16x9 overflow-hidden rounded-3 border mb-3">
 			<nuxt-img
 				:src="data.image ? data.image[0]['src'] : '/uploads/default.png'"
@@ -11,7 +46,9 @@
 		<div class="meta-data">
 			<div class="meta-data__date">
 				<Icon name="fa6-solid:calendar" />
-				<time :datetime="$dayjs(data.updated_at).utc().toString()">{{ $dayjs(data.updated_at).locale('id').format('dddd, D MMMM YYYY') }}</time>
+				<time :datetime="$dayjs(data.updated_at).utc().toString()">{{
+					$dayjs(data.updated_at).locale("id").format("dddd, D MMMM YYYY")
+				}}</time>
 			</div>
 			<div class="meta-data__tags">
 				<Icon name="fa6-solid:folder" />
@@ -21,6 +58,15 @@
 				<Icon name="fa6-solid:tags" />
 				<span>{{ data.tags.join(", ") }}</span>
 			</div>
+			<a
+				href="#"
+				data-bs-toggle="modal"
+				data-bs-target="#shareModal"
+				class="color-body text-decoration-none meta-data__share"
+			>
+				<Icon name="fa6-solid:share" />
+				<span>Bagikan</span>
+			</a>
 		</div>
 
 		<ContentRendererMarkdown :value="data" />
@@ -85,6 +131,7 @@ defineProps<{
 }>();
 
 const route = useRoute();
+const requesturl = useRequestURL();
 </script>
 
 <style lang="scss" scoped>
@@ -93,7 +140,7 @@ const route = useRoute();
 	gap: 0.75rem;
 	flex-wrap: wrap;
 	align-items: center;
-	opacity: 0.5;
+	opacity: 0.75;
 	padding-top: 1rem;
 	padding-top: 1rem;
 	padding-bottom: 1rem;
