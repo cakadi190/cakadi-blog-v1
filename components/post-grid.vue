@@ -6,7 +6,7 @@
 			<div class="row gy-4 justify-content-center">
 				<div class="col-md-6 mx-auto" v-if="pending">
 					<error-section
-						imgSrc="/images/loading.svg"
+						imgSrc="/images/errors/loading.svg"
 						imgAlt="Sedang Memuat"
 						imgHeight="250"
 						title="Sedang Memuat"
