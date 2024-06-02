@@ -10,6 +10,42 @@
 
 		<ContentRendererMarkdown :value="data" />
 
+		<div class="meta-data">
+			<div class="meta-data__tags">
+				<Icon name="fa6-solid:folder" />
+				<span>{{ data.category.join(", ") }}</span>
+			</div>
+			<div class="meta-data__categories">
+				<Icon name="fa6-solid:tags" />
+				<span>{{ data.tags.join(", ") }}</span>
+			</div>
+		</div>
+
+		<h6 class="mb-4">Artikel ini ditulis oleh</h6>
+		<div class="author-section bg-body-tertiary p-4 rounded-4">
+			<div class="row gy-4 align-items-center">
+				<div class="col-lg-2">
+					<div
+						class="ratio ratio-1x1 overflow-hidden rounded-circle border"
+					>
+						<Gravatar :size="700" default-img="mm" v-if="!data.author.avatar" :email="data.author.email" />
+						<nuxt-img
+							v-else
+							:src="data.author.avatar"
+							:alt="data.author.name"
+						/>
+					</div>
+				</div>
+				<div class="col-lg-8 text-center text-lg-start">
+					<div class="d-flex align-items-center justify-content-center justify-content-lg-start mb-2 gap-2">
+						<h2 class="mb-0">{{ data.author.name }}</h2>
+						<Icon name="material-symbols:verified" data-bs-toggle="tooltip" data-bs-title="Pemilik situs atau pengguna yang terverifikasi" class="text-primary" v-if="data.author.email === 'cakadi190@gmail.com' || data.author.verified" size="32" />
+					</div>
+					<p>{{ data.author.description }}</p>
+				</div>
+			</div>
+		</div>
+
 		<div id="coment-section" class="target-hashbang">
 			<client-only>
 				<DisqusComments :identifier="route.fullPath" />
@@ -19,10 +55,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-
 export default defineComponent({
-	name: 'PostContent',
+	name: "PostContent",
 });
 </script>
 
@@ -34,5 +68,29 @@ defineProps<{
 const route = useRoute();
 </script>
 
-<style>
+<style lang="scss" scoped>
+.meta-data {
+	display: flex;
+	gap: 0.75rem;
+	flex-wrap: wrap;
+	align-items: center;
+	opacity: 0.5;
+	padding-top: 1rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	margin-bottom: 3rem;
+	border-top: 1px solid var(--bs-border-color);
+	border-bottom: 1px solid var(--bs-border-color);
+	
+	> * {
+		align-items: center;
+		display: flex;
+		gap: 0.5rem;
+	}
+}
+
+.author-section {
+	padding-bottom: 1rem;
+	margin-bottom: 3rem;
+}
 </style>

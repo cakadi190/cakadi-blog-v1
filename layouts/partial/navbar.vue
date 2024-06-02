@@ -103,11 +103,13 @@ const colorMode = useColorMode();
 const theme = ref("light");
 
 const navbarMenu = ref([
-{ name: "Beranda", link: "/" },
-{ name: "Pramuka", link: "/kategori/pramuka" },
-{ name: "Teknologi", link: "/kategori/teknologi" },
-{ name: "Koding", link: "/kategori/coding" },
-{ name: "Desain Grafis", link: "/kategori/desain-grafis" },
+	{ name: "Beranda", link: "/" },
+	{ name: "Pramuka", link: "/kategori/pramuka" },
+	{ name: "Teknologi", link: "/kategori/teknologi" },
+	{ name: "Koding", link: "/kategori/coding" },
+	{ name: "Pengalaman Hidup", link: "/kategori/pengalaman-hidup" },
+	{ name: "Desain Grafis", link: "/kategori/desain-grafis" },
+	{ name: "Artikel Lain", link: "/kategori/lainnya" },
 ]);
 
 const closingOffcanvas = () => {

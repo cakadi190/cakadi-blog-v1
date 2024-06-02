@@ -22,6 +22,7 @@ export default defineNuxtConfig({
 		'nuxt-icon',
     "@nuxt/image",
 		'@nuxtjs/color-mode',
+		'nuxt-gravatar',
     '@nuxt/content',
 		'dayjs-nuxt',
 		["nuxt-disqus", {

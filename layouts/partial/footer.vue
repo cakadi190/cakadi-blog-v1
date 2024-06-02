@@ -7,7 +7,7 @@
 					<p class="opacity-75">
 						Halo, ini adalah website milik <a href="https://beta.cakadi.id">Cak Adi</a> yang membagikan berbagai artikel terkait kehidupan, teknologi, kepramukaan dan lain sebagainya yang selalu bermanfaat untuk kalian semuanya. Stay tune ya, web ini akan segera hadir dengan fitur dan cara membaca yang enak sekali.
 					</p>
-					<div class="d-flex gap-3 mt-4">
+					<div class="d-flex gap-3 mb-4 mt-4">
 						<a
 							aria-label="Cak Adi's Facebook"
 							class="duration-200 transition-all"
@@ -44,6 +44,7 @@
 							<Icon size="20" name="fa6-brands:linkedin-in" />
 						</a>
 					</div>
+					<a href="//www.dmca.com/Protection/Status.aspx?ID=8927aba4-9300-4bed-a0fd-5503cf62aece" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca_protected_sml_120i.png?ID=8927aba4-9300-4bed-a0fd-5503cf62aece"  alt="DMCA.com Protection Status" /></a>
 				</div>
 
 				<div class="col-lg-2 col-6">

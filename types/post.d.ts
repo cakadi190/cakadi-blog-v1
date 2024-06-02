@@ -5,9 +5,11 @@ interface Image {
 
 interface Author {
 	name: string;
-	avatar: Image;
+	avatar: string;
 	url: string;
-	desc?: string;
+	verified?: boolean;
+	description?: string;
+	email: string;
 }
 
 interface Post {
@@ -18,4 +20,6 @@ interface Post {
 	updated_at: string;
 	image: Image[];
 	author: Author;
+	category: string[];
+	tags: string[];
 }

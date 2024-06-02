@@ -42,7 +42,10 @@ useHead({
 	],
 	htmlAttrs: {
 		lang: "id"
-	}
+	},
+	script: [
+		{ src: 'https://images.dmca.com/Badges/DMCABadgeHelper.min.js' }
+	]
 });
 
 const handleSystemThemeChange = (e: MediaQueryListEvent) => {

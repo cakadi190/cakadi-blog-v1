@@ -2,7 +2,6 @@
 	<main class="container my-5 py-5">
 		<div class="row gy-4 pt-5">
 			<div class="col-md-8">
-
 				<ContentRenderer v-if="data" :value="data">
 					<post-content :data="data" />
 				</ContentRenderer>
