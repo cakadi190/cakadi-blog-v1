@@ -12,4 +12,24 @@
 
 <script lang="ts" setup>
 import postGrid from "~/components/post-grid.vue";
+
+const urlRequest = useRequestURL();
+
+// Seo Meta
+const title = computed(() => "Secarik Catatan dan Tulisan Yang Bermanfaat");
+const description = computed(() => "Catatan Cak Adi merupakan platform blogging pribadi milik Cak Adi yang mana membagikan Secarik Catatan dan Tulisan Yang Bermanfaat.");
+const image = computed(() => '/uploads/default.png');
+
+useSeoMeta({
+  ogUrl: urlRequest.href,
+	title,
+	ogTitle: title,
+	twitterTitle: title,
+	description,
+	ogDescription: description,
+	twitterDescription: description,
+	ogImage: image,
+	twitterImage: image,
+	twitterCard: 'summary_large_image',
+});
 </script>
