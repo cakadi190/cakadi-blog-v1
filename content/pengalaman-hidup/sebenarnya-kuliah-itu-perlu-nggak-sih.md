@@ -5,7 +5,7 @@ draft: false
 image:
   - src: /uploads/cover/butuh-kuliah-gak-sih-unsplash.webp
 category:
-  - Pendidikan
+  - Pengalaman Hidup
 tags:
   - Kuliah
   - Pendidikan Tinggi
