@@ -17,7 +17,7 @@ author:
   description: 'Seorang Fullstack Web Developer yang berbasis di Kabupaten Ngawi yang suka sekali dengan desain dan juga hal yang berbau teknologi.'
 ---
 
-Halo para pengembang web! Apakah kalian sudah pernah dengar tentang Nuxt 3? Ini adalah framework Vue.js yang sangat keren dan powerful. Nah, kali ini kita akan membahas cara deploy Nuxt 3 di Vercel dengan cepat dan mudah, bahkan bisa selesai dalam 30 menit atau kurang! Yuk, simak langkah-langkahnya!
+Halo rek! Apakah kalian sudah pernah dengar tentang Nuxt 3? Ini adalah framework Vue.js yang sangat keren dan powerful. Nah, kali ini kita akan membahas cara deploy Nuxt 3 di Vercel dengan cepat dan mudah, bahkan bisa selesai dalam 30 menit atau kurang! Yuk, simak langkah-langkahnya!
 
 ### 1. Persiapan Awal
 
