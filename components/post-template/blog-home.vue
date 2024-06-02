@@ -1,9 +1,6 @@
 <template>
 	<article class="col-md-4">
-		<nuxt-link
-			class="card card-body blog-post"
-			:to="data._path"
-		>
+		<nuxt-link class="card card-body blog-post" :to="`/artikel${data._path}`">
 			<div class="ratio ratio-16x9 overflow-hidden rounded-3 border mb-3">
 				<nuxt-img
 					:src="data.image ? data.image[0]['src'] : '/uploads/default.png'"
@@ -12,23 +9,27 @@
 
 			<h3 class="h5">{{ data.title }}</h3>
 
-			<div class="meta-data">
-				<div class="time">
-					<Icon name="fa6-solid:calendar" />
-					<time :datetime="$dayjs(data.created_at).utc().toString()">{{ $dayjs(data.created_at).locale('id').format('dddd, D MMMM YYYY') }}</time>
+			<client-only>
+				<div class="meta-data">
+					<div class="time">
+						<Icon name="fa6-solid:calendar" />
+						<time :datetime="$dayjs(data.created_at).utc().toString()">{{
+							$dayjs(data.created_at).locale("id").format("dddd, D MMMM YYYY")
+						}}</time>
+					</div>
+					<div class="author" v-if="data.author">
+						<Icon name="fa6-solid:user" />
+						<span>{{ data.author.name }}</span>
+					</div>
 				</div>
-				<div class="author" v-if="data.author">
-					<Icon name="fa6-solid:user" />
-					<span>{{ data.author.name }}</span>
-				</div>
-			</div>
+			</client-only>
 		</nuxt-link>
 	</article>
 </template>
 
 <script lang="ts" setup>
 defineProps<{
-	data: any;
+	data: Post;
 }>();
 </script>
 
@@ -42,10 +43,10 @@ export default defineComponent({
 .blog-post {
 	text-decoration: none;
 	padding: 1.25rem;
-	border-radius: .875rem;
-	background: rgba(255, 255, 255, .1);
+	border-radius: 0.875rem;
+	background: rgba(255, 255, 255, 0.1);
 	backdrop-filter: blur(1rem);
-	transition: all .2s;
+	transition: all 0.2s;
 
 	&:hover {
 		border-color: var(--bs-primary);
@@ -57,15 +58,15 @@ export default defineComponent({
 
 	.meta-data {
 		display: flex;
-		gap: .75rem;
+		gap: 0.75rem;
 		flex-wrap: wrap;
 		align-items: center;
-		opacity: .5;
-		
+		opacity: 0.5;
+
 		> * {
 			align-items: center;
 			display: flex;
-			gap: .5rem;
+			gap: 0.5rem;
 		}
 	}
 }

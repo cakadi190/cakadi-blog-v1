@@ -4,9 +4,7 @@ description: Istilah kepramukaan dalam bahasa Inggris sangat penting untuk kegia
 image:
   - src: /uploads/cover/istilah-pramuka.webp
 category:
-  - Bahasa Inggris
-  - Kepramukaan
-  - Jambore
+  - Pramuka
 tags:
   - Bahasa Inggris
   - Kepramukaan
@@ -27,7 +25,7 @@ Daftar istilah berikut disusun dari berbagai sumber, termasuk dari status [Faceb
 
 | **Bahasa Indonesia**                 | **Bahasa Inggris**                   |
 |--------------------------------------|--------------------------------------|
-| **Umum**                                                                   ||
+| **Umum**                                                                    |
 | Dasadarma                            | Scout Law                            |
 | Gerakan Pramuka                      | Scout Movement                       |
 | Kepramukaan                          | Scouting                             |
@@ -43,7 +41,7 @@ Daftar istilah berikut disusun dari berbagai sumber, termasuk dari status [Faceb
 | Siaga Putra                          | Cub Scout                            |
 | Siaga Putri                          | Brownie Scout                        |
 | Tri Satya                            | Scout Promise                        |
-| **Pramuka Siaga (Cub Scout)**                                              ||
+| **Pramuka Siaga (Cub Scout)**                                               |
 | Barung                               | Colour Group/Sixer                   |
 | Calon Siaga                          | Tenderpad                            |
 | Dwi Satya                            | Promise Cub                          |
@@ -58,7 +56,7 @@ Daftar istilah berikut disusun dari berbagai sumber, termasuk dari status [Faceb
 | Siaga Putri                          | Brownie Scout                        |
 | Siaga Tata                           | First Class Cub                      |
 | Wakil Pemimpin Barung                | Second                               |
-| **Kepenggalangan (About Boy/Girls Guide Scout)**                           ||
+| **Kepenggalangan (About Boy/Girls Guide Scout)**                            |
 | Calon Penggalang                     | Tenderfoot                           |
 | Pasukan                              | Troop                                |
 | Pembina Penggalang                   | Scoutmaster                          |
@@ -71,7 +69,7 @@ Daftar istilah berikut disusun dari berbagai sumber, termasuk dari status [Faceb
 | Pratama                              | Troop Leader                         |
 | Regu                                 | Patrol                               |
 | Wakil Pimpinan Regu                  | Second Patrol Leader                 |
-| **Kepenegakan (About Rover/Ranger Scout)**                                 ||
+| **Kepenegakan (About Rover/Ranger Scout)**                                  |
 | Ambalan                              | Crew                                 |
 | Calon Penegak (Putra)                | Rover Candidate                      |
 | Calon Penegak (Putri)                | Ranger Candidate                     |
@@ -86,7 +84,7 @@ Daftar istilah berikut disusun dari berbagai sumber, termasuk dari status [Faceb
 | Pradana (Putri)                      | Ranger Mate                          |
 | Sangga                               | Gang                                 |
 | Wakil Pimpinan Sangga                | Second Gang Leader                   |
-| **Kepandegaan (About Senior Rover/Ranger Scout)**                          ||
+| **Kepandegaan (About Senior Rover/Ranger Scout)**                           |
 | Calon Pandega (Putra)                | Senior Rover Scout Candidate         |
 | Calon Pandega (Putri)                | Senior Ranger Scout Candidate        |
 | Pandega (Putra)                      | Senior Rover Scout                   |
@@ -99,7 +97,7 @@ Daftar istilah berikut disusun dari berbagai sumber, termasuk dari status [Faceb
 | Kwartir Daerah                       | Provincial Council                   |
 | Kwartir Nasional                     | National Council                     |
 | Kwartir Ranting                      | District Council                     |
-| **Kedewankerjaan (Rover/Ranger Council)**                                  ||
+| **Kedewankerjaan (Rover/Ranger Council)**                                   |
 | Anggota Dewan Kerja                  | Board Members of Rover and Ranger Council |
 | Bendahara Dewan Kerja                | Treasurer of Rover and Ranger Council |
 | Dewan Kerja Cabang (DKC)             | Regency Rover and Ranger Council     |
@@ -109,7 +107,7 @@ Daftar istilah berikut disusun dari berbagai sumber, termasuk dari status [Faceb
 | Ketua Dewan Kerja                    | Chairperson of Rover and Ranger Council |
 | Sekretaris Dewan Kerja               | Secretary of Rover and Ranger Council |
 | Wakil Ketua Dewan Kerja              | Vice Chairperson of Rover and Ranger Council |
-| **Satuan Karya Pramuka (Rover Scout Special Unit)**                        ||
+| **Satuan Karya Pramuka (Rover Scout Special Unit)**                         |
 | Saka Bahari                          | Sea and Maritime Special Unit        |
 | Saka Bhakti Husada                   | Health Care And Services Special Unit|
 | Saka Bhayangkara                     | Law Enforcement Special Unit         |

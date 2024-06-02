@@ -5,7 +5,6 @@ image:
   - src: /uploads/cover/nvidia-headquarters.webp
 category:
   - Teknologi
-  - Industri
 tags:
   - Nvidia
   - Pabrik

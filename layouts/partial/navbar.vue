@@ -7,7 +7,10 @@
 			aria-labelledby="offcanvasLabel"
 		>
 			<div class="offcanvas-header">
-				<nuxt-link to="/" class="offcanvas-title text-decoration-none color-body d-flex gap-2">
+				<nuxt-link
+					to="/"
+					class="offcanvas-title text-decoration-none color-body d-flex gap-2"
+				>
 					<img
 						class="site-logo"
 						src="/images/brands/logo-color-long.svg"
@@ -15,10 +18,12 @@
 						alt="Logo Cak Adi"
 					/>
 
-					<div class="beta">
-						<Icon name="ant-design:experiment-filled" />
-						<span>Beta</span>
-					</div>
+					<ClientOnly>
+						<div class="beta">
+							<Icon name="ant-design:experiment-filled" />
+							<span>Beta</span>
+						</div>
+					</ClientOnly>
 				</nuxt-link>
 				<button
 					type="button"
@@ -57,10 +62,12 @@
 					alt="Logo Cak Adi"
 				/>
 
-				<div class="beta">
-					<Icon name="ant-design:experiment-filled" />
-					<span>Beta</span>
-				</div>
+				<ClientOnly>
+					<div class="beta">
+						<Icon name="ant-design:experiment-filled" />
+						<span>Beta</span>
+					</div>
+				</ClientOnly>
 			</nuxt-link>
 			<button
 				class="navbar-toggler p-0 border-0"
@@ -180,6 +187,6 @@ export default defineComponent({
 	backdrop-filter: blur(1rem);
 	display: flex;
 	align-items: center;
-	gap: .5rem;
+	gap: 0.5rem;
 }
 </style>

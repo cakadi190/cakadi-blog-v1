@@ -5,8 +5,6 @@ image:
   - src: /uploads/cover/advan-ai-gen-laptop.webp
 category:
   - Teknologi
-  - Laptop
-  - Smartphone
 tags:
   - Komputasi
   - Teknologi

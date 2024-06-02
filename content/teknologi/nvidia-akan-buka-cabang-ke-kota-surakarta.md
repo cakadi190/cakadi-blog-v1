@@ -5,7 +5,6 @@ image:
   - src: /uploads/cover/nvidia-surakarta.webp
 category:
   - Teknologi
-  - Laptop
 tags:
   - Komputasi
   - Teknologi
