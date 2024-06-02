@@ -8,9 +8,11 @@
 		</div>
 		<h1>{{ data.title }}</h1>
 
-		<ContentRendererMarkdown :value="data" />
-
 		<div class="meta-data">
+			<div class="meta-data__date">
+				<Icon name="fa6-solid:calendar" />
+				<time :datetime="$dayjs(data.updated_at).utc().toString()">{{ $dayjs(data.updated_at).locale('id').format('dddd, D MMMM YYYY') }}</time>
+			</div>
 			<div class="meta-data__tags">
 				<Icon name="fa6-solid:folder" />
 				<span>{{ data.category.join(", ") }}</span>
@@ -21,14 +23,19 @@
 			</div>
 		</div>
 
+		<ContentRendererMarkdown :value="data" />
+
 		<h6 class="mb-4">Artikel ini ditulis oleh</h6>
 		<div class="author-section bg-body-tertiary p-4 rounded-4">
 			<div class="row gy-4 align-items-center">
 				<div class="col-lg-2">
-					<div
-						class="ratio ratio-1x1 overflow-hidden rounded-circle border"
-					>
-						<Gravatar :size="700" default-img="mm" v-if="!data.author.avatar" :email="data.author.email" />
+					<div class="ratio ratio-1x1 overflow-hidden rounded-circle border">
+						<Gravatar
+							:size="700"
+							default-img="mm"
+							v-if="!data.author.avatar"
+							:email="data.author.email"
+						/>
 						<nuxt-img
 							v-else
 							:src="data.author.avatar"
@@ -37,9 +44,21 @@
 					</div>
 				</div>
 				<div class="col-lg-8 text-center text-lg-start">
-					<div class="d-flex align-items-center justify-content-center justify-content-lg-start mb-2 gap-2">
+					<div
+						class="d-flex align-items-center justify-content-center justify-content-lg-start mb-2 gap-2"
+					>
 						<h2 class="mb-0">{{ data.author.name }}</h2>
-						<Icon name="material-symbols:verified" data-bs-toggle="tooltip" data-bs-title="Pemilik situs atau pengguna yang terverifikasi" class="text-primary" v-if="data.author.email === 'cakadi190@gmail.com' || data.author.verified" size="32" />
+						<Icon
+							name="material-symbols:verified"
+							data-bs-toggle="tooltip"
+							data-bs-title="Pemilik situs atau pengguna yang terverifikasi"
+							class="text-primary"
+							v-if="
+								data.author.email === 'cakadi190@gmail.com' ||
+								data.author.verified
+							"
+							size="32"
+						/>
 					</div>
 					<p>{{ data.author.description }}</p>
 				</div>
@@ -81,7 +100,7 @@ const route = useRoute();
 	margin-bottom: 3rem;
 	border-top: 1px solid var(--bs-border-color);
 	border-bottom: 1px solid var(--bs-border-color);
-	
+
 	> * {
 		align-items: center;
 		display: flex;

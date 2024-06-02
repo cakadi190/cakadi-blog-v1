@@ -1,6 +1,7 @@
 ---
 title: Daftar Istilah Kepramukaan dalam Bahasa Inggris
 description: Istilah kepramukaan dalam bahasa Inggris sangat penting untuk kegiatan internasional seperti Jambore dan JOTA-JOTI, membantu pramuka dari berbagai negara berkomunikasi lebih efektif. Artikel ini menyajikan daftar istilah kepramukaan dalam bahasa Inggris yang telah diperiksa dari berbagai sumber, termasuk istilah umum, kesiagaan, kepenggalangan, kepenegakan, kepandegaan, dewan kerja, dan satuan karya pramuka, disusun dalam tabel yang mudah dipahami. Komentar untuk perbaikan dan pembagian artikel ini di media sosial sangat diharapkan agar lebih banyak anggota pramuka dapat memanfaatkannya.
+draft: false
 image:
   - src: /uploads/cover/istilah-pramuka.webp
 category:

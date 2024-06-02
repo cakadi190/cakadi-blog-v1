@@ -6,6 +6,11 @@
 		<div class="pt-5 mt-5">
 			<post-grid target="/teknologi" />
 			<post-grid target="/coding" title="Tutorial Ngoding" />
+			<post-grid target="/" title="Artikel Lainnya" />
+
+			<div class="justify-content-center d-flex mb-5 pb-5">
+				<nuxt-link to="/artikel" class="btn btn-primary">Lihat Selengkapnya</nuxt-link>
+			</div>
 		</div>
 	</main>
 </template>

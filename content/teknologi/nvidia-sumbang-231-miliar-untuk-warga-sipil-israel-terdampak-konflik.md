@@ -10,12 +10,6 @@ tags:
   - Pabrik
   - Israel
   - Teknologi
-  - Industri
-  - Ekonomi
-  - Ekosistem
-  - Sumber Daya Manusia
-  - Kecerdasan Buatan
-  - Komputasi Kuantum
 author:
   name: "Cak Adi"
   avatar: null

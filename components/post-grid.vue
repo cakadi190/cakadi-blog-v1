@@ -22,7 +22,7 @@
 						text="Maaf, kami gagal memuat konten untuk anda. Coba di reload lagi webnya."
 					/>
 				</div>
-				<div class="col-md-6 mx-auto" v-if="data.length === 0">
+				<div class="col-md-6 mx-auto" v-if="data && data.length === 0">
 					<error-section
 						imgSrc="/images/errors/404.svg"
 						imgAlt="Tidak Ditemukan"
@@ -60,7 +60,7 @@ const props = withDefaults(defineProps<{
 const targetKey = computed(() => props.target.replace(/^\/|\/$/g, '').replace(' ', '-'));
 
 const { data, pending, error } = await useLazyAsyncData<Post[]>(targetKey.value, () =>
-	(queryContent(props.target) as any).limit(props.limit).find()
+	(queryContent(props.target) as any).where({ draft: { $eq: false } }).limit(props.limit).find()
 );
 </script>
 

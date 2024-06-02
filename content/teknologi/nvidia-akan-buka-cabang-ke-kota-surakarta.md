@@ -1,6 +1,7 @@
 ---
 title: NVidia Akan Ekspansi Lini Bisnisnya ke Kota Surakarta (Solo)
 description: Nvidia, produsen semikonduktor terkemuka di dunia untuk kecerdasan buatan (AI), sedang mengincar Indonesia untuk proyek besar berikutnya—sebuah pusat AI senilai $200 juta. Inisiatif ini, yang bekerja sama dengan pemerintah Indonesia dan Indosat Ooredoo Hutchison, menandai langkah besar dalam kemajuan teknologi di negara tersebut serta ekspansi Nvidia di Asia Tenggara.
+draft: false
 image:
   - src: /uploads/cover/nvidia-surakarta.webp
 category:
