@@ -13,6 +13,7 @@
 						<p>Yuk Pasang Iklanmu disini. Oh iya kalian bisa menghubungi nomor admin di <a href="https://wa.me/6281333550746?text=Halo, saya berminat memasang iklan di website catatancakadi.com." target="_blank" rel="noopener noreferrer">081333550746</a></p>
 					</widgets-custom>
 
+					<widgets-post />
 					<widgets-category />
 					<widgets-tags />
 				</aside>
