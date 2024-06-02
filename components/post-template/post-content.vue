@@ -97,7 +97,7 @@ const route = useRoute();
 	padding-top: 1rem;
 	padding-top: 1rem;
 	padding-bottom: 1rem;
-	margin-bottom: 3rem;
+	margin-bottom: 1.5rem;
 	border-top: 1px solid var(--bs-border-color);
 	border-bottom: 1px solid var(--bs-border-color);
 

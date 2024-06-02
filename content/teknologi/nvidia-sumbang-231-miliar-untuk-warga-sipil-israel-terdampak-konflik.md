@@ -1,6 +1,7 @@
 ---
 title: Nvidia Menyumbangkan Rp 231 Miliar untuk Warga Sipil Israel yang Terdampak Konflik Israel-Palestina
 description: Nvidia menyumbangkan Rp 231 miliar untuk membantu warga sipil Israel yang terdampak konflik Israel-Palestina. Sumbangan ini menjadi yang terbesar dalam sejarah Nvidia, dengan dana yang berasal dari kontribusi karyawan global perusahaan.
+draft: false
 image:
   - src: /uploads/cover/nvidia-headquarters.webp
 category:

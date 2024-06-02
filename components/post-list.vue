@@ -42,7 +42,7 @@ export default defineComponent({
 const id = "list-artikel-" + generateRandomString(15);
 
 const { data, pending, error } = await useLazyAsyncData<Post[]>(id, () =>
-	(queryContent("/") as any).limit(5).find()
+	(queryContent("/") as any).limit(6).find()
 );
 </script>
 
