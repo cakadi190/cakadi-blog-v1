@@ -50,12 +50,14 @@
 		<h1>{{ data.title }}</h1>
 
 		<div class="meta-data">
-			<div class="meta-data__date">
-				<Icon name="fa6-solid:calendar" />
-				<time :datetime="$dayjs(data.updated_at).utc().toString()">{{
-					$dayjs(data.updated_at).locale("id").format("dddd, D MMMM YYYY")
-				}}</time>
-			</div>
+			<client-only>
+				<div class="meta-data__date">
+					<Icon name="fa6-solid:calendar" />
+					<time :datetime="$dayjs(data.updated_at).utc().toString()">{{
+						$dayjs(data.updated_at).locale("id").format("dddd, D MMMM YYYY")
+					}}</time>
+				</div>
+			</client-only>
 			<div class="meta-data__tags">
 				<Icon name="fa6-solid:folder" />
 				<span>{{ data.category.join(", ") }}</span>
@@ -81,7 +83,10 @@
 		<div class="author-section bg-body-tertiary p-4 rounded-4">
 			<div class="d-flex flex-column flex-lg-row gy-4 gap-4 align-items-center">
 				<div class="avatar flex-shrink-0" style="width: 120px">
-					<div class="ratio ratio-1x1 overflow-hidden rounded-circle border" style="width: 120px">
+					<div
+						class="ratio ratio-1x1 overflow-hidden rounded-circle border"
+						style="width: 120px"
+					>
 						<Gravatar
 							height="120"
 							:size="700"

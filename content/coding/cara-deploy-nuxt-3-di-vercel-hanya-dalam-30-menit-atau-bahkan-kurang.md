@@ -30,11 +30,13 @@ Sebelum mulai, pastikan kamu sudah punya beberapa hal berikut:
 
 Pertama-tama, kita buat dulu proyek Nuxt 3. Buka terminal dan jalankan perintah berikut:
 
+::syntax
 ```bash
 npx nuxi init my-nuxt3-app
 cd my-nuxt3-app
 npm install
 ```
+::
 
 Ini akan membuat proyek baru dengan nama `my-nuxt3-app` dan menginstal semua dependensi yang diperlukan.
 
@@ -43,20 +45,22 @@ Ini akan membuat proyek baru dengan nama `my-nuxt3-app` dan menginstal semua dep
 Selanjutnya, kita perlu menyimpan proyek ini di GitHub. Ikuti langkah-langkah ini:
 
 1. **Inisialisasi Git** di folder proyek:
-
+    ::syntax
     ```bash
     git init
     git add .
     git commit -m "Initial commit"
     ```
+    ::
 
 2. **Buat repository baru** di GitHub dan ikuti instruksi untuk menambahkan repository remote ke proyek kamu:
-
+    ::syntax
     ```bash
     git remote add origin https://github.com/username/my-nuxt3-app.git
     git branch -M main
     git push -u origin main
     ```
+    ::
 
 Gantilah `username` dengan nama pengguna GitHub kamu dan `my-nuxt3-app` dengan nama repository yang kamu buat.
 

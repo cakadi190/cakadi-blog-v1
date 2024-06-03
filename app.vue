@@ -33,21 +33,6 @@ const applyTheme = (themes: string) => {
 	theme.value = themes;
 };
 
-useHead({
-	titleTemplate: (titleChunk: any) => {
-		return titleChunk ? `${titleChunk} • Cak Adi` : "Cak Adi";
-	},
-	meta: [
-		{ name: 'color-scheme', content: 'dark' }
-	],
-	htmlAttrs: {
-		lang: "id"
-	},
-	script: [
-		{ src: 'https://images.dmca.com/Badges/DMCABadgeHelper.min.js', mode: 'client' }
-	]
-});
-
 const handleSystemThemeChange = (e: MediaQueryListEvent) => {
 	applyTheme(e.matches ? "dark" : "light");
 };

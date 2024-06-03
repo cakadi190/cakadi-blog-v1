@@ -2,12 +2,14 @@
 	<article class="list-group-item py-3 article" v-if="data._path !== `/${currentParams.join('/')}`">
 		<div class="row">
 			<div class="col-4">
-				<div class="ratio ratio-16x9 overflow-hidden rounded-3 border mb-3">
-					<nuxt-img
-						:src="data.image ? data.image[0]['src'] : '/uploads/default.png'"
-						:alt="data.title"
-					/>
-				</div>
+				<nuxt-link class="text-decoration-none" :to="`/artikel${data._path}`">
+					<div class="ratio ratio-16x9 overflow-hidden rounded-3 border mb-3">
+						<nuxt-img
+							:src="data.image ? data.image[0]['src'] : '/uploads/default.png'"
+							:alt="data.title"
+						/>
+					</div>
+				</nuxt-link>
 			</div>
 			<div class="col-8">
 				<nuxt-link class="text-decoration-none" :to="`/artikel${data._path}`"><h3 class="h6">{{ limitChars(data.title, 50) }}</h3></nuxt-link>

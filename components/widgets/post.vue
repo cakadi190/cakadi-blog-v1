@@ -4,7 +4,9 @@
 			<span>Artikel Lain</span>
 		</h5>
 
-		<post-list />
+		<client-only>
+			<post-list />
+		</client-only>
 	</div>
 </template>
 

@@ -3,7 +3,7 @@ title: Cara Install Laravel di Localhost Gak Sampe 1 Jam
 description: Panduan lengkap dan cepat untuk menginstall Laravel di localhost dalam waktu kurang dari 1 jam. Artikel ini memberikan langkah-langkah yang simpel dan mudah diikuti, cocok untuk pemula yang ingin mulai belajar Laravel.
 draft: false
 image:
-  - src: /uploads/cover/install-laravel.webp
+  - src: /uploads/cover/install-laravel-2.webp
 category:
   - Teknologi
 tags:
@@ -36,9 +36,11 @@ Composer adalah alat yang paling penting untuk mengelola dependency di PHP. Buat
 
 Setelah download, jalankan installer dan ikuti instruksi yang diberikan. Untuk memastikan Composer sudah terinstall dengan benar, buka terminal atau command prompt, lalu ketik:
 
+::syntax
 ```bash
 composer -v
 ```
+::
 
 Kalau Composer sudah terinstall dengan baik, kamu akan melihat versi Composer yang terpasang.
 
@@ -46,9 +48,11 @@ Kalau Composer sudah terinstall dengan baik, kamu akan melihat versi Composer ya
 
 Sekarang kita masuk ke bagian utama, yaitu install Laravel. Pertama, buka terminal atau command prompt dan arahkan ke direktori tempat kamu ingin membuat project Laravel. Setelah itu, jalankan perintah berikut:
 
+::syntax
 ```bash
 composer create-project --prefer-dist laravel/laravel nama_project_kamu
 ```
+::
 
 Ganti `nama_project_kamu` dengan nama project yang kamu inginkan. Composer akan otomatis mendownload dan menginstall semua yang dibutuhkan untuk Laravel.
 
@@ -56,13 +60,16 @@ Ganti `nama_project_kamu` dengan nama project yang kamu inginkan. Composer akan 
 
 Setelah instalasi selesai, masuk ke direktori project kamu:
 
+::syntax
 ```bash
 cd nama_project_kamu
 ```
+::
 
 Di dalam direktori ini, ada file `.env` yang berisi konfigurasi environment. Buka file ini dengan text editor favorit kamu dan sesuaikan pengaturan database. Contohnya seperti ini:
 
-```env
+::syntax
+```text
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
@@ -70,22 +77,24 @@ DB_DATABASE=nama_database_kamu
 DB_USERNAME=root
 DB_PASSWORD=
 ```
+::
 
 Pastikan kamu sudah membuat database dengan nama yang sama di phpMyAdmin atau tools database lainnya.
 
 ## 5. Jalankan Laravel
 
 Setelah semua konfigurasi selesai, saatnya menjalankan Laravel. Di terminal atau command prompt, pastikan kamu masih berada di direktori project Laravel kamu, lalu ketik:
-
+::syntax
 ```bash
 php artisan serve
 ```
-
+::
 Perintah ini akan menjalankan server development Laravel di localhost. Kamu bisa mengakses project kamu melalui browser di alamat:
-
+::syntax
 ```plaintext
 http://localhost:8000
 ```
+::
 
 Voila! Sekarang project Laravel kamu sudah berjalan di localhost.
 
