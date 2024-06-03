@@ -58,8 +58,8 @@ useSeoMeta({
 	description,
 	ogDescription: description,
 	twitterDescription: description,
-	ogImage: image,
-	twitterImage: image,
+	ogImage: image.value,
+	twitterImage: image.value,
 	twitterCard: 'summary_large_image',
 });
 
