@@ -28,6 +28,8 @@ const route = useRoute();
 const router = useRouter();
 const urlRequest = useRequestURL();
 
+console.log(urlRequest)
+
 const getPath = computed<string[]>(() => {
 	return route.params.slug as string[];
 });
@@ -46,7 +48,7 @@ if(data.value == null) {
 // Seo Meta
 const title = computed(() => data.value.title);
 const description = computed(() => data.value.description);
-const image = computed(() => data.value.image ? data.value.image[0]['src'] : '/uploads/default.png');
+const image = computed(() => urlRequest.origin + data.value.image ? data.value.image[0]['src'] : '/uploads/default.png');
 
 useSeoMeta({
   ogUrl: urlRequest.href,
