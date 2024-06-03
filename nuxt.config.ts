@@ -44,7 +44,8 @@ export default defineNuxtConfig({
 				return titleChunk ? `${titleChunk} • Catatan Cak Adi` : "Catatan Cak Adi";
 			},
 			meta: [
-				{ name: 'color-scheme', content: 'dark' }
+				{ name: 'color-scheme', content: 'dark' },
+				{ property: 'og:type', content: 'website' }
 			],
 			htmlAttrs: {
 				lang: "id"

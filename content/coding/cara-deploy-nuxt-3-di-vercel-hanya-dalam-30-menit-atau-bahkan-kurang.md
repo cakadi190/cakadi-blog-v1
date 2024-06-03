@@ -3,7 +3,7 @@ title: Cara Deploy Nuxt 3 di Vercel Hanya Dalam 30 Menit atau Bahkan Kurang
 description: Panduan lengkap dan cepat untuk meng-deploy aplikasi Nuxt 3 di Vercel dalam waktu kurang dari 30 menit. Artikel ini membahas langkah-langkah dari pembuatan proyek, penyimpanan di GitHub, hingga proses deploy di Vercel dengan bahasa yang mudah dipahami.
 draft: false
 image:
-  - src: /uploads/cover/deploy-nuxt3-vercel.webp
+  - src: /uploads/cover/install-laravel-2.webp
 category:
   - Coding
 tags:
