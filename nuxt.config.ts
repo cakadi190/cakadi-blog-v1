@@ -51,7 +51,12 @@ export default defineNuxtConfig({
 			},
 			script: [
 				{ src: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js' },
-				{ src: 'https://images.dmca.com/Badges/DMCABadgeHelper.min.js' }
+				{ src: 'https://images.dmca.com/Badges/DMCABadgeHelper.min.js' },
+				{
+					async: true,
+					src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8792210593151937',
+					crossorigin: 'anonymous'
+				}
 			]
 		}
 	},
@@ -63,17 +68,17 @@ export default defineNuxtConfig({
 		},
 	},
 	modules: [
-        'nuxt-icon',
-        "@nuxt/image",
-        '@nuxtjs/color-mode',
-        'nuxt-gravatar',
-        '@nuxt/content',
-        'dayjs-nuxt',
-        ["nuxt-disqus", {
+		'nuxt-icon',
+		"@nuxt/image",
+		'@nuxtjs/color-mode',
+		'nuxt-gravatar',
+		'@nuxt/content',
+		'dayjs-nuxt',
+		["nuxt-disqus", {
 			shortname: 'catatancakadi',
 			debug: true,
 		}],
-        ["@nuxtjs/google-fonts", {
+		["@nuxtjs/google-fonts", {
 			families: {
 				Signika: true,
 				'Fira Code': true,
@@ -87,6 +92,6 @@ export default defineNuxtConfig({
 			overwriting: true,
 			inject: true,
 		}],
-        "@stefanobartoletti/nuxt-social-share"
-    ],
+		"@stefanobartoletti/nuxt-social-share"
+	],
 })
