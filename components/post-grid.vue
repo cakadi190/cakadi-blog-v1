@@ -1,7 +1,16 @@
 <template>
 	<section class="need-space pt-0">
 		<div class="container">
-			<h3 class="mb-3">{{ title }}</h3>
+			<div class="d-flex mb-4 align-items-center gap-3 justify-content-between">
+				<h3 class="mb-0">{{ title }}</h3>
+				<nuxt-link
+					:to="target !== '/' ? `/kategori${target}` : '/artikel'"
+					class="text-decoration-none d-flex gap-2 align-items-center"
+				>
+					<span>Lihat Semuanya</span>
+					<Icon name="fa6-solid:arrow-right" />
+				</nuxt-link>
+			</div>
 
 			<div class="row gy-4 justify-content-center">
 				<div class="col-md-6 mx-auto" v-if="pending">
@@ -13,7 +22,7 @@
 						text="Sedang memuat bagian ini, mohon bersabar."
 					/>
 				</div>
-				<div class="col-md-6 mx-auto" v-if="error">
+				<div class="col-md-6 mx-auto" v-else-if="error">
 					<error-section
 						imgSrc="/images/errors/500.svg"
 						imgAlt="Gagal Memuat"
@@ -22,7 +31,10 @@
 						text="Maaf, kami gagal memuat konten untuk anda. Coba di reload lagi webnya."
 					/>
 				</div>
-				<div class="col-md-6 mx-auto" v-if="data && data.length === 0">
+				<div
+					class="col-md-6 mx-auto"
+					v-else-if="!pending && !error && data && data.length === 0"
+				>
 					<error-section
 						imgSrc="/images/errors/404.svg"
 						imgAlt="Tidak Ditemukan"
@@ -32,7 +44,12 @@
 					/>
 				</div>
 
-				<blog-home v-else v-for="item in data" :key="item.title" :data="item" />
+				<blog-home
+					v-else-if="!pending && !error && data && data.length"
+					v-for="item in data"
+					:key="item.title"
+					:data="item"
+				/>
 			</div>
 		</div>
 	</section>
@@ -45,22 +62,32 @@ export default defineComponent({
 </script>
 
 <script lang="ts" setup>
-import blogHome from '~/components/post-template/blog-home.vue';
+import blogHome from "~/components/post-template/blog-home.vue";
 
-const props = withDefaults(defineProps<{
-	target?: string;
-	title?: string;
-	limit?: number;
-}>(), {
-	target: "article",
-	title: "Mungkin Kamu Suka",
-	limit: 6,
-});
+const props = withDefaults(
+	defineProps<{
+		target?: string;
+		title?: string;
+		limit?: number;
+	}>(),
+	{
+		target: "article",
+		title: "Mungkin Kamu Suka",
+		limit: 6,
+	}
+);
 
-const targetKey = computed(() => props.target.replace(/^\/|\/$/g, '').replace(' ', '-'));
+const targetKey = computed(() =>
+	props.target.replace(/^\/|\/$/g, "").replace(" ", "-")
+);
 
-const { data, pending, error } = await useLazyAsyncData<Post[]>(targetKey.value, () =>
-	(queryContent(props.target) as any).where({ draft: { $eq: false } }).limit(props.limit).find()
+const { data, pending, error } = await useLazyAsyncData<Post[]>(
+	targetKey.value,
+	() =>
+		(queryContent(props.target) as any)
+			.where({ draft: { $eq: false } })
+			.limit(props.limit)
+			.find()
 );
 </script>
 

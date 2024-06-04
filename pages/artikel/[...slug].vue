@@ -48,8 +48,6 @@ const title = computed(() => data.value.title);
 const description = computed(() => data.value.description);
 const image = computed(() => urlRequest.origin + (data.value.image ? data.value.image[0]['src'] : '/uploads/default.png'));
 
-console.log(image.value)
-
 useSeoMeta({
   ogUrl: urlRequest.href,
 	title,

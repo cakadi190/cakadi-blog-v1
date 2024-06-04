@@ -1,17 +1,17 @@
 <template>
-	<div class="widget" id="#category">
+	<div class="widget" id="#tags">
 		<h5 class="title">
 			<span>Tagar</span>
 		</h5>
 
 		<div class="nav nav-pills gap-2">
 			<nuxt-link
-				v-for="category in resultTags"
-				:key="category.slug"
-				:to="`/tagar/${category.slug}`"
+				v-for="tags in resultTags"
+				:key="tags.slug"
+				:to="`/label/${tags.slug}`"
 				class="nav-link"
 			>
-				<span>{{ category.name }}</span>
+				<span>{{ tags.name }}</span>
 			</nuxt-link>
 		</div>
 	</div>

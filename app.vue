@@ -20,7 +20,7 @@ body {
 
 <script lang="ts" setup>
 import("dayjs/locale/id");
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 const dayjs = useDayjs();
 dayjs.locale("id");
@@ -32,6 +32,12 @@ const applyTheme = (themes: string) => {
 	document.documentElement.setAttribute("data-bs-theme", themes);
 	theme.value = themes;
 };
+
+useHead({
+	titleTemplate(titleChunk: string) {
+		return titleChunk ? `${titleChunk} • Catatan Cak Adi` : "Catatan Cak Adi";
+	},
+});
 
 const handleSystemThemeChange = (e: MediaQueryListEvent) => {
 	applyTheme(e.matches ? "dark" : "light");
@@ -89,11 +95,11 @@ watch(
 
 // Swall Info
 Swal.fire({
-  title: 'Informasi',
-  text: 'Website ini sedang dibangun dan dalam tahap pengembangan. Jadi mohon maaf apabila masih banyak bug, error maupun tampilan tidak sesuai dengan ekspektasi.',
-  icon: 'info',
-  confirmButtonText: 'Woke!'
-})
+	title: "Informasi",
+	text: "Website ini sedang dibangun dan dalam tahap pengembangan. Jadi mohon maaf apabila masih banyak bug, error maupun tampilan tidak sesuai dengan ekspektasi.",
+	icon: "info",
+	confirmButtonText: "Woke!",
+});
 </script>
 
 <style lang="scss">
@@ -187,14 +193,14 @@ h6 {
 		padding-bottom: 1rem;
 		margin-bottom: 3rem;
 		border-bottom: 1px solid var(--bs-border-color);
-		
+
 		span {
 			border: 1px solid var(--bs-border-color);
 			position: absolute;
 			background: var(--bs-body-bg);
-			padding: .5rem .875rem;
-			border-radius: .5rem;
-			margin-top: -.25rem;
+			padding: 0.5rem 0.875rem;
+			border-radius: 0.5rem;
+			margin-top: -0.25rem;
 		}
 	}
 }

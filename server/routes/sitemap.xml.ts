@@ -19,10 +19,10 @@ export default defineEventHandler(async (event) => {
       priority: 0.8
     }));
 
-  // Ekstrak tagar unik dan buat rutenya
+  // Ekstrak label unik dan buat rutenya
   const tags = [...new Set(data.flatMap(item => item.tags))]
     .map(tags => ({
-      url: `/tagar/${tags.toLowerCase().replace(/\s+/g, '-')}`,
+      url: `/label/${tags.toLowerCase().replace(/\s+/g, '-')}`,
       changefreq: 'daily',
       priority: 0.8
     }));

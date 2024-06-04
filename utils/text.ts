@@ -49,6 +49,15 @@ export const capitalize = (text: string): string => {
 };
 
 /**
+ * Mengubah huruf pertama setiap kata dalam teks menjadi huruf besar.
+ * @param {string} text - Teks yang akan diubah.
+ * @returns {string} Teks dengan huruf pertama setiap kata yang diubah menjadi huruf besar.
+ */
+export const capitalizeEachWord = (text: string): string => {
+	return text.split(' ').map(word => capitalize(word)).join(' ');
+};
+
+/**
  * Mengubah semua huruf teks menjadi huruf kecil.
  * @param {string} text - Teks yang akan diubah.
  * @returns {string} Teks dengan semua huruf menjadi huruf kecil.

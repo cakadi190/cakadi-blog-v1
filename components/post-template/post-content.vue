@@ -14,7 +14,7 @@
 							></button>
 						</div>
 						<div class="modal-body">
-							<div class="form-group">
+							<div class="form-group mb-3">
 								<label for="shareUrl" class="mb-2">Share URL</label>
 								<div class="input-group">
 									<input
@@ -32,6 +32,28 @@
 										<Icon name="fa6-solid:copy" />
 									</button>
 								</div>
+							</div>
+
+							<div class="d-flex gap-3">
+								<SocialShare
+									v-for="network in [
+										'facebook',
+										'twitter',
+										'linkedin',
+										'email',
+										'telegram',
+										'whatsapp',
+										'skype',
+										'line',
+										'reddit',
+									]"
+									:url="requesturl.href"
+									:key="network"
+									:network="network"
+									:styled="true"
+									:label="false"
+									class="p-2 text-white"
+								/>
 							</div>
 						</div>
 					</div>

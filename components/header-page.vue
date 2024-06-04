@@ -5,14 +5,9 @@ export default defineComponent({
 </script>
 
 <script setup lang="ts">
-import {
-	initialSlideFromLeftToRight,
-	enterSlideFromLeftToRight,
-} from "./motion";
-
 defineProps<{
-  backTo?: string;
-}>()
+	backTo?: string;
+}>();
 </script>
 
 <template>
@@ -20,24 +15,20 @@ defineProps<{
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6">
-          <nuxt-link v-if="backTo" :to="backTo" class="btn btn-link text-decoration-none d-flex gap-2 p-0 align-items-center mb-4">
-            <Icon name="fa6-solid:chevron-left" />
-            <span>Kembali</span>
-          </nuxt-link>
-
-					<h1
-						v-motion
-						:enter="enterSlideFromLeftToRight"
-						:initial="initialSlideFromLeftToRight"
+				
+					<nuxt-link
+						v-if="backTo"
+						:to="backTo"
+						class="btn btn-link text-decoration-none d-flex gap-2 p-0 align-items-center mb-4"
 					>
+						<Icon name="fa6-solid:chevron-left" />
+						<span>Kembali</span>
+					</nuxt-link>
+
+					<h1 class="h2">
 						<slot name="title" />
 					</h1>
-					<h2
-						v-motion
-						:enter="enterSlideFromLeftToRight"
-						:initial="initialSlideFromLeftToRight"
-						class="h4 opacity-75 lh-base mb-0"
-					>
+					<h2 class="h4 opacity-75 lh-base mb-0">
 						<slot name="subtitle" />
 					</h2>
 				</div>
@@ -86,7 +77,7 @@ defineProps<{
 
 	.row {
 		min-height: 40dvh;
-    padding-top: 5rem;
+		padding-top: 5rem;
 		align-items: center;
 	}
 }

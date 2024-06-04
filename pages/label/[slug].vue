@@ -1,13 +1,13 @@
 <template>
 	<div id="page-articles">
 		<header-page backTo="/">
-			<template #title>Semua Artikel</template>
-			<template #subtitle>Semua artikel yang ditulis di blog ini.</template>
+			<template #title>Artikel Dengan Kategori: {{ labelTitle }}</template>
+			<template #subtitle>Semua artikel yang ditulis di blog ini dengan label "{{ labelTitle }}".</template>
 		</header-page>
 
 		<section class="need-space pt-0">
 			<div class="container">
-				<div class="row gy-4 justify-content-center">
+				<div class="row gy-4">
 					<div class="col-md-6 mx-auto" v-if="pending">
 						<error-section
 							imgSrc="/images/errors/loading.svg"
@@ -84,6 +84,8 @@ const showData = ref(15);
 const page = ref(1);
 const skip = computed(() => (page.value - 1) * showData.value);
 
+const labelTitle = computed(() => capitalize((route.params.slug as string).replace('-', ' ')));
+
 const setPage = (page: number) => {
 	router.push({ query: { ...route.query, page: page.toString() } });
 };
@@ -113,14 +115,14 @@ const next = (): void => {
 // Fetch Data
 updatePageFromQuery();
 const fetchData = () => {
-	return (queryContent("/") as any)
-		.where({ draft: { $eq: false } })
+	return (queryContent(`/`) as any)
+		.where({ draft: { $eq: false }, tags: { $contains: capitalizeEachWord(labelTitle.value) } })
 		.skip(skip.value)
 		.limit(showData.value);
 };
 
 const { data, pending, error, refresh } = await useAsyncData<Post[]>(
-	"artikel-full",
+	"artikel-label",
 	() => fetchData().find(),
 	{
 		watch: [page, skip],
@@ -128,7 +130,7 @@ const { data, pending, error, refresh } = await useAsyncData<Post[]>(
 );
 
 const { data: count, refresh: countRefresh } = await useAsyncData<number>(
-	"count-full",
+	"count-label",
 	() => fetchData().count(),
 	{
 		watch: [page, skip],
@@ -138,10 +140,10 @@ const { data: count, refresh: countRefresh } = await useAsyncData<number>(
 const countPage = computed(() => Math.ceil(count.value / showData.value));
 
 // Seo Meta
-const title = computed(() => "Semua Artikel");
+const title = computed(() => `Label: "${capitalizeEachWord(labelTitle.value)}"`);
 const description = computed(
 	() =>
-		"Catatan Cak Adi merupakan platform blogging pribadi milik Cak Adi yang mana membagikan Secarik Catatan dan Tulisan Yang Bermanfaat."
+		`Daftar artikel yang memuat dan memiliki label ${capitalizeEachWord(labelTitle.value)}`
 );
 const image = computed(() => "/uploads/default.png");
 

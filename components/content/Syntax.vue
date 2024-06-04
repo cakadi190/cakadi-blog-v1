@@ -1,8 +1,8 @@
 <template>
 	<client-only>
-		<div class="card mb-4 overflow-hidden" :id="`syntax-${elId}`">
+		<div class="card mb-4 rounded-4 overflow-hidden" :id="`syntax-${elId}`">
 			<div
-				class="card-header bg-body p-3 py-2 align-items-center d-flex justify-content-between gap-2"
+				class="card-header px-4 border-0 bg-body p-3 align-items-center d-flex justify-content-between gap-2"
 			>
 				<strong>{{ title }}</strong>
 				<div v-if="enableCopy">
@@ -11,10 +11,19 @@
 					</button>
 				</div>
 			</div>
-			<div class="card-body bg-dark text-white">
+			<div class="card-body px-4 bg-dark text-white">
 				<slot />
 			</div>
-			<small class="card-body text-end p-2 px-3">Didukung oleh <a href="https://content.nuxt.com" target="_blank" rel="noopener noreferrer">Nuxt Content Syntax Highlighting</a>.</small>
+			<small class="card-body px-4 text-center text-lg-end p-2 px-3"
+				>Didukung oleh
+				<a
+					href="https://content.nuxt.com"
+					target="_blank"
+					class="text-decoration-none"
+					rel="noopener noreferrer"
+					>Nuxt Content Syntax Highlighting</a
+				>.</small
+			>
 		</div>
 	</client-only>
 </template>
@@ -37,14 +46,14 @@ const elId = generateRandomString(10);
 const copied = ref(false);
 
 const copyToClipBoard = async () => {
-  try {
-    await Promise.all([copyFromElement(`#syntax-${elId} pre`)]);
-		
+	try {
+		await Promise.all([copyFromElement(`#syntax-${elId} pre`)]);
+
 		copied.value = true;
-		setTimeout(() => copied.value = false, 2500);
-  } catch (error) {
-    console.error(error);
-  }
+		setTimeout(() => (copied.value = false), 2500);
+	} catch (error) {
+		console.error(error);
+	}
 };
 </script>
 

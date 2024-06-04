@@ -6,7 +6,7 @@
 		<div class="pt-5 mt-5">
 			<post-grid target="/coding" title="Tutorial Ngoding" />
 			<post-grid target="/teknologi" title="Berita Teknologi" />
-			<post-grid target="/" title="Artikel Lainnya" />
+			<post-grid class="pb-4" target="/" title="Artikel Lainnya" />
 
 			<div class="justify-content-center d-flex mb-5 pb-5">
 				<nuxt-link to="/artikel" class="btn btn-primary">Lihat Selengkapnya</nuxt-link>
@@ -21,7 +21,7 @@ import postGrid from "~/components/post-grid.vue";
 const urlRequest = useRequestURL();
 
 // Seo Meta
-const title = computed(() => "Secarik Catatan dan Tulisan Yang Bermanfaat");
+const title = computed(() => "Beranda");
 const description = computed(() => "Catatan Cak Adi merupakan platform blogging pribadi milik Cak Adi yang mana membagikan Secarik Catatan dan Tulisan Yang Bermanfaat.");
 const image = computed(() => '/uploads/default.png');
 

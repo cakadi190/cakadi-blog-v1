@@ -44,17 +44,7 @@ export default defineComponent({
 	text-decoration: none;
 	padding: 1.25rem;
 	border-radius: 0.875rem;
-	background: rgba(255, 255, 255, 0.1);
-	backdrop-filter: blur(1rem);
 	transition: all 0.2s;
-
-	&:hover {
-		border-color: var(--bs-primary);
-
-		@media screen and (min-width: 768px) {
-			transform: scale(1.025);
-		}
-	}
 
 	.meta-data {
 		display: flex;

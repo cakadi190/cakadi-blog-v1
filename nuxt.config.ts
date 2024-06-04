@@ -9,15 +9,15 @@ export default defineNuxtConfig({
 	},
 
 	content: {
-		markdown: {
-			remarkPlugins: {
-				'remark-emoji': {
-					emoticon: true
-				},
-				// Disable remark-gfm
-				'remark-gfm': false,
-			}
-		},
+		// markdown: {
+		// 	remarkPlugins: {
+		// 		'remark-emoji': {
+		// 			emoticon: true
+		// 		},
+		// 		// Disable remark-gfm
+		// 		'remark-gfm': false,
+		// 	}
+		// },
 		highlight: {
 			theme: 'monokai',
 			langs: [
@@ -40,9 +40,6 @@ export default defineNuxtConfig({
 
 	app: {
 		head: {
-			titleTemplate: (titleChunk: any) => {
-				return titleChunk ? `${titleChunk} • Catatan Cak Adi` : "Catatan Cak Adi";
-			},
 			meta: [
 				{ name: 'color-scheme', content: 'dark' },
 				{ property: 'og:type', content: 'website' }
@@ -64,17 +61,17 @@ export default defineNuxtConfig({
 		},
 	},
 	modules: [
-		'nuxt-icon',
-		"@nuxt/image",
-		'@nuxtjs/color-mode',
-		'nuxt-gravatar',
-		'@nuxt/content',
-		'dayjs-nuxt',
-		["nuxt-disqus", {
+        'nuxt-icon',
+        "@nuxt/image",
+        '@nuxtjs/color-mode',
+        'nuxt-gravatar',
+        '@nuxt/content',
+        'dayjs-nuxt',
+        ["nuxt-disqus", {
 			shortname: 'catatancakadi',
 			debug: true,
 		}],
-		["@nuxtjs/google-fonts", {
+        ["@nuxtjs/google-fonts", {
 			families: {
 				Signika: true,
 				'Fira Code': true,
@@ -88,5 +85,6 @@ export default defineNuxtConfig({
 			overwriting: true,
 			inject: true,
 		}],
-	],
+        "@stefanobartoletti/nuxt-social-share"
+    ],
 })
