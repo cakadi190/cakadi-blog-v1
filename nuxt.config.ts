@@ -42,7 +42,9 @@ export default defineNuxtConfig({
 		head: {
 			meta: [
 				{ name: 'color-scheme', content: 'dark' },
-				{ property: 'og:type', content: 'website' }
+				{ property: 'og:type', content: 'website' },
+				// For GAds
+				{ name: 'google-adsense-account', content: 'ca-pub-8792210593151937' }
 			],
 			htmlAttrs: {
 				lang: "id"
