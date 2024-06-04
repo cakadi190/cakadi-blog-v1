@@ -5,7 +5,7 @@ draft: false
 image:
   - src: /uploads/cover/install-laravel-2.webp
 category:
-  - Teknologi
+  - Coding
 tags:
   - Laravel
   - PHP
