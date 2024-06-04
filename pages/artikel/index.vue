@@ -114,6 +114,7 @@ const next = (): void => {
 updatePageFromQuery();
 const fetchData = () => {
 	return (queryContent("/") as any)
+		.sort({ updated_at: -1 })
 		.where({ draft: { $eq: false } })
 		.skip(skip.value)
 		.limit(showData.value);
@@ -134,6 +135,14 @@ const { data: count, refresh: countRefresh } = await useAsyncData<number>(
 		watch: [page, skip],
 	}
 );
+
+const doSortByDateData = () => {
+	data.value = data.value?.sort((a, b) => {
+		return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
+	});
+}
+
+doSortByDateData();
 
 const countPage = computed(() => Math.ceil(count.value / showData.value));
 

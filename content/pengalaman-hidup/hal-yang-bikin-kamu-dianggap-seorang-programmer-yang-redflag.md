@@ -15,6 +15,8 @@ author:
   avatar: null
   email: "cakadi190@gmail.com"
   description: "Seorang Fullstack Web Developer yang berbasis di Kabupaten Ngawi yang suka sekali dengan desain dan juga hal yang berbau teknologi."
+created_at: 2024-06-04 06:04:22
+updated_at: 2024-06-04 06:04:22
 ---
 
 Programmer, merupakan salah satu dari banyak pekerjaan dambaan dan impian anak IT yang setiap harinya cuman berkutat dengan laptop dan berada di kamar terus buat ngesolving kode dan proyekannya. Tak ayal, hampir semua programmer merasakan namanya rasa kesendirian hingga orang-orang menyebut dirinya sebagai orang *nolep* alias *no life* (seseorang yang memiliki perilaku menyendiri atau anti sosial<sup>[Sumbernya disini](https://www.detik.com/bali/berita/d-6496207/nolep-adalah-bahasa-gaul-no-life-begini-ciri-cirinya)</sup>).

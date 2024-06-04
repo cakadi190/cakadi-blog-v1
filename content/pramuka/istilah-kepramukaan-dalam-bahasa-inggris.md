@@ -16,6 +16,8 @@ author:
   avatar: null
   email: 'cakadi190@gmail.com'
   description: 'Seorang Fullstack Web Developer yang berbasis di Kabupaten Ngawi yang suka sekali dengan desain dan juga hal yang berbau teknologi.'
+created_at: 2024-06-04 07:30:22
+updated_at: 2024-06-04 07:30:22
 ---
 
 Menggunakan istilah-istilah kepramukaan dalam bahasa Inggris (English Scouting Methods) sangat penting saat seorang pramuka berpartisipasi dalam kegiatan internasional, seperti Jambore Regional, Jambore Internasional, atau JOTA-JOTI Internasional. Penggunaan istilah ini membantu menjembatani perbedaan bahasa antara pramuka dari berbagai negara, mengingat bahasa Inggris adalah bahasa yang paling banyak digunakan di dunia.

@@ -18,6 +18,8 @@ author:
   avatar: null
   email: 'cakadi190@gmail.com'
   description: 'Seorang Fullstack Web Developer yang berbasis di Kabupaten Ngawi yang suka sekali dengan desain dan juga hal yang berbau teknologi.'
+created_at: 2024-06-02 19:30:22
+updated_at: 2024-06-02 19:30:22
 ---
 
 **Nvidia**, produsen semikonduktor terkemuka dunia untuk kecerdasan buatan (AI), mengincar Indonesia untuk proyek besar berikutnya—pusat AI senilai $200 juta. Inisiatif ini, yang dilakukan bersama dengan pemerintah Indonesia dan Indosat Ooredoo Hutchison, menandai langkah besar dalam kemajuan teknologi negara dan ekspansi Nvidia di Asia Tenggara.

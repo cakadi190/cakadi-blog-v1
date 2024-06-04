@@ -18,6 +18,8 @@ author:
   avatar: null
   email: 'cakadi190@gmail.com'
   description: 'Seorang Fullstack Web Developer yang berbasis di Kabupaten Ngawi yang suka sekali dengan desain dan juga hal yang berbau teknologi.'
+created_at: 2024-06-03 19:30:22
+updated_at: 2024-06-03 19:30:22
 ---
 
 Advan telah merilis dua inovasi terbaru dalam dunia teknologi: Advan X-Play, handheld gaming pertama mereka, dan Advan AI-Gen, laptop mutakhir untuk kebutuhan performa tinggi dengan desain yang elegan dan minimalis. Langkah ini menandai komitmen Advan dalam memberikan pengalaman berkualitas kepada pengguna modern, baik dalam hiburan maupun produktivitas. Dengan Advan X-Play dan Advan AI-Gen, pengguna dapat menikmati teknologi terdepan tanpa harus mengorbankan gaya atau kinerja.

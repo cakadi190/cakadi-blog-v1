@@ -15,6 +15,8 @@ author:
   avatar: null
   email: 'cakadi190@gmail.com'
   description: 'Seorang Fullstack Web Developer yang berbasis di Kabupaten Ngawi yang suka sekali dengan desain dan juga hal yang berbau teknologi.'
+created_at: 2024-05-30 19:30:22
+updated_at: 2024-05-30 19:30:22
 ---
 
 Pendidikan tinggi selalu menjadi topik yang menarik untuk diperbincangkan. Pertanyaan tentang apakah kita benar-benar membutuhkan kuliah atau tidak sering kali muncul, terutama di era digital saat ini di mana informasi dan pengetahuan bisa diakses dengan mudah. Mari kita eksplorasi lebih dalam mengenai topik ini dari berbagai sudut pandang.
