@@ -15,7 +15,8 @@ author:
   avatar: null
   email: 'cakadi190@gmail.com'
   description: 'Seorang Fullstack Web Developer yang berbasis di Kabupaten Ngawi yang suka sekali dengan desain dan juga hal yang berbau teknologi.'
-slug: cara-install-laravel-di-localhost-gak-sampe-1-jam
+created_at: 2024-06-01 19:30:22
+updated_at: 2024-06-01 19:30:22
 ---
 
 Hai teman-teman! Kamu mau belajar Laravel tapi bingung gimana cara installnya? Tenang aja, kali ini aku bakal kasih tau langkah-langkah install Laravel di localhost yang simpel dan gak bakal makan waktu lebih dari 1 jam. Yuk, simak caranya!

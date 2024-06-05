@@ -16,6 +16,8 @@ author:
   avatar: null
   email: 'cakadi190@gmail.com'
   description: 'Seorang Fullstack Web Developer yang berbasis di Kabupaten Ngawi yang suka sekali dengan desain dan juga hal yang berbau teknologi.'
+created_at: 2024-06-01 19:30:22
+updated_at: 2024-06-01 19:30:22
 ---
 
 Laravel adalah framework PHP yang terkenal dengan fitur-fiturnya yang kaya dan kemudahan penggunaannya. Salah satu fitur lanjutan yang sangat berguna dalam pengembangan aplikasi adalah Route Model Binding. Fitur ini memungkinkan kita untuk otomatis memuat model berdasarkan parameter route, sehingga kita dapat mengurangi kode boilerplate dan membuat kode lebih bersih dan mudah dipahami. Mari kita bahas Route Model Binding di Laravel dengan bahasa yang kekinian dan mudah dimengerti.

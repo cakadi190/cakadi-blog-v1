@@ -15,6 +15,8 @@ author:
   avatar: null
   email: "cakadi190@gmail.com"
   description: "Seorang Fullstack Web Developer yang berbasis di Kabupaten Ngawi yang suka sekali dengan desain dan juga hal yang berbau teknologi."
+created_at: 2024-06-01 19:30:22
+updated_at: 2024-06-01 19:30:22
 ---
 
 Laravel adalah salah satu framework PHP yang paling populer dan sering digunakan oleh para developer web. Salah satu fitur paling penting dalam Laravel adalah routing, yang memungkinkan kita untuk mengarahkan permintaan HTTP ke fungsi atau controller yang tepat. Mari kita bahas cara belajar routing dasar di Laravel dengan bahasa yang kekinian dan mudah dimengerti.

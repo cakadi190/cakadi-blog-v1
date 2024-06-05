@@ -15,6 +15,8 @@ author:
   avatar: null
   email: 'cakadi190@gmail.com'
   description: 'Seorang Fullstack Web Developer yang berbasis di Kabupaten Ngawi yang suka sekali dengan desain dan juga hal yang berbau teknologi.'
+created_at: 2024-06-01 19:30:22
+updated_at: 2024-06-01 19:30:22
 ---
 
 Halo rek! Apakah kalian sudah pernah dengar tentang Nuxt 3? Ini adalah framework Vue.js yang sangat keren dan powerful. Nah, kali ini kita akan membahas cara deploy Nuxt 3 di Vercel dengan cepat dan mudah, bahkan bisa selesai dalam 30 menit atau kurang! Yuk, simak langkah-langkahnya!

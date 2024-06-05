@@ -16,8 +16,8 @@ author:
   avatar: null
   email: 'cakadi190@gmail.com'
   description: 'Seorang Fullstack Web Developer yang berbasis di Kabupaten Ngawi yang suka sekali dengan desain dan juga hal yang berbau teknologi.'
-created_at: 2024-06-01 19:30:22
-updated_at: 2024-06-01 19:30:22
+created_at: 2024-06-01T19:30:22.000Z
+updated_at: 2024-06-01T19:30:22.000Z
 ---
 
 Jakarta - Raksasa teknologi asal Amerika Serikat (AS), Nvidia, menunjukkan dukungan mereka kepada warga sipil yang terkena dampak konflik Israel-Palestina. Dukungan ini diwujudkan dalam bentuk sumbangan sosial kepada organisasi nirlaba di Israel. Nvidia dikabarkan menggelontorkan dana bantuan sebesar USD 15 juta atau sekitar Rp 231 miliar, seperti dilansir detikINET dari Reuters pada Kamis (28/12/2023).

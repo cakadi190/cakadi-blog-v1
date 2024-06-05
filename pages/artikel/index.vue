@@ -50,7 +50,7 @@
 		</section>
 
 		<div
-			v-if="!pending && !error"
+			v-if="!pending && !error && page > countPage"
 			class="pb-5 mt-n5 mb-5 d-flex justify-content-center gap-3"
 		>
 			<button
