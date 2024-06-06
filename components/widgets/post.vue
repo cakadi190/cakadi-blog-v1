@@ -4,16 +4,12 @@
 			<span>Artikel Lain</span>
 		</h5>
 
-		<client-only>
-			<post-list />
-		</client-only>
+		<post-list />
 	</div>
 </template>
 
 <script lang="ts" setup>
-
 </script>
 
 <style>
-
 </style>

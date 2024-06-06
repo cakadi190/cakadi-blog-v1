@@ -1,5 +1,5 @@
 <template>
-	<div class="list-group list-group-flush">
+	<div class="list-group list-group-flush" v-if="loaded">
 		<div class="list-group-item" v-if="pending">
 			<error-section
 				imgSrc="/images/errors/loading.svg"
@@ -40,10 +40,13 @@ export default defineComponent({
 
 <script lang="ts" setup>
 const id = "list-artikel-" + generateRandomString(15);
+const loaded = ref(false);
 
 const { data, pending, error } = await useLazyAsyncData<Post[]>(id, () =>
-	(queryContent("/") as any).skip(0).limit(6).find()
+	(queryContent("/") as any).limit(5).find()
 );
+
+onMounted(() => loaded.value = true);
 
 const doSortByDateData = () => {
 	data.value = data.value?.sort((a, b) => {

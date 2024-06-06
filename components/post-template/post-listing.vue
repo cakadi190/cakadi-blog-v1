@@ -5,6 +5,7 @@
 				<nuxt-link class="text-decoration-none" :to="`/artikel${data._path}`">
 					<div class="ratio ratio-16x9 overflow-hidden rounded-3 border mb-3">
 						<nuxt-img
+						preload 
 							:src="data.image ? data.image[0]['src'] : '/uploads/default.png'"
 							:alt="data.title"
 						/>

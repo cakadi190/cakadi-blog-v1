@@ -65,6 +65,7 @@
 	<article id="post-section">
 		<div class="ratio ratio-16x9 overflow-hidden rounded-3 border mb-3">
 			<nuxt-img
+			preload 
 				:src="data.image ? data.image[0]['src'] : '/uploads/default.png'"
 				:alt="data.title"
 			/>
@@ -117,6 +118,7 @@
 							:email="data.author.email"
 						/>
 						<nuxt-img
+						preload 
 							height="120"
 							v-else
 							:src="data.author.avatar"

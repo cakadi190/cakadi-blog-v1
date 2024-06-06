@@ -1,7 +1,7 @@
 <template>
 	<div id="page-articles">
 		<header-page backTo="/">
-			<template #title>Artikel Dengan Kategori: {{ catTitle }}</template>
+			<template #title>Kategori: {{ catTitle }}</template>
 			<template #subtitle
 				>Semua artikel yang ditulis di blog ini dengan kategori
 				{{ catTitle }}.</template

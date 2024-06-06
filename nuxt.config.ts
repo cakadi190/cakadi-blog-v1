@@ -6,9 +6,6 @@ export default defineNuxtConfig({
 			reuseExistingServer: true
 		}
 	},
-	modules: [
-		'nuxt-delay-hydration',
-	],
 	delayHydration: {
 		// enables nuxt-delay-hydration in dev mode for testing
 		debug: process.env.NODE_ENV === 'development',
@@ -48,11 +45,11 @@ export default defineNuxtConfig({
 				lang: "id"
 			},
 			script: [
-				{ src: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js' },
-				{ src: 'https://images.dmca.com/Badges/DMCABadgeHelper.min.js' },
+				{ tagPosition: 'bodyClose', src: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js' },
+				{ tagPosition: 'bodyClose', src: 'https://images.dmca.com/Badges/DMCABadgeHelper.min.js' },
 				{
 					async: true,
-					src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8792210593151937',
+					tagPosition: 'bodyClose', src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8792210593151937',
 					crossorigin: 'anonymous',
 					defer: true,
 				}
@@ -67,6 +64,7 @@ export default defineNuxtConfig({
 		},
 	},
 	modules: [
+		'nuxt-delay-hydration',
 		'nuxt-icon',
 		"@nuxt/image",
 		'@nuxtjs/color-mode',
