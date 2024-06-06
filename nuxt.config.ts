@@ -1,23 +1,21 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 	devtools: {
-		enabled: true,
-
-		timeline: {
-			enabled: true,
-		},
+		enabled: false,
+		vscode: {
+			reuseExistingServer: true
+		}
+	},
+	modules: [
+		'nuxt-delay-hydration',
+	],
+	delayHydration: {
+		// enables nuxt-delay-hydration in dev mode for testing
+		debug: process.env.NODE_ENV === 'development',
+		mode: 'mount'
 	},
 
 	content: {
-		// markdown: {
-		// 	remarkPlugins: {
-		// 		'remark-emoji': {
-		// 			emoticon: true
-		// 		},
-		// 		// Disable remark-gfm
-		// 		'remark-gfm': false,
-		// 	}
-		// },
 		highlight: {
 			theme: 'monokai',
 			langs: [
@@ -55,7 +53,8 @@ export default defineNuxtConfig({
 				{
 					async: true,
 					src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8792210593151937',
-					crossorigin: 'anonymous'
+					crossorigin: 'anonymous',
+					defer: true,
 				}
 			]
 		}
