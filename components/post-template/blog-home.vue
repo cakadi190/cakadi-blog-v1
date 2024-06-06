@@ -52,7 +52,7 @@ export default defineComponent({
 		gap: 0.75rem;
 		flex-wrap: wrap;
 		align-items: center;
-		opacity: 0.5;
+		opacity: 0.75;
 
 		> * {
 			align-items: center;
