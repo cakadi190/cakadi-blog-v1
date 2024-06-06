@@ -35,6 +35,14 @@
 			:data="item"
 		/>
 	</div>
+	<error-section
+		imgSrc="/images/errors/loading.svg"
+		imgAlt="Sedang Memuat"
+		imgHeight="250"
+		title="Sedang Memuat"
+		v-else
+		text="Sedang memuat bagian ini, mohon bersabar."
+	/>
 </template>
 
 <script lang="ts">
