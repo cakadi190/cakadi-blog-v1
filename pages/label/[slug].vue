@@ -1,7 +1,7 @@
 <template>
 	<div id="page-articles">
 		<header-page backTo="/">
-			<template #title>Artikel Dengan Kategori: {{ labelTitle }}</template>
+			<template #title>Label: {{ labelTitle }}</template>
 			<template #subtitle>Semua artikel yang ditulis di blog ini dengan label "{{ labelTitle }}".</template>
 		</header-page>
 
@@ -137,12 +137,12 @@ const { data: count, refresh: countRefresh } = await useAsyncData<number>(
 	}
 );
 
-const doSortByDateData = () => {
+const doSortData = () => {
 	data.value = data.value?.sort((a, b) => {
 		return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
 	});
 }
-doSortByDateData();
+doSortData();
 
 const countPage = computed(() => Math.ceil(count.value / showData.value));
 

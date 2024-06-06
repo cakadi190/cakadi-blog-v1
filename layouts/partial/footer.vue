@@ -1,5 +1,12 @@
 <template>
-	<footer class="border-top py-4 mt-auto">
+	<footer class="border-top py-5 mt-auto">
+		<div class="back-to-top">
+			<button
+      @click="scrollToTop">
+				<Icon name="fa6-solid:chevron-up" />
+			</button>
+		</div>
+
 		<div class="container py-4">
 			<div class="row gy-5">
 				<div class="col-md-6">
@@ -53,12 +60,12 @@
 				<div class="col-lg-2 col-6">
 					<h5 class="h6">Ke(-rjaan/gabut)-an Saya</h5>
 					<ul class="list-unstyled">
-						<!-- <li><nuxt-link to="/pendidikan">Pendidikan</nuxt-link></li> -->
-						<!-- <li><nuxt-link to="/penghargaan">Penghargaan</nuxt-link></li> -->
-						<!-- <li><nuxt-link to="/tentang/skill">Skill & Perkakas</nuxt-link></li> -->
-						<!-- <li><nuxt-link to="/layanan">Layanan</nuxt-link></li> -->
-						<!-- <li><nuxt-link to="/portofolio">Portofolio Saya</nuxt-link></li> -->
-						<!-- <li><nuxt-link to="/karir">Karir</nuxt-link></li> -->
+						<li><nuxt-link to="/pendidikan">Pendidikan</nuxt-link></li>
+						<li><nuxt-link to="/penghargaan">Penghargaan</nuxt-link></li>
+						<li><nuxt-link to="/tentang/skill">Skill & Perkakas</nuxt-link></li>
+						<li><nuxt-link to="/layanan">Layanan</nuxt-link></li>
+						<li><nuxt-link to="/portofolio">Portofolio Saya</nuxt-link></li>
+						<li><nuxt-link to="/karir">Karir</nuxt-link></li>
 					</ul>
 				</div>
 
@@ -109,6 +116,36 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+footer {
+	z-index: 1020;
+	position: relative;
+	background: var(--bs-body-bg);
+
+	.back-to-top {
+		position: absolute;
+		margin: 0 auto;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: max-content;
+		margin-top: -2rem;
+
+		button {
+			background: var(--bs-body-bg);
+			border: 1px solid var(--bs-border-color);
+			height: 4rem;
+			width: 4rem;
+			border-radius: 99rem;
+			transition: all .2s;
+			
+			&:hover {
+				background: var(--bs-primary);
+				border-color: var(--bs-primary);
+			}
+		}
+	}
+}
+
 /* Di dalam <style> */
 .social-icons a {
 	margin-right: 10px; /* Atur jarak antar ikon */

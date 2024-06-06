@@ -28,7 +28,12 @@
 			/>
 		</div>
 
-		<post-template-post-listing v-else v-for="item in data" :key="item.title" :data="item" />
+		<post-template-post-listing
+			v-else
+			v-for="item in postData"
+			:key="item.title"
+			:data="item"
+		/>
 	</div>
 </template>
 
@@ -39,21 +44,30 @@ export default defineComponent({
 </script>
 
 <script lang="ts" setup>
-const id = "list-artikel-" + generateRandomString(15);
+import type { NuxtError } from "nuxt/dist/app/composables";
+
 const loaded = ref(false);
+const postData = ref<Post[]>([]);
+const route = useRoute();
 
-const { data, pending, error } = await useLazyAsyncData<Post[]>(id, () =>
-	(queryContent("/") as any).limit(5).find()
-);
+const props = defineProps<{
+	data?: Post[];
+	pending?: boolean;
+	error?: NuxtError<unknown>;
+}>();
 
-onMounted(() => loaded.value = true);
-
-const doSortByDateData = () => {
-	data.value = data.value?.sort((a, b) => {
-		return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
-	});
-}
-doSortByDateData();
+onMounted(() => {
+	loaded.value = true;
+	postData.value = props.data
+		?.sort(
+			(a, b) =>
+				new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
+		)
+		.filter((item) => {
+			return `/artikel${item._path}` != route.path;
+		})
+		.slice(0, 5);
+});
 </script>
 
 <style>

@@ -1,5 +1,5 @@
 <template>
-	<article class="list-group-item py-3 article" v-if="data._path !== `/${currentParams.join('/')}`">
+	<article class="list-group-item py-3 article">
 		<div class="row">
 			<div class="col-4">
 				<nuxt-link class="text-decoration-none" :to="`/artikel${data._path}`">
