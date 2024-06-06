@@ -6,9 +6,9 @@ export default defineEventHandler(async (event) => {
   const data = await serverQueryContent(event).find();
 
   const otherRoutes = [
-    { url: '/tentang', changefreq: 'yearly', priority: 0.5 },
-    { url: '/tentang/kebijakan-privasi', changefreq: 'yearly', priority: 0.5 },
-    { url: '/tentang/kebijakan-berkomentar', changefreq: 'yearly', priority: 0.5 },
+    { url: '/tentang', changefreq: 'yearly', priority: 0.5, lastmod: new Date().toISOString() },
+    { url: '/tentang/kebijakan-privasi', changefreq: 'yearly', priority: 0.5, lastmod: new Date().toISOString() },
+    { url: '/tentang/kebijakan-berkomentar', changefreq: 'yearly', priority: 0.5, lastmod: new Date().toISOString() },
   ];
 
   // Ekstrak kategori unik dan buat rutenya
@@ -16,7 +16,8 @@ export default defineEventHandler(async (event) => {
     .map(category => ({
       url: `/kategori/${category.toLowerCase().replace(/\s+/g, '-')}`,
       changefreq: 'daily',
-      priority: 0.8
+      priority: 0.8,
+			lastmod: data[0].updated_at,
     }));
 
   // Ekstrak label unik dan buat rutenya
@@ -24,19 +25,21 @@ export default defineEventHandler(async (event) => {
     .map(tags => ({
       url: `/label/${tags.toLowerCase().replace(/\s+/g, '-')}`,
       changefreq: 'daily',
-      priority: 0.8
+      priority: 0.8,
+			lastmod: data[0].updated_at,
     }));
 
   // Buat rute untuk setiap item data
   const contentRoutes = data.map(item => ({
     url: item._path,
     changefreq: 'daily',
-    priority: 0.9
+    priority: 0.9,
+		lastmod: item.updated_at
   }));
 
   // Gabungkan semua rute
   const routes = [
-    { url: '/', changefreq: 'daily', priority: 1.0 },
+    { url: '/', changefreq: 'daily', priority: 1.0, lastmod: new Date().toISOString() },
     ...contentRoutes,
     ...otherRoutes,
     ...categories,
