@@ -31,7 +31,7 @@ export default defineEventHandler(async (event) => {
 
   // Buat rute untuk setiap item data
   const contentRoutes = data.map(item => ({
-    url: item._path,
+    url: `/artikel${item._path}`,
     changefreq: 'daily',
     priority: 0.9,
 		lastmod: item.updated_at
