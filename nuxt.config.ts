@@ -66,6 +66,7 @@ export default defineNuxtConfig({
 	modules: [
 		'nuxt-delay-hydration',
 		'nuxt-icon',
+		'nuxt-swiper',
 		"@nuxt/image",
 		'@nuxtjs/color-mode',
 		'nuxt-gravatar',

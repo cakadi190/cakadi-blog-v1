@@ -1,9 +1,11 @@
 <template>
-	<main class="pt-5" id="homepage">
+	<div id="homepage">
 		<!-- <div class="container">
 			<nuxt-img src="https://place-hold.it/800x150?text=Pasang Iklan Disini" class="w-100" />
-		</div> -->
-		<div class="pt-5 mt-5">
+		</div> -->			
+		<partials-home-carousel />
+
+		<div class="post-home">
 			<post-grid target="/coding" title="Tutorial Ngoding" />
 			<post-grid target="/teknologi" title="Berita Teknologi" />
 			<post-grid class="pb-4" target="/" title="Artikel Lainnya" />
@@ -12,7 +14,7 @@
 				<nuxt-link to="/artikel" class="btn btn-primary">Lihat Selengkapnya</nuxt-link>
 			</div>
 		</div>
-	</main>
+	</div>
 </template>
 
 <script lang="ts" setup>
