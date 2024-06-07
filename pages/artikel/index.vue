@@ -99,7 +99,7 @@ const fetchData = () => {
 const { data, pending, error, refresh } = await useLazyAsyncData<any>(
 	"artikel-full",
 	() => fetchData().find()
-);''const
+);
 
 const countPage = computed(() => Math.ceil(data.value?.length / 9));
 
