@@ -14,6 +14,9 @@ defineProps<{
 	<header id="masthead">
 		<div class="container">
 			<div class="row">
+				<div class="col-md-12">
+					<palestine-help />
+				</div>
 				<div class="col-md-6">
 				
 					<nuxt-link
@@ -76,8 +79,9 @@ defineProps<{
 	}
 
 	.row {
-		min-height: 40dvh;
-		padding-top: 5rem;
+		min-height: 25dvh;
+		padding-bottom: 5rem;
+		padding-top: 1.5rem;
 		align-items: center;
 	}
 }

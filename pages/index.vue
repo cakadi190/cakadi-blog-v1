@@ -1,25 +1,14 @@
 <template>
 	<div id="homepage">
-		<!-- <div class="container">
-			<nuxt-img src="https://place-hold.it/800x150?text=Pasang Iklan Disini" class="w-100" />
-		</div> -->			
 		<partials-home-carousel />
 
-		<div class="post-home">
-			<post-grid target="/coding" title="Tutorial Ngoding" />
-			<post-grid target="/teknologi" title="Berita Teknologi" />
-			<post-grid class="pb-4" target="/" title="Artikel Lainnya" />
-
-			<div class="justify-content-center d-flex mb-5 pb-5">
-				<nuxt-link to="/artikel" class="btn btn-primary">Lihat Selengkapnya</nuxt-link>
-			</div>
-		</div>
+		<post-grid target="/coding" title="Perkodingan Duniawi" />
+		<post-grid target="/teknologi" title="Teknoinfo" />
+		<post-grid target="/" title="Semua Artikel" />
 	</div>
 </template>
 
 <script lang="ts" setup>
-import postGrid from "~/components/post-grid.vue";
-
 const urlRequest = useRequestURL();
 
 // Seo Meta

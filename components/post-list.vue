@@ -28,7 +28,7 @@
 			/>
 		</div>
 
-		<post-template-post-listing
+		<post-template-listing
 			v-else
 			v-for="item in postData"
 			:key="item.title"

@@ -3,17 +3,28 @@
 		<nuxt-img preload :src="data.image[0].src" class="w-100 centered-image" />
 
 		<div class="content">
-			<client-only>
-				<div class="meta-data">
-					<div class="category">
-						<Icon name="fa6-solid:folder" />
-						<span>{{ data.category.join(", ") }}</span>
+			<div class="row w-100">
+				<div class="col-md-8">
+					<div class="meta-data">
+						<div class="category">
+							<Icon name="fa6-solid:folder" />
+							<span>{{ data.category.join(", ") }}</span>
+						</div>
+					</div>
+
+					<router-link :to="`/artikel${data._path}`">
+						<h1 class="fw-bold mb-3">{{ data.title }}</h1>
+					</router-link>
+
+					<div class="m-0">
+						<strong>Oleh {{ data.author?.name }}</strong
+						>,
+						<time :datetime="$dayjs(data.updated_at).utc().toString()">{{
+							$dayjs(data.updated_at).locale("id").format("dddd, D MMMM YYYY")
+						}}</time>
 					</div>
 				</div>
-			</client-only>
-			<router-link :to="`/artikel${data._path}`">
-				<h1 class="fw-bold">{{ data.title }}</h1>
-			</router-link>
+			</div>
 		</div>
 	</article>
 </template>
@@ -37,7 +48,6 @@ const change = () => console.log("changed");
 	position: relative;
 	overflow: hidden;
 	aspect-ratio: 16 / 6;
-	border-radius: 0.75rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -62,7 +72,7 @@ const change = () => console.log("changed");
 	width: 100%;
 	background: linear-gradient(
 		to bottom,
-		rgba(0, 0, 0, 0) 15%,
+		rgba(0, 0, 0, 0.25) 15%,
 		rgb(0, 0, 0) 100%
 	);
 	top: 0;
@@ -76,6 +86,10 @@ const change = () => console.log("changed");
 	align-items: flex-start;
 	justify-content: flex-end;
 	color: white;
+
+	@media screen and (max-width: 768px) {
+		padding: 1.25rem;
+	}
 
 	h1 {
 		font-display: 1.5rem;
@@ -94,13 +108,13 @@ const change = () => console.log("changed");
 		display: flex;
 		align-items: center;
 		gap: 0.5rem;
-		opacity: 0.5;
 		margin-bottom: 0.75rem;
+		line-height: 1;
 
 		> * {
 			display: flex;
 			align-items: center;
-			gap: 0.325rem;
+			gap: 0.75rem;
 		}
 	}
 }

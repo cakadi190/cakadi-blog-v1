@@ -1,22 +1,22 @@
 <template>
 	<header id="masthead">
-		<client-only>
-			<div class="container my-5 py-5 pb-0 pb-lg-5" v-if="posts">
+		<div class="container my-4 mb-3 mb-lg-5 pb-3 pb-lg-5">
+			<palestine-help />
+
+			<div class="overflow-hidden rounded-4 border">
+				<!-- eslint-disable -->
 				<Swiper
 					:modules="[SwiperAutoplay, SwiperEffectCreative]"
 					:slides-per-view="1"
 					:loop="true"
-					:autoplay="{
-						delay: 5000,
-						disableOnInteraction: true,
-					}"
+					:autoplay="(autoplay as any)"
 				>
 					<SwiperSlide v-for="slide in posts" :key="slide._path">
 						<post-template-carousel :data="slide" />
 					</SwiperSlide>
 				</Swiper>
 			</div>
-		</client-only>
+		</div>
 	</header>
 </template>
 
@@ -26,15 +26,24 @@ const {
 	data: posts,
 	pending,
 	error,
-} = await useAsyncData<Post[]>(id, () => (queryContent("/") as any).find(), {
-	transform: (a) =>
-		a
-			?.sort(
-				(a, b) =>
-					new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
-			)
-			.slice(0, 5),
-});
+} = await useLazyAsyncData<Post[]>(
+	id,
+	() => (queryContent("/") as any).find(),
+	{
+		transform: (items) =>
+			items
+				?.sort(
+					(a, b) =>
+						new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
+				)
+				.slice(0, 5),
+	}
+);
+
+const autoplay = {
+	delay: 5000,
+	disableOnInteraction: true,
+};
 </script>
 
 <style lang="scss">

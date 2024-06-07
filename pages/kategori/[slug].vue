@@ -77,7 +77,7 @@
 <script lang="ts" setup>
 import { ref, computed, watch } from "vue";
 import { useRoute, useAsyncData, useSeoMeta } from "#imports";
-import blogHome from "~/components/post-template/blog-home.vue";
+import blogHome from "~/components/post-template/home.vue";
 
 const route = useRoute();
 const router = useRouter();

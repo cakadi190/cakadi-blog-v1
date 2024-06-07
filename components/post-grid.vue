@@ -62,7 +62,7 @@ export default defineComponent({
 </script>
 
 <script lang="ts" setup>
-import blogHome from "~/components/post-template/blog-home.vue";
+import blogHome from "~/components/post-template/home.vue";
 
 const props = withDefaults(
 	defineProps<{
@@ -87,15 +87,16 @@ const { data, pending, error } = await useLazyAsyncData<Post[]>(
 		(queryContent(props.target) as any)
 			.where({ draft: { $eq: false } })
 			.limit(props.limit)
-			.find()
+			.find(),
+	{
+		transform: (items) =>
+			items
+				?.sort(
+					(a, b) =>
+						new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
+				),
+	}
 );
-
-const doSortData = () => {
-	data.value = data.value?.sort((a, b) => {
-		return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
-	});
-}
-doSortData();
 </script>
 
 <style>

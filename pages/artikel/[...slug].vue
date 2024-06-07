@@ -1,7 +1,10 @@
 <template>
 	<main class="container my-5 pb-5">
+		
 		<div class="row gy-4 pt-5">
 			<div class="col-md-8">
+				<palestine-help />
+
 				<ContentRenderer v-if="data" :value="data">
 					<post-content :data="data" />
 				</ContentRenderer>
@@ -22,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import postContent from '~/components/post-template/post-content.vue';
+import postContent from '~/components/post-template/content.vue';
 
 const route = useRoute();
 const router = useRouter();
