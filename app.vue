@@ -132,8 +132,8 @@ Swal.fire({
 	&:before {
 		display: block;
 		content: " ";
-		margin-top: -5rem;
-		height: 5rem;
+		margin-top: -1rem;
+		height: 1rem;
 		visibility: hidden;
 	}
 }
@@ -152,8 +152,8 @@ h6 {
 		&:before {
 			display: block;
 			content: " ";
-			margin-top: -5rem;
-			height: 5rem;
+			margin-top: -1rem;
+			height: 1rem;
 			visibility: hidden;
 		}
 
