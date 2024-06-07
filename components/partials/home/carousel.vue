@@ -28,7 +28,7 @@ const {
 	error,
 } = await useLazyAsyncData<Post[]>(
 	id,
-	() => (queryContent("/") as any).find(),
+	() => (queryContent("/") as any).where({ draft: { $eq: false } }).find(),
 	{
 		transform: (items) =>
 			items

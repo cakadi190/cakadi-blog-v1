@@ -11,10 +11,10 @@
 					</button>
 				</div>
 			</div>
-			<div class="card-body px-4 bg-dark text-white">
+			<div class="card-body px-0 bg-dark text-white">
 				<slot />
 			</div>
-			<small class="card-body px-4 text-center text-lg-end p-2 px-3"
+			<small class="card-body px-3 text-center text-lg-end p-2 px-3"
 				>Didukung oleh
 				<a
 					href="https://content.nuxt.com"
@@ -60,5 +60,6 @@ const copyToClipBoard = async () => {
 <style lang="scss">
 .card pre {
 	margin: 0;
+	padding: 0 1.5rem;
 }
 </style>

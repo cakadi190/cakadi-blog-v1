@@ -39,7 +39,7 @@
 						/>
 					</div>
 
-					<blog-home
+					<post-template-home
 						v-else-if="!pending && !error && data && data.length"
 						v-for="item in data"
 						:key="item.title"
@@ -50,7 +50,6 @@
 		</section>
 
 		<div
-			v-if="!pending && !error && page > countPage"
 			class="pb-5 mt-n5 mb-5 d-flex justify-content-center gap-3"
 		>
 			<button
@@ -72,79 +71,48 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed, watch } from "vue";
-import { useRoute, useAsyncData, useSeoMeta } from "#imports";
-import blogHome from "~/components/post-template/home.vue";
-
-const route = useRoute();
-const router = useRouter();
 const urlRequest = useRequestURL();
+const route = useRoute();
 
-const showData = ref(15);
-const page = ref(1);
-const skip = computed(() => (page.value - 1) * showData.value);
+const page = computed({
+	get() {
+		return Number(route.query.page?.toString()) || 1;
+	},
+	set(newPage: number) {
+		navigateTo({
+			query: {
+				page: newPage,
+			},
+		});
+	},
+});
 
-const setPage = (page: number) => {
-	router.push({ query: { ...route.query, page: page.toString() } });
-};
+const skip = computed<number>(() => (page.value > 1 ? ((page.value - 1) * 9) - 1 : 0));
 
-const updatePageFromQuery = () => {
-	const currentPage = parseInt(route.query.page as string, 10);
-	page.value = !isNaN(currentPage) && currentPage > 0 ? currentPage : 1;
-};
-
-// For Pagination
-const previous = (): void => {
-	if (page.value != 1) {
-		scrollToTop();
-		page.value = page.value - 1;
-	}
-	setPage(page.value);
-};
-
-const next = (): void => {
-	if (page.value + 1) {
-		scrollToTop();
-		page.value = page.value + 1;
-	}
-	setPage(page.value);
-};
-
-// Fetch Data
-updatePageFromQuery();
 const fetchData = () => {
 	return (queryContent("/") as any)
-		.sort({ updated_at: -1 })
 		.where({ draft: { $eq: false } })
 		.skip(skip.value)
-		.limit(showData.value);
+		.limit(9);
 };
 
-const { data, pending, error, refresh } = await useAsyncData<Post[]>(
+const { data, pending, error, refresh } = await useLazyAsyncData<any>(
 	"artikel-full",
-	() => fetchData().find(),
-	{
-		watch: [page, skip],
-	}
-);
+	() => fetchData().find()
+);''const
 
-const { data: count, refresh: countRefresh } = await useAsyncData<number>(
-	"count-full",
-	() => fetchData().count(),
-	{
-		watch: [page, skip],
-	}
-);
+const countPage = computed(() => Math.ceil(data.value?.length / 9));
 
-const doSortData = () => {
-	data.value = data.value?.sort((a, b) => {
-		return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
-	});
-}
+console.log(countPage.value)
 
-doSortData();
-
-const countPage = computed(() => Math.ceil(count.value / showData.value));
+const next = () => {
+  page.value++;
+  refresh();
+};
+const previous = () => {
+  page.value--;
+  refresh();
+};
 
 // Seo Meta
 const title = computed(() => "Semua Artikel");
