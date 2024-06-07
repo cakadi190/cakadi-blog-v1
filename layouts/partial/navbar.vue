@@ -109,7 +109,7 @@ const navbarMenu = ref([
 	{ name: "Koding", link: "/kategori/coding" },
 	{ name: "Pengalaman Hidup", link: "/kategori/pengalaman-hidup" },
 	{ name: "Desain Grafis", link: "/kategori/desain-grafis" },
-	{ name: "Artikel Lain", link: "/kategori/lainnya" },
+	{ name: "Artikel Lain", link: "/artikel" },
 ]);
 
 const closingOffcanvas = () => {
