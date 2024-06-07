@@ -40,8 +40,8 @@
 					</div>
 
 					<post-template-home
-						v-else-if="!pending && !error && data && data.length"
-						v-for="item in data"
+						v-else-if="!pending && !error && data.data"
+						v-for="item in data.data"
 						:key="item.title"
 						:data="item"
 					/>
@@ -49,9 +49,7 @@
 			</div>
 		</section>
 
-		<div
-			class="pb-5 mt-n5 mb-5 d-flex justify-content-center gap-3"
-		>
+		<div class="pb-5 mt-n5 mb-5 d-flex justify-content-center gap-3">
 			<button
 				@click="previous"
 				class="btn btn-primary"
@@ -62,7 +60,7 @@
 			<button
 				@click="next"
 				class="btn btn-primary"
-				:class="{ disabled: page >= countPage }"
+				:class="{ disabled: page >= data.totalPage }"
 			>
 				<Icon name="fa6-solid:arrow-right" />
 			</button>
@@ -87,31 +85,31 @@ const page = computed({
 	},
 });
 
-const skip = computed<number>(() => (page.value > 1 ? ((page.value - 1) * 9) - 1 : 0));
-
-const fetchData = () => {
-	return (queryContent("/") as any)
-		.where({ draft: { $eq: false } })
-		.skip(skip.value)
-		.limit(9);
-};
+const skip = computed<number>(() =>
+	page.value > 1 ? (page.value - 1) * 9 - 1 : 0
+);
 
 const { data, pending, error, refresh } = await useLazyAsyncData<any>(
 	"artikel-full",
-	() => fetchData().find()
+	() => (queryContent("/") as any).where({ draft: { $eq: false } }).find(),
+	{
+		transform: async (items) => {
+			return {
+				data: items.slice(skip.value, skip.value + 9),
+				totalPage: Math.ceil(items.length / 9),
+				count: await (queryContent("/") as any).where({ draft: { $eq: false } }).count(),
+			}
+		},
+	}
 );
 
-const countPage = computed(() => Math.ceil(data.value?.length / 9));
-
-console.log(countPage.value)
-
-const next = () => {
-  page.value++;
-  refresh();
+const next = async () => {
+	page.value++;
+	refresh();
 };
-const previous = () => {
-  page.value--;
-  refresh();
+const previous = async () => {
+	page.value--;
+	refresh();
 };
 
 // Seo Meta
