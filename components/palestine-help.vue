@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="alert alert-warning alert-dismissible fade show mb-5"
+		class="alert alert-primary alert-dismissible fade show mb-5"
 		role="alert"
 	>
 		<strong

@@ -7,7 +7,7 @@
 
 		<section class="need-space pt-0">
 			<div class="container">
-				<div class="row gy-4 justify-content-center">
+				<div class="row gy-4">
 					<div class="col-md-6 mx-auto" v-if="pending">
 						<error-section
 							imgSrc="/images/errors/loading.svg"
@@ -40,8 +40,8 @@
 					</div>
 
 					<post-template-home
-						v-else-if="!pending && !error && data.data"
-						v-for="item in data.data"
+						v-else-if="!pending && !error && data"
+						v-for="item in data"
 						:key="item.title"
 						:data="item"
 					/>
@@ -49,7 +49,7 @@
 			</div>
 		</section>
 
-		<div class="pb-5 mt-n5 mb-5 d-flex justify-content-center gap-3">
+		<div class="pb-5 mt-n5 mb-5 d-flex justify-content-center gap-3" v-if="totalPage > 1">
 			<button
 				@click="previous"
 				class="btn btn-primary"
@@ -60,7 +60,7 @@
 			<button
 				@click="next"
 				class="btn btn-primary"
-				:class="{ disabled: page >= data.totalPage }"
+				:class="{ disabled: page >= totalPage }"
 			>
 				<Icon name="fa6-solid:arrow-right" />
 			</button>
@@ -93,15 +93,25 @@ const { data, pending, error, refresh } = await useLazyAsyncData<any>(
 	"artikel-full",
 	() => (queryContent("/") as any).where({ draft: { $eq: false } }).find(),
 	{
-		transform: async (items) => {
-			return {
-				data: items.slice(skip.value, skip.value + 9),
-				totalPage: Math.ceil(items.length / 9),
-				count: await (queryContent("/") as any).where({ draft: { $eq: false } }).count(),
-			}
+		transform(items) {
+			return items.slice(skip.value, skip.value + 9);
 		},
 	}
 );
+
+const totalPosts = ref<number>(0);
+
+const fetchTotalPosts = async () => {
+	totalPosts.value = await (queryContent("/") as any)
+		.where({ draft: { $eq: false } })
+		.count();
+};
+
+onMounted(fetchTotalPosts);
+
+const totalPage = computed(() => {
+	return Math.ceil(totalPosts.value / 9);
+});
 
 const next = async () => {
 	page.value++;

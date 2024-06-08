@@ -17,8 +17,7 @@ defineProps<{
 				<div class="col-md-12">
 					<palestine-help />
 				</div>
-				<div class="col-md-6">
-				
+				<div class="col-xxl-6 col-xs-8">
 					<nuxt-link
 						v-if="backTo"
 						:to="backTo"

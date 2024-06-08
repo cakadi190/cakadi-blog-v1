@@ -2,7 +2,10 @@
 	<div id="page-articles">
 		<header-page backTo="/">
 			<template #title>Label: {{ labelTitle }}</template>
-			<template #subtitle>Semua artikel yang ditulis di blog ini dengan label "{{ labelTitle }}".</template>
+			<template #subtitle
+				>Semua artikel dengan label "{{ labelTitle }}" ditulis di blog
+				ini.</template
+			>
 		</header-page>
 
 		<section class="need-space pt-0">
@@ -39,8 +42,8 @@
 						/>
 					</div>
 
-					<blog-home
-						v-else-if="!pending && !error && data && data.length"
+					<post-template-home
+						v-else-if="!pending && !error && data"
 						v-for="item in data"
 						:key="item.title"
 						:data="item"
@@ -50,8 +53,8 @@
 		</section>
 
 		<div
-			v-if="!pending && !error"
 			class="pb-5 mt-n5 mb-5 d-flex justify-content-center gap-3"
+			v-if="totalPage > 1"
 		>
 			<button
 				@click="previous"
@@ -63,7 +66,7 @@
 			<button
 				@click="next"
 				class="btn btn-primary"
-				:class="{ disabled: page >= countPage }"
+				:class="{ disabled: page >= totalPage }"
 			>
 				<Icon name="fa6-solid:arrow-right" />
 			</button>
@@ -72,85 +75,83 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed, watch } from "vue";
-import { useRoute, useAsyncData, useSeoMeta } from "#imports";
-import blogHome from "~/components/post-template/home.vue";
-
-const route = useRoute();
-const router = useRouter();
 const urlRequest = useRequestURL();
+const route = useRoute();
 
-const showData = ref(15);
-const page = ref(1);
-const skip = computed(() => (page.value - 1) * showData.value);
+const labelTitle = computed(() =>
+	capitalizeEachWord(route.params.slug.toString().replace("-", " "))
+);
 
-const labelTitle = computed(() => capitalize((route.params.slug as string).replace('-', ' ')));
+const page = computed({
+	get() {
+		return Number(route.query.page?.toString()) || 1;
+	},
+	set(newPage: number) {
+		navigateTo({
+			query: {
+				page: newPage,
+			},
+		});
+	},
+});
 
-const setPage = (page: number) => {
-	router.push({ query: { ...route.query, page: page.toString() } });
-};
+const skip = computed<number>(() =>
+	page.value > 1 ? (page.value - 1) * 9 - 1 : 0
+);
 
-const updatePageFromQuery = () => {
-	const currentPage = parseInt(route.query.page as string, 10);
-	page.value = !isNaN(currentPage) && currentPage > 0 ? currentPage : 1;
-};
-
-// For Pagination
-const previous = (): void => {
-	if (page.value != 1) {
-		scrollToTop();
-		page.value = page.value - 1;
-	}
-	setPage(page.value);
-};
-
-const next = (): void => {
-	if (page.value + 1) {
-		scrollToTop();
-		page.value = page.value + 1;
-	}
-	setPage(page.value);
-};
-
-// Fetch Data
-updatePageFromQuery();
-const fetchData = () => {
-	return (queryContent(`/`) as any)
-		.where({ draft: { $eq: false }, tags: { $contains: capitalizeEachWord(labelTitle.value) } })
-		.skip(skip.value)
-		.limit(showData.value);
-};
-
-const { data, pending, error, refresh } = await useAsyncData<Post[]>(
-	"artikel-label",
-	() => fetchData().find(),
+const { data, pending, error, refresh } = await useLazyAsyncData<any>(
+	"artikel-kategori",
+	() =>
+		(queryContent('/') as any)
+			.where({
+				draft: { $eq: false },
+				tags: { $contains: capitalizeEachWord(labelTitle.value) },
+			})
+			.find(),
 	{
-		watch: [page, skip],
+		transform(items) {
+			return items.slice(skip.value, skip.value + 9);
+		},
 	}
 );
 
-const { data: count, refresh: countRefresh } = await useAsyncData<number>(
-	"count-label",
-	() => fetchData().count(),
-	{
-		watch: [page, skip],
-	}
-);
+const totalPosts = ref<number>(0);
 
-const doSortData = () => {
-	data.value = data.value?.sort((a, b) => {
-		return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
-	});
-}
-doSortData();
+const fetchTotalPosts = async () => {
+	totalPosts.value = await (
+		queryContent('/') as any
+	)
+		.where({
+			draft: { $eq: false },
+			tags: { $contains: capitalizeEachWord(labelTitle.value) },
+		})
+		.count();
+};
 
-const countPage = computed(() => Math.ceil(count.value / showData.value));
+onMounted(fetchTotalPosts);
+
+const totalPage = computed(() => {
+	return Math.ceil(totalPosts.value / 9);
+});
+
+const next = async () => {
+	page.value++;
+	refresh();
+};
+const previous = async () => {
+	page.value--;
+	refresh();
+};
 
 // Seo Meta
-const title = computed(() => `Label: "${capitalizeEachWord(labelTitle.value)}"`);
+const title = computed(
+	() => `Label: "${capitalizeEachWord(labelTitle.value)}"`
+);
 const description = computed(
 	() =>
-		`Daftar artikel yang memuat dan memiliki label ${capitalizeEachWord(labelTitle.value)}`
+		`Daftar artikel yang memuat dan memiliki label ${capitalizeEachWord(
+			labelTitle.value
+		)}`
 );
 const image = computed(() => "/uploads/default.png");
 

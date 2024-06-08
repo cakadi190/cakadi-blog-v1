@@ -4,7 +4,7 @@
 			<span>Tagar</span>
 		</h5>
 
-		<!-- <div class="nav nav-pills gap-2">
+		<div class="nav nav-pills gap-2">
 			<nuxt-link
 				v-for="tags in resultTags"
 				:key="tags.slug"
@@ -13,7 +13,7 @@
 			>
 				<span>{{ tags.name }}</span>
 			</nuxt-link>
-		</div> -->
+		</div>
 	</div>
 </template>
 
@@ -23,7 +23,7 @@ const { data } = await useAsyncData<Post[]>("tags", () =>
   (queryContent("/") as any).only(["tags"]).find(),
 	{
 		transform(items) {
-			return items.filter((item) => item.tags !== null);
+			return items.slice(0, 9).filter((item) => item.tags !== null);
 		}
 	}
 );
