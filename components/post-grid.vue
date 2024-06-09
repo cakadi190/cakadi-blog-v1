@@ -7,8 +7,8 @@
 					:to="target !== '/' ? `/kategori${target}` : '/artikel'"
 					class="text-decoration-none d-flex gap-2 align-items-center"
 				>
-					<span>Lihat Semuanya</span>
-					<Icon name="fa6-solid:arrow-right" />
+					<span class="d-none d-md-none d-lg-inline">Lihat Semuanya</span>
+					<Icon name="fa6-solid:arrow-right" class="me-3 me-lg-0" />
 				</nuxt-link>
 			</div>
 

@@ -17,13 +17,6 @@
 						height="28"
 						alt="Logo Cak Adi"
 					/>
-
-					<ClientOnly>
-						<div class="beta">
-							<Icon name="ant-design:experiment-filled" />
-							<span>v1.1</span>
-						</div>
-					</ClientOnly>
 				</nuxt-link>
 				<button
 					type="button"
@@ -61,13 +54,6 @@
 					height="28"
 					alt="Logo Cak Adi"
 				/>
-
-				<ClientOnly>
-					<div class="beta">
-						<Icon name="ant-design:experiment-filled" />
-						<span>v1.1</span>
-					</div>
-				</ClientOnly>
 			</nuxt-link>
 			<button
 				class="navbar-toggler p-0 border-0"
