@@ -25,44 +25,10 @@ import Swal from "sweetalert2";
 const dayjs = useDayjs();
 dayjs.locale("id");
 
-const colorMode = useColorMode();
-const theme = ref("light");
-
-const applyTheme = (themes: string) => {
-	document.documentElement.setAttribute("data-bs-theme", themes);
-	theme.value = themes;
-};
-
 useHead({
 	titleTemplate(titleChunk: string) {
 		return titleChunk ? `${titleChunk} • Catatan Cak Adi` : "Catatan Cak Adi";
 	},
-});
-
-const handleSystemThemeChange = (e: MediaQueryListEvent) => {
-	applyTheme(e.matches ? "dark" : "light");
-};
-
-onMounted(() => {
-	const mediamode = localStorage.getItem("mediamode");
-	const colorModePreference = colorMode.preference;
-
-	if (colorModePreference === "system") {
-		const systemThemeQuery = window.matchMedia("(prefers-color-scheme: dark)");
-
-		if (mediamode === "dark" || mediamode === "light") {
-			applyTheme(mediamode);
-		} else {
-			applyTheme(systemThemeQuery.matches ? "dark" : "light");
-			systemThemeQuery.addEventListener("change", handleSystemThemeChange);
-		}
-
-		return () => {
-			systemThemeQuery.removeEventListener("change", handleSystemThemeChange);
-		};
-	} else {
-		applyTheme(colorModePreference);
-	}
 });
 
 const initTooltipAndPopover = () => {
@@ -92,20 +58,6 @@ watch(
 		initTooltipAndPopover();
 	}
 );
-
-onMounted(() => {
-	if (localStorage.getItem("dyslexic")) {
-		$("body").css("font-family", "Open-Dyslexic");
-	}
-});
-
-// // Swall Info
-// Swal.fire({
-// 	title: "Informasi",
-// 	text: "Website ini sedang dibangun dan dalam tahap pengembangan. Jadi mohon maaf apabila masih banyak bug, error maupun tampilan tidak sesuai dengan ekspektasi.",
-// 	icon: "info",
-// 	confirmButtonText: "Woke!",
-// });
 </script>
 
 <style lang="scss">

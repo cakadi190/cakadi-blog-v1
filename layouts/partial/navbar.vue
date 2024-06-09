@@ -119,39 +119,6 @@ const closingOffcanvas = () => {
 	}
 };
 
-const applyTheme = (themes: string) => {
-	const logos = document.getElementsByClassName("site-logo");
-
-	Array.from(logos).forEach((logoElement: Element) => {
-		if (logoElement) {
-			logoElement.setAttribute(
-				"src",
-				`/images/brands/logo-${themes === "light" ? "color" : "white"}-long.svg`
-			);
-		}
-	});
-
-	theme.value = themes;
-};
-
-const handleSystemThemeChange = (e: MediaQueryListEvent) => {
-	applyTheme(e.matches ? "dark" : "light");
-};
-
-onMounted(() => {
-	if (colorMode.preference === "system") {
-		const systemThemeQuery = window.matchMedia("(prefers-color-scheme: dark)");
-		applyTheme(systemThemeQuery.matches ? "dark" : "light");
-		systemThemeQuery.addEventListener("change", handleSystemThemeChange);
-
-		return () => {
-			systemThemeQuery.removeEventListener("change", handleSystemThemeChange);
-		};
-	} else {
-		applyTheme(colorMode.preference);
-	}
-});
-
 const handleScroll = () => {
 	if (window.scrollY >= 50) {
 		navbar.value?.classList.add("body-bg-rgb");

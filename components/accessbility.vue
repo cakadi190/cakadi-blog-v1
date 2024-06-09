@@ -1,24 +1,32 @@
 <template>
-	<button
-		class="btn btn-secondary button-accessbility d-flex align-items-center justify-content-center"
-		:class="{ hidden: !showButton }"
-		data-bs-toggle="offcanvas"
-		data-bs-target="#offcanvas-accessbility"
-	>
-		<Icon name="fa6-solid:universal-access" />
+	<client-only>
+		<button
+			class="btn btn-secondary button-accessbility d-flex align-items-center justify-content-center"
+			:class="{ hidden: !showButton }"
+			data-bs-toggle="offcanvas"
+			data-bs-target="#offcanvas-accessbility"
+		>
+			<Icon name="fa6-solid:universal-access" />
 		</button>
-		
-		<div
+	</client-only>
+
+	<div
 		class="offcanvas offcanvas-end"
 		tabindex="-1"
 		id="offcanvas-accessbility"
 		aria-labelledby="offcanvas-accessbilityLabel"
-		>
+	>
 		<div class="offcanvas-header">
-			<h5 class="offcanvas-title d-flex align-items-center gap-2" id="offcanvas-accessbilityLabel">
+			<h5
+				class="offcanvas-title d-flex align-items-center gap-2"
+				id="offcanvas-accessbilityLabel"
+			>
 				<Icon name="fa6-solid:universal-access" />
-				<span>Panel Aksesbilitas</span>
-				<span class="badge bg-info">Beta</span>
+				<span>Fitur Aksesbilitas</span>
+				<span class="d-flex gap-2 align-items-center badge bg-info">
+					<Icon name="ant-design:experiment-filled" /> 
+					<span>Beta</span>
+				</span>
 			</h5>
 			<button
 				type="button"
@@ -28,24 +36,25 @@
 			></button>
 		</div>
 		<div class="offcanvas-body">
-			<div>
-				Some text as placeholder. In real life you can have the elements you
-				have chosen. Like, text, images, lists, etc.
+			<p>
+				Silahkan gunakan fitur aksesbilitas ini untuk anda yang membutuhkan
+				fitur khusus dan penyandang disabilitas.
+			</p>
+
+			<div class="alert alert-info">
+				<h5 class="h5">Informasi!</h5>
+				<p class="mb-0">
+					Maaf ya fitur ini sedang saya kembangkan. Nantinya akan saya
+					perbaharui dan optimalkan fitur untuk disabilitas ini.
+				</p>
 			</div>
-			<div class="dropdown mt-3">
-				<button
-					class="btn btn-secondary dropdown-toggle"
-					type="button"
-					data-bs-toggle="dropdown"
-				>
-					Dropdown button
-				</button>
-				<ul class="dropdown-menu">
-					<li><a class="dropdown-item" href="#">Action</a></li>
-					<li><a class="dropdown-item" href="#">Another action</a></li>
-					<li><a class="dropdown-item" href="#">Something else here</a></li>
-				</ul>
-			</div>
+
+			<ul class="list-group list-group-flush border-top">
+				<accessbility-dyslexia />
+				<accessbility-dark />
+				<accessbility-underlined-links />
+				<accessbility-tts />
+			</ul>
 		</div>
 	</div>
 </template>
@@ -79,7 +88,7 @@ onUnmounted(() => {
 	justify-content: center;
 	transition: all 0.2s;
 	visibility: visible;
-	z-index: 1030;
+	z-index: 1050;
 
 	&.hidden {
 		bottom: 1rem;

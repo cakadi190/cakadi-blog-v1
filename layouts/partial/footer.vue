@@ -129,7 +129,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 footer {
-	z-index: 1020;
+	z-index: 1040;
 	position: relative;
 	background: var(--bs-body-bg);
 	margin-top: auto;
@@ -184,8 +184,10 @@ footer {
 			width: 4rem;
 			border-radius: 99rem;
 			transition: all 0.2s;
-
+			color: var(--bs-body-color);
+			
 			&:hover {
+				color: var(--bs-white);
 				background: var(--bs-primary);
 				border-color: var(--bs-primary);
 			}
