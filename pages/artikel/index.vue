@@ -86,7 +86,7 @@ const page = computed({
 });
 
 const skip = computed<number>(() =>
-	page.value > 1 ? (page.value - 1) * 9 - 1 : 0
+	page.value > 1 ? (page.value - 1) * 9 : 0
 );
 
 const { data, pending, error, refresh } = await useLazyAsyncData<any>(

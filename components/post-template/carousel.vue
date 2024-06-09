@@ -39,8 +39,6 @@ const route = useRoute();
 const props = defineProps<{
 	data?: Post;
 }>();
-
-const change = () => console.log("changed");
 </script>
 
 <style lang="scss" scoped>
