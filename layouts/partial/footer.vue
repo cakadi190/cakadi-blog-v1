@@ -136,10 +136,6 @@ footer {
 	background: var(--bs-body-bg);
 	margin-top: auto;
 
-	@media screen and (max-width: 768px) {
-		margin-top: 7.5rem;
-	}
-
 	&::before {
 		content: "";
 		position: absolute;
