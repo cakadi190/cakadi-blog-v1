@@ -9,9 +9,16 @@
 </template>
 
 <script lang="ts" setup>
+const route = useRoute();
 const id = "list-artikel-" + generateRandomString(15);
 const { data, pending, error } = await useAsyncData<Post[]>(id, () =>
-	(queryContent("/") as any).find()
+	(queryContent("/articles") as any).find(),
+	{
+		transform: (items) => {
+			const currentPath = route.fullPath.replace('/artikel', '');
+			return items.filter((item) => item._path.substring('/articles'.length) !== currentPath);
+		}
+	}
 );
 </script>
 

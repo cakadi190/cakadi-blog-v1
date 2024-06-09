@@ -84,7 +84,7 @@ const targetKey = computed(() =>
 const { data, pending, error } = await useLazyAsyncData<Post[]>(
 	targetKey.value,
 	() =>
-		(queryContent(props.target) as any)
+		(queryContent(`/articles${props.target}`) as any)
 			.where({ draft: { $eq: false } })
 			.limit(props.limit)
 			.find(),

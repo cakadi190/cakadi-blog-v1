@@ -1,6 +1,6 @@
 <template>
 	<article class="col-md-4">
-		<nuxt-link class="card card-body blog-post" :to="`/artikel${data._path}`">
+		<nuxt-link class="card card-body blog-post" :to="`/artikel${data._path.replace('/articles', '')}`">
 			<div class="ratio ratio-16x9 overflow-hidden rounded-3 border mb-3">
 				<nuxt-img
 					preload

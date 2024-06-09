@@ -53,7 +53,7 @@ export default defineNuxtConfig({
 			meta: [
 				{ name: 'color-scheme', content: 'dark' },
 				{ property: 'og:type', content: 'website' },
-				// For GAds
+				// For GAds Verification
 				{ name: 'google-adsense-account', content: 'ca-pub-8792210593151937' }
 			],
 			htmlAttrs: {
@@ -95,7 +95,8 @@ export default defineNuxtConfig({
 			families: {
 				Signika: true,
 				'Fira Code': true,
-				Merriweather: true
+				Merriweather: true,
+				Amiri: true,
 			},
 			download: true,
 			base64: true,

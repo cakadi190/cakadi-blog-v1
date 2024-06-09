@@ -12,7 +12,7 @@
 						</div>
 					</div>
 
-					<router-link :to="`/artikel${data._path}`">
+					<router-link :to="`/artikel${data._path.replace('/articles', '')}`">
 						<h1 class="fw-bold mb-3">{{ data.title }}</h1>
 					</router-link>
 

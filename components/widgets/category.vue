@@ -21,7 +21,7 @@
 <script lang="ts" setup>
 const resultCategory = ref([]);
 const { data } = await useAsyncData("category", () =>
-  (queryContent("/") as any).only(["category"]).find()
+  (queryContent("/articles") as any).only(["category"]).find()
 );
 
 if (Array.isArray(data.value) && data.value.length > 0) {
@@ -31,7 +31,7 @@ if (Array.isArray(data.value) && data.value.length > 0) {
 
   const resultPromises = categories.map(async (cat) => {
     const slug = cat.toLowerCase().replace(/ /g, "-");
-    const count = await (queryContent(`/${slug}`) as any).count();
+    const count = await (queryContent(`/articles/${slug}`) as any).count();
     return { name: cat, slug, count };
   });
 

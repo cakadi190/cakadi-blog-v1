@@ -20,7 +20,7 @@
 <script lang="ts" setup>
 const resultTags = ref([]);
 const { data } = await useAsyncData<Post[]>("tags", () =>
-  (queryContent("/") as any).only(["tags"]).find(),
+  (queryContent("/articles") as any).only(["tags"]).find(),
 	{
 		transform(items) {
 			return items.slice(0, 9).filter((item) => item.tags !== null);

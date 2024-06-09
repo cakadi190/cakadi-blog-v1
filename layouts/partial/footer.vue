@@ -70,14 +70,13 @@
 				</div>
 
 				<div class="col-lg-2 col-6">
-					<h5 class="h6">Ke(-rjaan/gabut)-an Saya</h5>
+					<h5 class="h6">Kategori Lain</h5>
 					<ul class="list-unstyled">
-						<li><nuxt-link to="/pendidikan">Pendidikan</nuxt-link></li>
-						<li><nuxt-link to="/penghargaan">Penghargaan</nuxt-link></li>
-						<li><nuxt-link to="/tentang/skill">Skill & Perkakas</nuxt-link></li>
-						<li><nuxt-link to="/layanan">Layanan</nuxt-link></li>
-						<li><nuxt-link to="/portofolio">Portofolio Saya</nuxt-link></li>
-						<li><nuxt-link to="/karir">Karir</nuxt-link></li>
+						<li><nuxt-link to="/kategori/pramuka">Pramuka</nuxt-link></li>
+						<li><nuxt-link to="/kategori/teknologi">Teknologi</nuxt-link></li>
+						<li><nuxt-link to="/kategori/palestina">Palestina</nuxt-link></li>
+						<li><nuxt-link to="/kategori/pengalaman-hidup">Pengalaman Hidup</nuxt-link></li>
+						<li><nuxt-link to="/kategori/desain-grafis">Desain Grafis</nuxt-link></li>
 					</ul>
 				</div>
 
@@ -85,23 +84,22 @@
 					<h5 class="h6">Sumber Daya</h5>
 					<ul class="list-unstyled">
 						<li>
-							<a target="_blank" href="https://www.catatancakadi.com"
-								>Blog Pribadi</a
+							<a target="_blank" href="https://www.cakadi.id"
+								>Situs Resmi Pribadi</a
 							>
 						</li>
-						<li><a href="#">Referensi Ngoding</a></li>
-						<li><a href="#">Contekan Kode</a></li>
-						<li><a href="#">Tempat Ngopi</a></li>
+						<li><nuxt-link to="/page/about-us">Tentang Situs</nuxt-link></li>
+						<li><nuxt-link to="/page/privacy-policy">Kebijakan Privasi</nuxt-link></li>
+						<li><nuxt-link to="/page/comment-policy">Kebijakan Berkomentar</nuxt-link></li>
 					</ul>
 				</div>
 
 				<div class="col-md-2">
 					<h5 class="h6">Tautan Lain-lain</h5>
 					<ul class="list-unstyled">
-						<li><a href="#">Tentang Situs</a></li>
 						<li><a href="#">Kredit</a></li>
-						<li><a href="#">Donasi di trakteer.id</a></li>
-						<li><a href="#">Donasi di ko-fi.com</a></li>
+						<li><a href="https://trakteer.id/cakadi190">Donasi di trakteer.id</a></li>
+						<li><a href="https://ko-fi.com/cakadi190">Donasi di ko-fi.com</a></li>
 					</ul>
 				</div>
 			</div>

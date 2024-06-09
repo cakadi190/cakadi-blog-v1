@@ -6,7 +6,7 @@
 				<palestine-help />
 
 				<ContentRenderer v-if="data" :value="data">
-					<post-template-content :data="data" />
+					<post-template-page :data="data" />
 				</ContentRenderer>
 			</div>
 			<div class="col-md-4">
@@ -29,15 +29,8 @@ const route = useRoute();
 const router = useRouter();
 const urlRequest = useRequestURL();
 
-const getPath = computed<string[]>(() => {
-	return route.params.slug as string[];
-});
-
-const { data } = await useAsyncData<Post>("article", () => {
-	const slugPath = Array.isArray(getPath.value)
-		? getPath.value.join("/")
-		: getPath.value;
-	return (queryContent(`/articles/${slugPath}`) as any).findOne();
+const { data } = await useAsyncData<Post>("page", () => {
+	return (queryContent(`/pages/${route.params.slug}`) as any).findOne();
 });
 
 if(data.value == null) {

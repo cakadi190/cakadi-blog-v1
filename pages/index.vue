@@ -4,7 +4,7 @@
 
 		<post-grid target="/coding" title="Perkodingan Duniawi" />
 		<post-grid target="/teknologi" title="Teknoinfo" />
-		<post-grid target="/" title="Semua Artikel" :limit="9" />
+		<post-grid target="/" title="Semua Artikel" :limit="9" class="pb-5 mb-5" />
 
 		<div class="pb-5 mb-5 d-flex justify-content-center">
 			<nuxt-link to="/artikel" class="btn btn-primary">Lihat Semua Artikel</nuxt-link>

@@ -93,13 +93,13 @@ watch(
 	}
 );
 
-// Swall Info
-Swal.fire({
-	title: "Informasi",
-	text: "Website ini sedang dibangun dan dalam tahap pengembangan. Jadi mohon maaf apabila masih banyak bug, error maupun tampilan tidak sesuai dengan ekspektasi.",
-	icon: "info",
-	confirmButtonText: "Woke!",
-});
+// // Swall Info
+// Swal.fire({
+// 	title: "Informasi",
+// 	text: "Website ini sedang dibangun dan dalam tahap pengembangan. Jadi mohon maaf apabila masih banyak bug, error maupun tampilan tidak sesuai dengan ekspektasi.",
+// 	icon: "info",
+// 	confirmButtonText: "Woke!",
+// });
 </script>
 
 <style lang="scss">

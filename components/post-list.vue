@@ -72,7 +72,7 @@ onMounted(() => {
 				new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
 		)
 		.filter((item) => {
-			return `/artikel${item._path}` != route.path;
+			return `/artikel/articles/${item._path}` != route.path;
 		})
 		.slice(0, 5);
 });

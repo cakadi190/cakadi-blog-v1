@@ -102,7 +102,7 @@ const skip = computed<number>(() =>
 const { data, pending, error, refresh } = await useLazyAsyncData<any>(
 	"artikel-kategori",
 	() =>
-		(queryContent('/') as any)
+		(queryContent('/articles') as any)
 			.where({
 				draft: { $eq: false },
 				tags: { $contains: capitalizeEachWord(labelTitle.value) },

@@ -95,7 +95,7 @@ const skip = computed<number>(() =>
 
 const { data, pending, error, refresh } = await useLazyAsyncData<any>(
 	"artikel-kategori",
-	() => (queryContent(`/${route.params.slug.toString()}`) as any).where({ draft: { $eq: false } }).find(),
+	() => (queryContent(`/articles/${route.params.slug.toString()}`) as any).where({ draft: { $eq: false } }).find(),
 	{
 		transform(items) {
 			return items.slice(skip.value, skip.value + 9);
@@ -106,7 +106,7 @@ const { data, pending, error, refresh } = await useLazyAsyncData<any>(
 const totalPosts = ref<number>(0);
 
 const fetchTotalPosts = async () => {
-	totalPosts.value = await (queryContent(`/${route.params.slug.toString()}`) as any)
+	totalPosts.value = await (queryContent(`/articles/${route.params.slug.toString()}`) as any)
 		.where({ draft: { $eq: false } })
 		.count();
 };
