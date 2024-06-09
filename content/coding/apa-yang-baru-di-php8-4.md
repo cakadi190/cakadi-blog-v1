@@ -112,4 +112,4 @@ function foo(?string $bar = null) { ... }
 ```
 ::
 
-Itu dia beberapa fitur keren di PHP 8.4 yang bakal bikin coding jadi lebih menyenangkan. Tunggu apalagi? Stay tuned buat update selanjutnya sampai PHP 8.4 resmi dirilis!
+Itu dia beberapa fitur keren di PHP 8.4 yang bakal bikin coding jadi lebih menyenangkan. Tunggu apalagi? _Stay tuned_ buat update selanjutnya sampai PHP 8.4 resmi dirilis!
