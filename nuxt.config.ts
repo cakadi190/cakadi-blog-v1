@@ -25,20 +25,20 @@ export default defineNuxtConfig({
 				'c',
 				'cpp',
 				'java',
-				'js', 
-				'jsx', 
-				'json', 
-				'ts', 
-				'tsx', 
-				'vue', 
-				'css', 
-				'html', 
-				'vue', 
-				'bash', 
-				'md', 
-				'mdc', 
-				'yaml', 
-				'blade', 
+				'js',
+				'jsx',
+				'json',
+				'ts',
+				'tsx',
+				'vue',
+				'css',
+				'html',
+				'vue',
+				'bash',
+				'md',
+				'mdc',
+				'yaml',
+				'blade',
 				'json',
 			]
 		}
@@ -54,11 +54,14 @@ export default defineNuxtConfig({
 				{ name: 'color-scheme', content: 'dark' },
 				{ property: 'og:type', content: 'website' },
 				// For GAds Verification
-				{ name: 'google-adsense-account', content: 'ca-pub-8792210593151937' }
+				{ name: 'google-adsense-account', content: 'ca-pub-8792210593151937' },
 			],
 			htmlAttrs: {
 				lang: "id"
 			},
+			link: [
+				{ href: 'https://fonts.cdnfonts.com/css/open-dyslexic', rel: 'stylesheet' }
+			],
 			script: [
 				{ tagPosition: 'bodyClose', src: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js' },
 				{ tagPosition: 'bodyClose', src: 'https://images.dmca.com/Badges/DMCABadgeHelper.min.js' },
@@ -106,6 +109,6 @@ export default defineNuxtConfig({
 			overwriting: true,
 			inject: true,
 		}],
-		"@stefanobartoletti/nuxt-social-share"
+		"@stefanobartoletti/nuxt-social-share",
 	],
 })

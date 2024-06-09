@@ -93,6 +93,12 @@ watch(
 	}
 );
 
+onMounted(() => {
+	if (localStorage.getItem("dyslexic")) {
+		$("body").css("font-family", "Open-Dyslexic");
+	}
+});
+
 // // Swall Info
 // Swal.fire({
 // 	title: "Informasi",
