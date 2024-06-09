@@ -1,6 +1,8 @@
 ---
 title: Tentang Situs Ini
 description: Informasi mengenai situs ini dan fokus konten yang disajikan kepada pengunjung.
+created_at: 2024-06-09 11:30:00
+updated_at: 2024-06-09 12:30:00
 ---
 
 Situs ini didedikasikan untuk menyajikan artikel-artikel berkualitas yang berkaitan dengan coding, teknologi, kepramukaan, desain grafis, dan berbagai pengalaman hidup yang inspiratif dari Cak Adi.

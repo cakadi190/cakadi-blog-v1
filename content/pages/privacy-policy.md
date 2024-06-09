@@ -1,6 +1,8 @@
 ---
 title: Kebijakan Privasi Ahsana Digital Intermedia
 description: Kebijakan privasi Ahsana Digital Intermedia menguraikan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi pribadi Anda.
+created_at: 2024-06-09 11:30:00
+updated_at: 2024-06-09 12:30:00
 ---
 
 Ahsana Digital Intermedia mengoperasikan situs web https://www.catatancakadi.com, yang menyediakan LAYANAN.

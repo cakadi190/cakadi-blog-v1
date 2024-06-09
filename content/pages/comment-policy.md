@@ -1,6 +1,8 @@
 ---
 title: Kebijakan Berkomentar
 description: Kebijakan berkomentar ini menguraikan aturan-aturan yang harus diikuti oleh pengguna dalam memberikan komentar di situs ini.
+created_at: 2024-06-09 11:30:00
+updated_at: 2024-06-09 12:30:00
 ---
 
 Kami menghargai kebebasan berekspresi dan mendukung diskusi terbuka di situs ini. Namun, kami berharap agar setiap komentar yang disampaikan oleh pengguna tetap menghormati norma-norma etika dan tidak melanggar hukum yang berlaku. Dengan menggunakan layanan komentar di situs ini, pengguna setuju untuk mematuhi ketentuan-ketentuan berikut:
