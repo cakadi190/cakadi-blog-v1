@@ -1,23 +1,28 @@
 <template>
-	<div class="widget" id="#category">
-		<h5 class="title">
-			<span>Artikel Lain</span>
-		</h5>
+	<client-only>
+		<div class="widget" id="#category">
+			<h5 class="title">
+				<span>Artikel Lain</span>
+			</h5>
 
-		<post-list :data="data" :pending="pending" :error="error" />
-	</div>
+			<post-list :data="data" :pending="pending" :error="error" />
+		</div>
+	</client-only>
 </template>
 
 <script lang="ts" setup>
 const route = useRoute();
 const id = "list-artikel-" + generateRandomString(15);
-const { data, pending, error } = await useAsyncData<Post[]>(id, () =>
-	(queryContent("/articles") as any).find(),
+const { data, pending, error } = await useLazyAsyncData<Post[]>(
+	id,
+	() => (queryContent("/articles") as any).find(),
 	{
 		transform: (items) => {
-			const currentPath = route.fullPath.replace('/artikel', '');
-			return items.filter((item) => item._path.substring('/articles'.length) !== currentPath);
-		}
+			const currentPath = route.fullPath.replace("/artikel", "");
+			return items.filter(
+				(item) => item._path.substring("/articles".length) !== currentPath
+			);
+		},
 	}
 );
 </script>

@@ -18,7 +18,7 @@
 				text="Maaf, kami gagal memuat konten untuk anda. Coba di reload lagi webnya."
 			/>
 		</div>
-		<div class="list-group-item" v-if="data?.length === 0">
+		<div class="list-group-item" v-if="postData?.length === 0">
 			<error-section
 				imgSrc="/images/errors/404.svg"
 				imgAlt="Tidak Ditemukan"
@@ -61,7 +61,7 @@ const route = useRoute();
 const props = defineProps<{
 	data?: Post[];
 	pending?: boolean;
-	error?: NuxtError<unknown>;
+	error?: NuxtError<unknown> | Error;
 }>();
 
 onMounted(() => {
@@ -71,9 +71,7 @@ onMounted(() => {
 			(a, b) =>
 				new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
 		)
-		.filter((item) => {
-			return `/artikel/articles/${item._path}` != route.path;
-		})
+		.filter((item) => `/artikel/${item._path}` != route.path)
 		.slice(0, 5);
 });
 </script>

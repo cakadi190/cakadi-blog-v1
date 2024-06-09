@@ -48,7 +48,7 @@ export default defineComponent({
   justify-content: center;
   transition: all .2s;
   visibility: visible;
-	z-index: 1010;
+	z-index: 1030;
   
   &.hidden {
     visibility: hidden;

@@ -21,7 +21,7 @@
 					<ClientOnly>
 						<div class="beta">
 							<Icon name="ant-design:experiment-filled" />
-							<span>v1.0</span>
+							<span>v1.1</span>
 						</div>
 					</ClientOnly>
 				</nuxt-link>
@@ -65,7 +65,7 @@
 				<ClientOnly>
 					<div class="beta">
 						<Icon name="ant-design:experiment-filled" />
-						<span>v1.0</span>
+						<span>v1.1</span>
 					</div>
 				</ClientOnly>
 			</nuxt-link>

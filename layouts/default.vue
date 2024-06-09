@@ -4,6 +4,7 @@
     <slot />
     <footer-main />
     <back-to-top />
+		<accessbility />
   </div>
 </template>
 
