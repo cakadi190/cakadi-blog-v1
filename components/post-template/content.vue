@@ -65,7 +65,7 @@
 	<article id="post-section">
 		<div class="ratio ratio-16x9 overflow-hidden rounded-3 border mb-3">
 			<nuxt-img
-			preload 
+				preload
 				:src="data.image ? data.image[0]['src'] : '/uploads/default.png'"
 				:alt="data.title"
 			/>
@@ -102,48 +102,52 @@
 
 		<ContentRendererMarkdown :value="data" />
 
-		<h6 class="mb-4">Artikel ini ditulis oleh</h6>
-		<div class="author-section bg-body-tertiary p-4 rounded-4">
-			<div class="d-flex flex-column flex-lg-row gy-4 gap-4 align-items-center">
-				<div class="avatar flex-shrink-0" style="width: 120px">
-					<div
-						class="ratio ratio-1x1 overflow-hidden rounded-circle border"
-						style="width: 120px"
-					>
-						<Gravatar
-							height="120"
-							:size="700"
-							default-img="mm"
-							v-if="!data.author.avatar"
-							:email="data.author.email"
-						/>
-						<nuxt-img
-						preload 
-							height="120"
-							v-else
-							:src="data.author.avatar"
-							:alt="data.author.name"
-						/>
+		<div class="mt-4 border-top pt-4">
+			<h6 class="mb-4">Artikel ini ditulis oleh</h6>
+			<div class="author-section bg-body-tertiary p-4 rounded-4">
+				<div
+					class="d-flex flex-column flex-lg-row gy-4 gap-4 align-items-center"
+				>
+					<div class="avatar flex-shrink-0" style="width: 120px">
+						<div
+							class="ratio ratio-1x1 overflow-hidden rounded-circle border"
+							style="width: 120px"
+						>
+							<Gravatar
+								height="120"
+								:size="700"
+								default-img="mm"
+								v-if="!data.author.avatar"
+								:email="data.author.email"
+							/>
+							<nuxt-img
+								preload
+								height="120"
+								v-else
+								:src="data.author.avatar"
+								:alt="data.author.name"
+							/>
+						</div>
 					</div>
-				</div>
-				<div class="desc text-center text-lg-start">
-					<div
-						class="d-flex align-items-center justify-content-center justify-content-lg-start mb-2 gap-2"
-					>
-						<h2 class="mb-0">{{ data.author.name }}</h2>
-						<Icon
-							name="material-symbols:verified"
-							data-bs-toggle="tooltip"
-							data-bs-title="Pemilik situs atau pengguna yang terverifikasi"
-							class="text-primary"
-							v-if="
-								data.author.email === 'cakadi190@gmail.com' ||
-								data.author.verified
-							"
-							size="32"
-						/>
+					<div class="desc text-center text-lg-start">
+						<div
+							class="d-flex align-items-center justify-content-center justify-content-lg-start mb-2 gap-2"
+						>
+							<h2 class="mb-0">{{ data.author.name }}</h2>
+							<Icon
+								name="material-symbols:verified"
+								data-bs-toggle="tooltip"
+								data-bs-title="Pemilik situs atau pengguna yang terverifikasi"
+								class="text-primary"
+								v-if="
+									data.author.email === 'cakadi190@gmail.com' ||
+									data.author.verified
+								"
+								size="32"
+							/>
+						</div>
+						<p class="mb-0">{{ data.author.description }}</p>
 					</div>
-					<p class="mb-0">{{ data.author.description }}</p>
 				</div>
 			</div>
 		</div>

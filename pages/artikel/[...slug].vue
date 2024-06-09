@@ -6,7 +6,7 @@
 				<palestine-help />
 
 				<ContentRenderer v-if="data" :value="data">
-					<post-content :data="data" />
+					<post-template-content :data="data" />
 				</ContentRenderer>
 			</div>
 			<div class="col-md-4">
@@ -25,8 +25,6 @@
 </template>
 
 <script setup lang="ts">
-import postContent from '~/components/post-template/content.vue';
-
 const route = useRoute();
 const router = useRouter();
 const urlRequest = useRequestURL();
