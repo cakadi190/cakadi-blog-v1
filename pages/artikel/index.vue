@@ -116,10 +116,12 @@ const totalPage = computed(() => {
 const next = async () => {
 	page.value++;
 	refresh();
+	scrollToTop();
 };
 const previous = async () => {
 	page.value--;
 	refresh();
+	scrollToTop();
 };
 
 // Seo Meta
