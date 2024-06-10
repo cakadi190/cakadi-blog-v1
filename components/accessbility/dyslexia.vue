@@ -25,7 +25,7 @@ onMounted(() => {
   enableDyslexic.value = storedValue === 'true';
 
 	if (enableDyslexic.value === true) {
-		document.body.style.fontFamily = 'Open-Dyslexic';
+		document.body.style.fontFamily = '"Open-Dyslexic", sans-serif';
 	} else {
 		document.body.style.fontFamily = '';
 	}
@@ -36,7 +36,7 @@ const changeOption = () => {
 
 	if (enableDyslexic.value === true) {
 		localStorage.setItem(dyslexicStorageKey, 'true');
-		document.body.style.fontFamily = 'Open-Dyslexic';
+		document.body.style.fontFamily = '"Open-Dyslexic", sans-serif';
 	} else {
 		localStorage.setItem(dyslexicStorageKey, 'false');
 		document.body.style.fontFamily = '';
