@@ -104,8 +104,7 @@ h5,
 h6 {
 	a {
 		text-decoration: none;
-		display: flex;
-		align-items: center;
+		display: inline-block;
 
 		&:before {
 			display: block;
@@ -113,31 +112,6 @@ h6 {
 			margin-top: -1rem;
 			height: 1rem;
 			visibility: hidden;
-		}
-
-		&:after {
-			content: "#";
-			margin-left: 0.5rem;
-			opacity: 0;
-			transition: all 0.2s ease;
-			visibility: hidden;
-			padding: 0.5rem;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			border: 1px solid var(--bs-border-color);
-			font-size: 0.75em;
-			width: 2rem;
-			height: 2rem;
-			line-height: 1rem;
-			border-radius: 0.5rem;
-		}
-
-		&:hover {
-			&:after {
-				opacity: 1;
-				visibility: visible;
-			}
 		}
 	}
 }

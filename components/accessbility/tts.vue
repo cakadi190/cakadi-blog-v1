@@ -6,6 +6,7 @@
 				type="checkbox"
 				role="switch"
 				id="ttsOptions"
+				disabled
 				@change="changeOption"
 				:checked="enableTts"
 			/>
@@ -51,7 +52,6 @@ const speak = () => {
 };
 
 const enableSpeak = () => {
-	console.log(enableTts.value)
 	if (enableTts.value) {
 		localStorage.setItem(ttsKey, "true");
 		speak();

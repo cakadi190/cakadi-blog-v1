@@ -6,6 +6,7 @@
 				type="checkbox"
 				role="switch"
 				id="darkSwitch"
+				disabled
 			/>
 			<label class="form-check-label" for="darkSwitch">
 				Mode Gelap / Terang
