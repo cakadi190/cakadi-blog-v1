@@ -9,21 +9,26 @@
 				v-model="isDarkMode"
 				@change="toggleColorMode"
 			/>
-			<label class="form-check-label" for="darkSwitch">
-				Mode Gelap
-			</label>
+			<label class="form-check-label" for="darkSwitch"> Mode Gelap </label>
 		</div>
 	</li>
 </template>
 
 <script lang="ts" setup>
 const colorMode = useColorMode();
-const isDarkMode = ref(colorMode.preference === 'dark');
+const isDarkMode = ref(colorMode.preference === "dark");
 
 const toggleColorMode = () => {
-	colorMode.preference = !isDarkMode.value ? 'light' : 'dark';
-	$('html').attr('data-bs-theme', !isDarkMode.value ? 'light' : 'dark');
-	$('.navbar .site-logo').attr('src', !isDarkMode.value ? '/images/brands/logo-color-long.svg' : '/images/brands/logo-white-long.svg');
+	colorMode.preference = !isDarkMode.value ? "light" : "dark";
+	$("html").attr("data-bs-theme", !isDarkMode.value ? "light" : "dark");
+	$(".site-logo").each(function () {
+		$(this).attr(
+			"src",
+			!isDarkMode.value
+				? "/images/brands/logo-color-long.svg"
+				: "/images/brands/logo-white-long.svg"
+		);
+	});
 };
 
 onMounted(toggleColorMode);
