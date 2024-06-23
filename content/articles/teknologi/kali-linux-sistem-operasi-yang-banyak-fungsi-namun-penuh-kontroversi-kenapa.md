@@ -17,7 +17,7 @@ author:
   email: 'cakadi190@gmail.com'
   description: 'Seorang Fullstack Web Developer yang berbasis di Kabupaten Ngawi yang suka sekali dengan desain dan juga hal yang berbau teknologi.'
 created_at: 2024-06-23 13:14:22
-updated_at: 2024-06-23 13:14:22
+updated_at: 2024-06-23 14:44:21
 ---
 
 ::alert{type="warning"}
@@ -43,6 +43,10 @@ Para bocil (bocah cilik) inilah yang mendukung bahwa Kali Linux itu jelek di mat
 
 ### 4. Sistem Operasi Yang Gak Ramah Buat Pemula
 Sistem Operasi satu ini adalah sistem operasi yang sangat kompleks dan banyak perkakas yang dapat dipake. Namun dibalik itu semua, sistem operasi satu ini gak cocok buat pemula yang notabene baru belajar linux dan dasar penetrasi atau keamanan digital. Tapi kalau kalian mau nyoba sistem operasi ini, _monggo_ dan saya persilahkan. Namun dengan catatan #DYOR (_Do Your Own Risk_, atau lakukanlah dengan resikomu sendiri).
+
+::alert{type="info"}
+Pembuat Kali Linux juga udah ngasih peringatan di situsnya kalau OS ini gak direkomendasikan buat penggunaan sehari-hari dan bisa kamu baca [disini](https://www.kali.org/docs/introduction/should-i-use-kali-linux/#is-kali-linux-right-for-you).
+::
 
 ### 5. Media Sosial dan Pencitraan Negatif
 Fenomena di media sosial juga berkontribusi pada persepsi negatif terhadap Kali Linux. Beberapa individu atau kelompok sering memamerkan penggunaan Kali Linux secara tidak bertanggung jawab, memposting gambar-gambar yang terlihat seperti mereka sedang melakukan aktivitas hacking tanpa pemahaman yang memadai. Hal ini tidak hanya menyesatkan publik umum tetapi juga mengurangi integritas alat-alat pentesting yang sebenarnya bermanfaat.
