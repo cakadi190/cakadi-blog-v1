@@ -99,7 +99,7 @@ const skip = computed<number>(() =>
 	page.value > 1 ? (page.value - 1) * 9 - 1 : 0
 );
 
-const { data, pending, error, refresh } = await useLazyAsyncData<any>(
+const { data, pending, error, refresh } = await useLazyAsyncData<Post[]>(
 	"artikel-kategori",
 	() =>
 		(queryContent('/articles') as any)
@@ -110,7 +110,10 @@ const { data, pending, error, refresh } = await useLazyAsyncData<any>(
 			.find(),
 	{
 		transform(items) {
-			return items.slice(skip.value, skip.value + 9);
+			return items?.sort(
+					(a, b) =>
+						new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
+				).slice(skip.value, skip.value + 9);
 		},
 	}
 );

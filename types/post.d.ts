@@ -22,4 +22,29 @@ interface Post {
 	author: Author;
 	category: string[];
 	tags: string[];
+	body: {
+		toc: {
+			title: string;
+			searchDepth: number;
+			depth: number;
+			links: {
+				id: string;
+				depth: number;
+				text: string;
+			}[]
+		}
+	}
+}
+
+interface TOCItem {
+  id: string;
+  depth: number;
+  text: string;
+}
+
+interface TOCData {
+  title: string;
+  searchDepth: number;
+  depth: number;
+  links: TOCItem[];
 }

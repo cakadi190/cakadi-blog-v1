@@ -64,13 +64,13 @@ export default defineNuxtConfig({
 			],
 			script: [
 				{ tagPosition: 'bodyClose', src: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js' },
-				{ tagPosition: 'bodyClose', src: 'https://images.dmca.com/Badges/DMCABadgeHelper.min.js' },
-				{
-					async: true,
-					tagPosition: 'bodyClose', src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8792210593151937',
-					crossorigin: 'anonymous',
-					defer: true,
-				}
+				// { tagPosition: 'bodyClose', src: 'https://images.dmca.com/Badges/DMCABadgeHelper.min.js' },
+				// {
+				// 	async: true,
+				// 	tagPosition: 'bodyClose', src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8792210593151937',
+				// 	crossorigin: 'anonymous',
+				// 	defer: true,
+				// }
 			]
 		}
 	},

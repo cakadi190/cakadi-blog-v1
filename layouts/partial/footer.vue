@@ -89,6 +89,7 @@
 							>
 						</li>
 						<li><nuxt-link to="/page/about-us">Tentang Situs</nuxt-link></li>
+						<li><nuxt-link to="/page/catatan-rilis">Catatan Rilis</nuxt-link></li>
 						<li><nuxt-link to="/page/privacy-policy">Kebijakan Privasi</nuxt-link></li>
 						<li><nuxt-link to="/page/comment-policy">Kebijakan Berkomentar</nuxt-link></li>
 					</ul>

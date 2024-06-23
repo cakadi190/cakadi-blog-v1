@@ -2,6 +2,11 @@
 	<article id="page-section">
 		<h1>{{ data.title }}</h1>
 
+		<breadcrumb-vue :breadcrumbs="[
+			{ label: 'Beranda', url: '/' },
+			{ label: data.title, url: `/page/${route.params.slug}` },
+		]" />
+
 		<ContentRendererMarkdown :value="data" />
 	</article>
 </template>

@@ -6,7 +6,10 @@ export default defineEventHandler(async (event) => {
   const data = await serverQueryContent(event).find();
 
   // Buat rute untuk setiap item data
-  const contentRoutes = data.map(item => ({
+  const contentRoutes = data?.sort(
+		(a, b) =>
+			new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
+	).map(item => ({
 		url: item._path ? item._path.replace('pages', 'page').replace('articles', 'artikel') : '/',
 		changefreq: 'daily',
 		priority: 0.9,

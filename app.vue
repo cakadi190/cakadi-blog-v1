@@ -136,4 +136,31 @@ h6 {
 		}
 	}
 }
+
+// SCROLLBAR
+/* Menyembunyikan scrollbar default di Firefox */
+* {
+  scrollbar-width: thin;
+}
+
+/* Menyembunyikan scrollbar default di Chrome, Edge, dan Safari */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--bs-body-bg); /* Mengambil warna latar belakang dari body */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(var(--bs-primary-rgb), 0.2); /* Warna handle scrollbar */
+  border-radius: 6px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(var(--bs-primary-rgb), 0.3); /* Warna handle scrollbar saat hover */
+}
 </style>
