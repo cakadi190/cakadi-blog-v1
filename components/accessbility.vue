@@ -54,6 +54,7 @@
 				<accessbility-dark />
 				<accessbility-underlined-links />
 				<accessbility-tts />
+				<accessbility-font-size />
 			</ul>
 		</div>
 	</div>

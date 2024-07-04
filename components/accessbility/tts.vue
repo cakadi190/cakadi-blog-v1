@@ -40,12 +40,11 @@ const doSpeak = (text: string) => {
 };
 
 const speak = () => {
-	const elements = document.querySelectorAll("a,button");
+	const elements = document.querySelectorAll("[data-tts=true],[data-tts]");
+	console.log(elements)
 	elements.forEach((element) => {
 		element.addEventListener("mouseenter", () => {
-			const text =
-				(element as HTMLElement).textContent ||
-				(element as HTMLElement).innerText;
+			const text = (element as HTMLElement).getAttribute("data-text");
 			doSpeak(text);
 		});
 	});

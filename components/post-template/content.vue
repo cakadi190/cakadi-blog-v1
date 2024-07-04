@@ -14,8 +14,10 @@
 							></button>
 						</div>
 						<div class="modal-body">
+							<p class="text-muted" data-tts data-text="Yuk bagikan artikel ini dan bagikan juga ilmu pengetahuan untuk generasi Indonesia yang lebih baik!">Yuk bagikan artikel ini dan bagikan juga ilmu pengetahuan untuk generasi Indonesia yang lebih baik!</p>
+							
 							<div class="form-group mb-3">
-								<label for="shareUrl" class="mb-2">Share URL</label>
+								<label for="shareUrl" class="mb-2">Tautan</label>
 								<div class="input-group">
 									<input
 										type="text"
@@ -34,7 +36,7 @@
 								</div>
 							</div>
 
-							<div class="d-flex gap-3">
+							<div class="d-flex flex-wrap justify-content-between">
 								<SocialShare
 									v-for="network in [
 										'facebook',
