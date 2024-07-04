@@ -1,7 +1,7 @@
 ---
 title: "Apa Itu Middleware Pada Laravel 10 dan Apa Kegunaannya?"
 description: Artikel ini akan memberikan kamu informasi apa itu middleware pada laravel
-draft: true
+draft: false
 image:
   - src: /uploads/cover/install-laravel-2.webp
 category:
