@@ -17,7 +17,8 @@
 				</Swiper>
 			</div>
 			<div v-else>
-				<p>Sedang memuat...</p>
+				<strong>Tunggu Sebentar</strong>
+				<p>Sedang memuat kontennya...</p>
 			</div>
 		</div>
 	</header>
