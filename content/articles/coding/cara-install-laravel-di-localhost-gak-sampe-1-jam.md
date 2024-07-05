@@ -2,8 +2,7 @@
 title: Cara Install Laravel di Localhost Gak Sampe 1 Jam
 description: Panduan lengkap dan cepat untuk menginstall Laravel di localhost dalam waktu kurang dari 1 jam. Artikel ini memberikan langkah-langkah yang simpel dan mudah diikuti, cocok untuk pemula yang ingin mulai belajar Laravel.
 draft: false
-image:
-  - src: /uploads/cover/laravel-tutorial.webp
+image: /uploads/cover/laravel-tutorial.webp
 category:
   - Coding
 tags:

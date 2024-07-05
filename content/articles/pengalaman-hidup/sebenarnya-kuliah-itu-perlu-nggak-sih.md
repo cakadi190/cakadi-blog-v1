@@ -2,8 +2,7 @@
 title: Sebenarnya Kita Butuh Kuliah Apa Nggak Sih?
 description: Pertanyaan tentang relevansi kuliah di era digital saat ini semakin sering muncul. Artikel ini mengulas manfaat dan tantangan dari kuliah, serta alternatif pendidikan lain seperti bootcamps, kursus online, dan sertifikasi profesional. Dengan mempertimbangkan berbagai perspektif, artikel ini membantu pembaca mengevaluasi apakah kuliah merupakan pilihan yang tepat untuk mereka.
 draft: false
-image:
-  - src: /uploads/cover/butuh-kuliah-gak-sih-unsplash.webp
+image: /uploads/cover/butuh-kuliah-gak-sih-unsplash.webp
 category:
   - Pengalaman Hidup
 tags:

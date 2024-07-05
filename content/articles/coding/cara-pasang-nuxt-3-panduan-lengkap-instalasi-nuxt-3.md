@@ -2,8 +2,7 @@
 title: "Cara Pasang Nuxt 3: Panduan Lengkap Instalasi Nuxt 3"
 description: Artikel ini memberikan panduan lengkap tentang cara memasang Nuxt 3, termasuk langkah-langkah instalasi dan konfigurasi awal untuk memulai proyek dengan Nuxt 3.
 draft: false
-image:
-  - src: /uploads/cover/nuxtjs.webp
+image: /uploads/cover/nuxtjs.webp
 category:
   - Coding
 tags:

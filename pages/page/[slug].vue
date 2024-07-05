@@ -40,7 +40,7 @@ if(data.value == null) {
 // Seo Meta
 const title = computed(() => data.value.title);
 const description = computed(() => data.value.description);
-const image = computed(() => urlRequest.origin + (data.value.image ? data.value.image[0]['src'] : '/uploads/default.png'));
+const image = computed(() => urlRequest.origin + (data.value.image ? data.value.image : '/uploads/default.png'));
 
 useSeoMeta({
   ogUrl: urlRequest.href,

@@ -2,8 +2,7 @@
 title: Hal Yang Bikin Kamu Dianggap Seorang Programmer Yang Redflag 🚩
 description: Yuk rek, buat umak seorang programmer jangan sampai umak bikin citra dirimu sebagai programmer langsung dicap sebagai Programmer yang Redflag biar proyekanmu gacor terus.
 draft: false
-image:
-  - src: /uploads/cover/programmer-redflag.webp
+image: /uploads/cover/programmer-redflag.webp
 category:
   - Pengalaman Hidup
 tags:

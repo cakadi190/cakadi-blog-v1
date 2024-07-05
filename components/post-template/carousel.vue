@@ -1,6 +1,6 @@
 <template>
 	<article class="post-slider">
-		<nuxt-img preload :src="data.image[0].src" class="w-100 centered-image" />
+		<nuxt-img preload :src="data.image" class="w-100 centered-image" />
 
 		<div class="content">
 			<div class="row w-100">

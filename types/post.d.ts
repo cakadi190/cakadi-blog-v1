@@ -19,7 +19,7 @@ interface Post {
 	description?: string;
 	created_at: string;
 	updated_at: string;
-	image: Image[];
+	image?: string;
 	author: Author;
 	category: string[];
 	tags: string[];

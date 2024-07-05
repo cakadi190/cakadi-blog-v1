@@ -2,8 +2,7 @@
 title: "PHP 8.4: Fitur Mendatang dan Informasi Rilis"
 description: Artikel ini memberikan informasi dasar tentang rilis PHP 8.4 yang dijadwalkan pada November 2024, serta mengulas fitur-fitur utama seperti fungsi pencarian array baru, hook properti, dan akses anggota tanpa tanda kurung tambahan.
 draft: false
-image:
-  - src: /uploads/cover/php-cover.webp
+image: /uploads/cover/php-cover.webp
 category:
   - Coding
 tags:

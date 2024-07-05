@@ -2,8 +2,7 @@
 title: Jadi Seseorang Yang Terlalu Sibuk Itu Gak Enak Gaes!
 description: Menjadi orang sibuk memang tidak selalu menyenangkan, Gaes! Dengan jadwal yang padat, waktu untuk diri sendiri dan keluarga jadi terbatas. Sering kali stres dan kelelahan menghampiri, jarang ketemu bapak ibuk, bahkan waktu main pun hampir gak ada.
 draft: true
-image:
-  - src: /uploads/cover/busy-person.webp
+image: /uploads/cover/busy-person.webp
 category:
   - Pengalaman Hidup
 tags:

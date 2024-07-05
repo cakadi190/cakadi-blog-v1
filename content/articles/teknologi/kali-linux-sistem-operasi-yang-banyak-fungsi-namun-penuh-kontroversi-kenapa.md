@@ -2,8 +2,7 @@
 title: Kali Linux, Sistem Operasi Yang Banyak Fungsi Namun Penuh Kontroversi. Kenapa?
 description: Artikel ini membahas alasan-alasan mengapa Kali Linux seringkali mendapat kritik dari kalangan teknisi IT, serta perspektif yang mungkin dapat menjelaskan fenomena tersebut.
 draft: false
-image:
-  - src: /uploads/cover/kali-bright.webp
+image: /uploads/cover/kali-bright.webp
 category:
   - Teknologi
 tags:

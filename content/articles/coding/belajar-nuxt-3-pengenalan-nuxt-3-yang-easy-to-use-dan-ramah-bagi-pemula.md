@@ -2,8 +2,7 @@
 title: "Belajar Nuxt 3: Pengenalan Nuxt 3 Yang Easy To Use dan Ramah Bagi Pemula"
 description: Artikel ini memberikan pengenalan dasar tentang Nuxt 3, sebuah framework Vue.js yang mudah digunakan dan ramah bagi pemula, serta mengulas fitur-fitur utama dan manfaat penggunaannya.
 draft: false
-image:
-  - src: /uploads/cover/nuxtjs.webp
+image: /uploads/cover/nuxtjs.webp
 category:
   - Coding
 tags:
