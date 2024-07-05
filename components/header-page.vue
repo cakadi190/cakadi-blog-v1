@@ -14,9 +14,9 @@ defineProps<{
 	<header id="masthead">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12">
+				<!-- <div class="col-md-12">
 					<palestine-help />
-				</div>
+				</div> -->
 				<div class="col-xxl-6 col-xs-8">
 					<nuxt-link
 						v-if="backTo"

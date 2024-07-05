@@ -14,8 +14,15 @@
 							></button>
 						</div>
 						<div class="modal-body">
-							<p class="text-muted" data-tts data-text="Yuk bagikan artikel ini dan bagikan juga ilmu pengetahuan untuk generasi Indonesia yang lebih baik!">Yuk bagikan artikel ini dan bagikan juga ilmu pengetahuan untuk generasi Indonesia yang lebih baik!</p>
-							
+							<p
+								class="text-muted"
+								data-tts
+								data-text="Yuk bagikan artikel ini dan bagikan juga ilmu pengetahuan untuk generasi Indonesia yang lebih baik!"
+							>
+								Yuk bagikan artikel ini dan bagikan juga ilmu pengetahuan untuk
+								generasi Indonesia yang lebih baik!
+							</p>
+
 							<div class="form-group mb-3">
 								<label for="shareUrl" class="mb-2">Tautan</label>
 								<div class="input-group">
@@ -75,14 +82,12 @@
 		<h1>{{ data.title }}</h1>
 
 		<div class="meta-data">
-			<client-only>
-				<div class="meta-data__date">
-					<Icon name="fa6-solid:calendar" />
-					<time :datetime="$dayjs(data.updated_at).utc().toString()">{{
-						$dayjs(data.updated_at).locale("id").format("dddd, D MMMM YYYY")
-					}}</time>
-				</div>
-			</client-only>
+			<div class="meta-data__date">
+				<Icon name="fa6-solid:calendar" />
+				<time :datetime="$dayjs(data.updated_at).utc().toString()">{{
+					$dayjs(data.updated_at).locale("id").format("dddd, D MMMM YYYY")
+				}}</time>
+			</div>
 			<div class="meta-data__tags">
 				<Icon name="fa6-solid:folder" />
 				<span>{{ data.category.join(", ") }}</span>

@@ -90,11 +90,10 @@ const { data, pending, error } = await useLazyAsyncData<Post[]>(
 			.find(),
 	{
 		transform: (items) =>
-			items
-				?.sort(
-					(a, b) =>
-						new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
-				),
+			items?.sort(
+				(a, b) =>
+					new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
+			),
 	}
 );
 </script>

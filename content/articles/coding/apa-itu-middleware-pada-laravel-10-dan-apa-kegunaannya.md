@@ -1,9 +1,9 @@
 ---
 title: "Apa Itu Middleware Pada Laravel 10 dan Apa Kegunaannya?"
-description: Artikel ini akan memberikan kamu informasi apa itu middleware pada laravel
+description: Pada artikel ini akan dibahas mengenai apa itu Middleware dan bagaimana cara menggunakannya di Laravel 10 yang mana fitur satu ini sangat berguna sekali untuk keperluan autentikasi dan juga pembatasan di sisi sistem / backend.
 draft: false
 image:
-  - src: /uploads/cover/install-laravel-2.webp
+  - src: /uploads/cover/l10-cover.webp
 category:
   - Coding
 tags:

@@ -15,6 +15,7 @@ interface Author {
 interface Post {
 	_path: string;
 	title: string;
+	draft?: boolean;
 	description?: string;
 	created_at: string;
 	updated_at: string;

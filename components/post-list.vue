@@ -1,6 +1,6 @@
 <template>
-	<div class="list-group list-group-flush" v-if="loaded">
-		<div class="list-group-item" v-if="pending">
+	<div class="list-group list-group-flush">
+		<div class="list-group-item" v-if="pending != 'success'">
 			<error-section
 				imgSrc="/images/errors/loading.svg"
 				imgAlt="Sedang Memuat"
@@ -9,7 +9,7 @@
 				text="Sedang memuat bagian ini, mohon bersabar."
 			/>
 		</div>
-		<div class="list-group-item" v-if="error">
+		<div class="list-group-item" v-if="error && pending != 'success'">
 			<error-section
 				imgSrc="/images/errors/500.svg"
 				imgAlt="Gagal Memuat"
@@ -18,7 +18,7 @@
 				text="Maaf, kami gagal memuat konten untuk anda. Coba di reload lagi webnya."
 			/>
 		</div>
-		<div class="list-group-item" v-if="postData?.length === 0">
+		<div class="list-group-item" v-if="data?.length === 0">
 			<error-section
 				imgSrc="/images/errors/404.svg"
 				imgAlt="Tidak Ditemukan"
@@ -30,19 +30,11 @@
 
 		<post-template-listing
 			v-else
-			v-for="item in postData"
+			v-for="item in data"
 			:key="item.title"
 			:data="item"
 		/>
 	</div>
-	<error-section
-		imgSrc="/images/errors/loading.svg"
-		imgAlt="Sedang Memuat"
-		imgHeight="250"
-		title="Sedang Memuat"
-		v-else
-		text="Sedang memuat bagian ini, mohon bersabar."
-	/>
 </template>
 
 <script lang="ts">
@@ -52,28 +44,13 @@ export default defineComponent({
 </script>
 
 <script lang="ts" setup>
-import type { NuxtError } from "nuxt/dist/app/composables";
+import type { AsyncDataRequestStatus, NuxtError } from "nuxt/dist/app/composables";
 
-const loaded = ref(false);
-const postData = ref<Post[]>([]);
-const route = useRoute();
-
-const props = defineProps<{
+defineProps<{
 	data?: Post[];
-	pending?: boolean;
+	pending?: Ref<AsyncDataRequestStatus> | string;
 	error?: NuxtError<unknown> | Error;
 }>();
-
-onMounted(() => {
-	loaded.value = true;
-	postData.value = props.data
-		?.sort(
-			(a, b) =>
-				new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
-		)
-		.filter((item) => `/artikel/${item._path}` != route.path)
-		.slice(0, 5);
-});
 </script>
 
 <style>

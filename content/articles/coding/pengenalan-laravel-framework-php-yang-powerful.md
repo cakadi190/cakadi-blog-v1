@@ -3,7 +3,7 @@ title: "Pengenalan Laravel: Framework PHP yang Powerful"
 description: Artikel ini memberikan pengenalan dasar tentang Laravel, sebuah framework PHP yang powerful dan populer, serta mengulas fitur-fitur utama dan manfaat penggunaannya.
 draft: false
 image:
-  - src: /uploads/cover/install-laravel-2.webp
+  - src: /uploads/cover/laravel-tutorial.webp
 category:
   - Coding
 tags:

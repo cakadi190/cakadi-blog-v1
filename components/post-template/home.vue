@@ -1,29 +1,31 @@
 <template>
 	<article class="col-md-4">
-		<nuxt-link class="card card-body blog-post" :to="`/artikel${data._path.replace('/articles', '')}`">
+		<nuxt-link
+			class="blog-post"
+			:to="`/artikel${data._path.replace('/articles', '')}`"
+		>
 			<div class="ratio ratio-16x9 overflow-hidden rounded-3 border mb-3">
 				<nuxt-img
 					preload
 					:src="data.image ? data.image[0]['src'] : '/uploads/default.png'"
+					:alt="data.title"
 				/>
 			</div>
 
-			<h3 class="h5">{{ data.title }}</h3>
+			<h3 class="h5">{{ truncate(data.title, 75) }}</h3>
 
-			<client-only>
-				<div class="meta-data">
-					<div class="time">
-						<Icon name="fa6-solid:calendar" />
-						<time :datetime="$dayjs(data.created_at).utc().toString()">{{
-							$dayjs(data.created_at).locale("id").format("dddd, D MMMM YYYY")
-						}}</time>
-					</div>
-					<div class="author" v-if="data.author">
-						<Icon name="fa6-solid:user" />
-						<span>{{ data.author.name }}</span>
-					</div>
+			<div class="meta-data">
+				<div class="time">
+					<Icon name="fa6-solid:calendar" />
+					<time :datetime="$dayjs(data.created_at).utc().toString()">{{
+						$dayjs(data.created_at).locale("id").format("dddd, D MMMM YYYY")
+					}}</time>
 				</div>
-			</client-only>
+				<div class="author" v-if="data.author">
+					<Icon name="fa6-solid:user" />
+					<span>{{ data.author.name }}</span>
+				</div>
+			</div>
 		</nuxt-link>
 	</article>
 </template>
@@ -46,6 +48,7 @@ export default defineComponent({
 	padding: 1.25rem;
 	border-radius: 0.875rem;
 	transition: all 0.2s;
+	color: var(--bs-body-color);
 
 	.meta-data {
 		display: flex;

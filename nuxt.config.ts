@@ -6,11 +6,6 @@ export default defineNuxtConfig({
 			reuseExistingServer: true
 		}
 	},
-	delayHydration: {
-		// enables nuxt-delay-hydration in dev mode for testing
-		debug: process.env.NODE_ENV === 'development',
-		mode: 'mount'
-	},
 
 	content: {
 		highlight: {
@@ -81,8 +76,9 @@ export default defineNuxtConfig({
 			failOnError: false,
 		},
 	},
+
 	modules: [
-		'nuxt-delay-hydration',
+		// 'nuxt-delay-hydration',
 		'nuxt-icon',
 		'nuxt-swiper',
 		"@nuxt/image",
@@ -111,4 +107,6 @@ export default defineNuxtConfig({
 		}],
 		"@stefanobartoletti/nuxt-social-share",
 	],
+
+	compatibilityDate: '2024-07-05',
 })

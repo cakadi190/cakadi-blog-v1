@@ -3,7 +3,7 @@ title: "Fitur Baru dan Pembaharuan di Laravel 11.10 Yang Menarik Buat Pengembang
 description: Artikel ini membahas fitur-fitur baru di Laravel 11.10, termasuk kemampuan untuk mengirim callback ke updateOrInsert, dukungan untuk model yang dihapus secara lembut dengan binding model rute eksplisit, dan lainnya.
 draft: false
 image:
-  - src: /uploads/cover/laravel-news.webp
+  - src: /uploads/cover/laravel-tutorial.webp
 category:
   - Coding
 tags:

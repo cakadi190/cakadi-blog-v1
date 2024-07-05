@@ -2,10 +2,18 @@
 title: Catatan Rilis Situs
 description: Catatan perubahan dan pembaruan yang dilakukan pada situs ini.
 created_at: 2024-06-09 13:00:00
-updated_at: 2024-06-23 13:30:00
+updated_at: 2024-07-05 13:30:00
 ---
 
 Catatan Rilis ini berisi catatan perubahan dan pembaruan yang telah dilakukan pada situs ini. Kami berkomitmen untuk terus meningkatkan dan memperbarui konten serta fitur-fitur di situs ini untuk memberikan pengalaman terbaik kepada pengunjung.
+
+### Versi 1.1.0 (2024-07-05)
+- **Core System Upgrade**: Upgrade versi dependensi nuxt ke 3.12.3.
+- **Post UI**: Memperbaiki tampilan post grid yang mana menghapus garis tepi.
+- **Post UI**: Memperbaiki tataletak pada detail postingan.
+- **Fitur Aksesbilitas**: Menambahkan fitur pengubahan ukuran teks pada seluruh elemen yang mana membuat pengunjung dapat membesarkan ukuran teks menjadi 1.5x, 2x atau 2.5x dari teks semula.
+- **Recent Post System**: Menghilangkan daftar postingan yang statusnya draf supaya tidak bisa dibaca.
+- **Sitemap**: Menghilangkan daftar postingan yang statusnya draf supaya tidak bisa dibaca.
 
 ### Versi 1.0.1 (2024-06-23)
 - **Fitur Aksesibilitas**: Menambahkan pengaturan disleksia, mode gelap atau terang, dan juga pengaturan ukuran teks. (Tahap Beta)

@@ -1,9 +1,9 @@
 <template>
 	<header id="masthead">
 		<div class="container my-4 mb-3 mb-lg-5 pb-3 pb-lg-5">
-			<palestine-help />
+			<!-- <palestine-help /> -->
 
-			<div class="overflow-hidden rounded-4 border">
+			<div class="overflow-hidden rounded-4 border" v-if="isMounted">
 				<!-- eslint-disable -->
 				<Swiper
 					:modules="[SwiperAutoplay, SwiperEffectCreative]"
@@ -16,11 +16,20 @@
 					</SwiperSlide>
 				</Swiper>
 			</div>
+			<div v-else>
+				<p>Sedang memuat...</p>
+			</div>
 		</div>
 	</header>
 </template>
 
 <script lang="ts" setup>
+const isMounted = ref(false);
+
+onMounted(() => {
+	isMounted.value = true;
+});
+
 const id = "list-carousel-" + generateRandomString(15);
 const {
 	data: posts,
@@ -28,7 +37,8 @@ const {
 	error,
 } = await useLazyAsyncData<Post[]>(
 	id,
-	() => (queryContent("/articles") as any).where({ draft: { $eq: false } }).find(),
+	() =>
+		(queryContent("/articles") as any).where({ draft: { $eq: false } }).find(),
 	{
 		transform: (items) =>
 			items

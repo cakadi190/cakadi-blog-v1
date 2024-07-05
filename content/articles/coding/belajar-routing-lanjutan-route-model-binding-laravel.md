@@ -3,7 +3,7 @@ title: Belajar Routing Lanjutan, Route Model Binding Pada Laravel
 description: Panduan lengkap tentang penggunaan Route Model Binding di Laravel. Artikel ini membahas cara menggunakan Route Model Binding untuk memuat model berdasarkan parameter route, baik dalam closure maupun controller, serta bagaimana menyesuaikan logika default dari Route Model Binding.
 draft: false
 image:
-  - src: /uploads/cover/install-laravel-2.webp
+  - src: /uploads/cover/l10-cover.webp
 category:
   - Coding
 tags:

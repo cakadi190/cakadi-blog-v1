@@ -3,7 +3,7 @@
 		
 		<div class="row gy-4 pt-5">
 			<div class="col-md-8">
-				<palestine-help />
+				<!-- <palestine-help /> -->
 
 				<ContentRenderer v-if="data" :value="data">
 					<post-template-page :data="data" />

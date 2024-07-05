@@ -3,7 +3,7 @@ title: Belajar Routing dan Controller Dasar Pada Laravel
 description: Panduan lengkap untuk mempelajari routing dasar pada framework Laravel. Artikel ini membahas cara membuat route sederhana, route dengan parameter, route dengan controller, penggunaan middleware, dan route groups dengan bahasa yang kekinian.
 draft: false
 image:
-  - src: /uploads/cover/laravel-cover.webp
+  - src: /uploads/cover/l10-cover.webp
 category:
   - Coding
 tags:
