@@ -1,4 +1,4 @@
-# Cakadi Blog
+# Cakadi Blog V1 [Deprecated]
 
 Welcome to the **Cakadi Blog** repository! This project is a modern, responsive blogging platform built with React.js, Node.js, Express.js, and MongoDB, featuring user authentication, content management, a comment system, search functionality, and SEO optimization.
 
